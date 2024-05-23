@@ -1,0 +1,104 @@
+/* 언어설정 */
+@charset 'utf-8';
+
+/* 전체설정 */
+* {margin: 0;padding: 0;}
+ul,ol {list-style: none;}
+a {text-decoration: none;
+    color: #000;}
+img {vertical-align: bottom;}
+
+
+
+
+/* 헤더설정 */
+.logo {font-size: 30px;}
+.logo a {}
+
+/* 네비설정 */
+.box2 {display: flex;
+    justify-content: flex-start;
+    align-items: center;}
+.gnb {}
+.gnb ul {display: flex;
+        justify-content: flex-end;
+        align-items: center;}
+.gnb ul li {}
+.gnb ul li a {display: block;
+            padding: 10px 15px;
+            font-size: 14px;}
+
+/* 메인이미지설정 */
+.topimg {max-width: 100%;}
+
+/* 공지사항 설정 */
+.notice {}
+.notice h2 {margin-bottom: 5px;
+            font-size: 18px;
+            color: #666;}
+.notice ul {}
+.notice ul li {}
+.notice ul li a {display: block;
+                font-size: 14px;
+                padding: 5px;
+                border-bottom: 2px dotted #ddd;}
+
+.notice ul li a:after {content: '';
+                        display: block;
+                        clear: both;}
+.notice ul li a time {font-weight: bold;
+                    color: rgb(125, 125, 125);
+                    float: left;}
+.notice ul li a .txt {float: none;
+                    margin-left: 40px;
+                    padding-left: 10px;}
+
+/* 푸터설정 */
+.box5 {background-color: #ddd;
+        padding: 15px 0;}
+.copyright {}
+.copyright p {font-size: 14px;
+            color: #666;}
+
+/* 여백설정 */
+.boxA {padding: 8px 10px;}
+.box3 {}
+.box4 {padding: 15px 10px;}
+.box5 {}
+
+
+
+
+/* 미디어쿼리구간설정####################### */
+/* 768px 이상일 때 */
+@media (min-width:768px) {
+    /* 레이아웃 설정 */
+    .boxA {display: flex;}
+    .boxA>div {width: 50%;}
+    /* 네비설정 */
+    .box2 {display: flex;
+        justify-content: flex-end;
+        align-items: center;}
+    .gnb {}
+    .gnb ul {display: flex;
+            justify-content: flex-end;
+            align-items: center;}
+
+
+
+}
+/* 와이드데스크탑 설정 */
+@media (min-width:1280px) {
+    /* 와이드좌우여백 설정 */
+    .boxA, .copyright, .box3, .box4 {width: 1140px;
+            margin: 0 auto;}
+    /* boxA 밑줄 설정 */
+    .boxA-out {border-bottom: 1px solid #ddd ;
+                padding: 8px 0;
+                margin-bottom: 15px;}
+    
+
+
+
+
+}
