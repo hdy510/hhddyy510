@@ -5,68 +5,115 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TimeSwitch</title>
-    <!-- 그리드가이드 연결 -->
-    <!-- <link rel="stylesheet" href="grid-guide.css"> -->
-    <!-- 외부스타일시트 연결 -->
+<!-- 그리드가이드  -->
+<!-- <link rel="stylesheet" href="grid-guide.css"> -->
+    <!-- 외부스타일시트연결 -->
     <link rel="stylesheet" href="style.css">
-    <!-- 폰트어썸 연결 -->
-    <script src="https://kit.fontawesome.com/fb97202f89.js" crossorigin="anonymous"></script>
+
+    <!-- 폰트어썸연결 -->
+    <script src="https://kit.fontawesome.com/85ac904405.js" crossorigin="anonymous"></script>
+
+    <!-- 제이쿼리 연결 -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+
+    <script>
+        // 제이쿼리선언문
+        $(document).ready(function(){
+            //menuBtn을 클릭했을 때 gnb가 toggle 되어라.
+            $('.menuBtn').click(function(){
+                $('.gnb').slideToggle();
+            })
+        })
+    </script>
 </head>
 <body>
-    <div class="boxA-out">
-        <div class="boxA">
-            <div class="box1">
-                    <h1 class="logo">
-                        <a href="">TimeSwitch</a>
-                    </h1>
-            </div>
-            <div class="box2">
-                <nav class="gnb">
-                    <ul>
-                        <li><a href="">메인</a></li>
-                        <li><a href="">연혁</a></li>
-                        <li><a href="">사업 소개</a></li>
-                        <li><a href="">채용 정보</a></li>
-                        <li><a href="">문의</a></li>
-                    </ul>
-                </nav>
-            </div>
+
+<div class="boxA-out">
+    <div class="boxA">
+        <div class="box1">
+            <h1 class="logo"><a href=""><img src="img/logo-large.png" alt="" width="250" height="auto"></a></h1>
+        </div>
+    
+        <div class="box2">
+            <button class="menuBtn">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+            <nav class="gnb">
+                <ul>
+                    <li><a href="">메인</a></li>
+                    <li><a href="">연혁</a></li>
+                    <li><a href="">사업소개</a></li>
+                    <li><a href="">채용정보</a></li>
+                    <li><a href="">문의</a></li>
+                </ul>
+            </nav>
         </div>
     </div>
-    <div class="box3">
-            <img src="img/header.jpg" alt="" class="topimg">
+</div>
+<div class="box3">
+    <img src="img/header.jpg" alt="" class="topimg">
+</div>
+<div class="box6">
+    <div class="box6-1">
+        <a href="">
+            <div>
+                <i class="fa fa-database" aria-hidden="true"></i>
+                <h2>데이터분석 / 해석</h2>
+                <p>목적에 맞는 다양한 각도로<br> 데이터를 분석 해석합니다.</p>
+            </div>
+        </a>
     </div>
-    <div class="box4">
+    <div class="box6-2">
+        <a href="">
+            <div>
+                <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                <h2>데이터 시각화</h2>
+                <p>해석결과는 데이터 시각화해서<br> 활용할수 있게합니다.</p>
+            </div>
+        </a>
+    </div>
+    <div class="box6-3">
+        <a href="">
+            <div>
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <h2>24시간 지원</h2>
+                <p>24시간 대응 팀으로 장애에<br> 신속하게 대응합니다.</p>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="box4">
+   <div class="box4-1">
         <div class="notice">
             <h2>공지사항</h2>
             <ul>
-                <li><a href="">
-                        <time datetime="" >04/05</time>
-                        <div class="txt">데이터센터 유지보수를 수행합니다.</div> 
-                    </a>
-                </li>
-                <li><a href="">
-                        <time datetime="">04/01</time>
-                        <div class="txt">안드로이드 애플리케이션 버전 1.2를 출시했습니다. </div>
-                    </a>
-                </li>
-                <li><a href="">
-                        <time datetime="">03/22</time>
-                        <div class="txt">세미나/캠패인 과 관련된 공지사항</div>
-                    </a>
-                </li>
-                <li><a href="">
-                        <time datetime="">02/15</time>
-                        <div class="txt">그래프 표시의변경 반식을 쉽게 바꿨습니다.</div> 
-                    </a>
-                </li>
+                <li><a href=""><time>04/05</time>  <div class="txt">데이터센터 유지보수를 수행합니다.</div></a></li>
+                <li><a href=""><time>04/01</time>  <div class="txt">안드로이드 애플리케이션 버전 1.2를 출시했습니다.</div></a></li>
+                <li><a href=""><time>03/22</time>  <div class="txt">세미나/캠패인 과 관련된 공지사항</div></a></li>
+                <li><a href=""><time>02/15</time>  <div class="txt">그래프 표시의변경 반식을 쉽게 바꿨습니다.</div></a></li>
+            </ul>
+    
+        </div>
+   </div>
+   <div class="box4-2">
+        <div class="sns">
+            <h2>최신 정보를 여기서도 받아보세요!</h2>
+            <ul>
+                <li><a href="">Twitter</a></li>
+                <li><a href="">Facebook</a></li>
+                <li><a href="">Instagram</a></li>
             </ul>
         </div>
+
+   </div>
+
+</div>
+<div class="box5">
+    <div class="copyright">
+        <p>Copyright &copy; Timeswitch  </p>
     </div>
-    <div class="box5">
-        <div class="copyright">
-            <p>Copyright &copy; Timeswitch</p>  
-        </div>
-    </div>
+</div>
+    
 </body>
 </html>
