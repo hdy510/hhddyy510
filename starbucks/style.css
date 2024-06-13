@@ -350,7 +350,50 @@ section:nth-child(6) {background-image: url(img/2024_summer_pick_bg.jpg);
                     height: 600px;
                     padding: 40px 0;
                     background-attachment: fixed;}
-.pickup_inner {display: flex;}
+.pickup_inner {display: flex;
+                position: relative;
+                height: 520px;
+            }
+.pickup_inner .txtBox {color: #fff;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+                        margin-top: 40px;}
+.pickup_inner .txtBox .topTxt {display: flex;
+                                flex-direction: column;
+                                align-items: flex-end;}
+.pickup_inner .txtBox .topTxt em {font-style: normal;
+                                font-weight: bold;
+                                font-size: 100px;
+                                margin-bottom: -30px;}
+.pickup_inner .txtBox .topTxt b {font-style: normal;
+                                font-weight: bold;
+                                font-size: 79px;
+                                margin-bottom: -55px;}
+.pickup_inner .txtBox .topTxt span {font-style: normal;
+                                    font-weight: bold;
+                                    font-size: 47px;}
+.pickup_inner .txtBox .bottomTxt {margin-top: 20px;
+    text-align: right;
+    line-height: 1.6;}
+.pickup_inner .txtBox .bottomTxt h3 {text-align: right;}
+.pickup_inner .txtBox .bottomTxt h3 strong {}
+.pickup_inner .txtBox span {margin-top: 40px;}
+.pickup_inner .txtBox span a {color: #fff;
+                            display: inline-block;
+                            padding: 8px 20px;
+                            border: 2px solid #fff;
+                            border-radius: 5px;
+                            font-size: 18px;
+                            transition: all 0.5s;}
+.pickup_inner .txtBox span a:hover {background-color: #fff;
+                                    color: #000;
+                                    text-decoration: underline;}
+.pickup_inner .imgBox {position: absolute;
+                        width: 60%;
+                        right: 0;
+                        top: 0;}
+.pickup_inner .imgBox img {}
 
 
 
