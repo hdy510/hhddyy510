@@ -1,0 +1,1470 @@
+/* 언어설정 */
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+/* 폰트정보 
+font-family: "Noto Sans KR", sans-serif;
+
+/* 전체설정 */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    background-color: #fcfcfc;
+    color: #131313;
+
+}
+
+/* 페이지화면 기본설정 */
+.wrap {
+    width: 100%;
+    /* position: fixed; */
+    background-color: #fcfcfc;
+    /* 하단스크롤바없애는방법 */
+    overflow: hidden;
+}
+
+/* full screen scrolling 설정 */
+/* .wrap {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+} */
+
+.wrap>section {
+    width: 100%;
+    height: 100vh;
+    /* scroll-snap-align: start; */
+}
+
+/* 우측 페이지네비게이션바 설정 */
+.btn {
+    /* background-color: rgb(88, 111, 138); */
+    width: 53px;
+    height: 255px;
+    position: fixed;
+    right: 3%;
+    top: 50%;
+    margin-top: -127px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.btn ul {}
+
+.btn ul li {
+    margin: 13px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+}
+
+.btn ul li div {
+    background-color: #fff;
+    width: 16px;
+    height: 16px;
+    border-radius: 70px;
+    box-shadow: 0px 4px 8px #e0e0e0;
+    cursor: pointer;
+}
+
+/* 첫번째 페이지임을 알려주는 형태 */
+.btn ul li.on div {
+    /* background-color: #131313; */
+    background-image: url(img/nav_paw_green.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 52px;
+    height: 52px;
+}
+
+/* topBtn 설정 */
+body {position: relative;}
+.topBtn {background-color: #fcfcfc;
+        position: fixed;
+        right: 3%;
+        bottom: 4%;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 70px;
+        cursor: pointer;
+        box-shadow: 0px 4px 4px #f3f3f3;
+        border: 2px solid #f3f3f3;
+        transition: all 0.3s;
+        }
+.topBtn i {font-size: 24px;
+            color: #9e9e9e;
+            }
+.topBtn span {font-size: 16px;
+                color: #9e9e9e;}
+/* topBtn hover transition */
+.topBtn:hover {transform: translateY(-10px);
+    box-shadow: 0px 4px 4px #c6c6c6;
+}
+
+/* header 설정 */
+header {
+    background-color: #fcfcfc;
+    /* background-color: #bfdff7; */
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 80px;
+    border-radius: 0 0 16px 16px;
+
+}
+
+header .header_inner {
+    display: flex;
+    width: 100%;
+}
+
+header .header_inner h1 {
+    width: 20%;
+    /* background-color: rgb(255, 236, 172); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .header_inner h1 a {}
+
+header .header_inner h1 a img {
+    max-width: 234px;
+    width: 100%;
+}
+
+header .header_inner nav {
+    width: 60%;
+    /* background-color: rgb(255, 183, 183); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .header_inner nav ul {
+    display: flex;
+}
+
+header .header_inner nav ul li {}
+
+header .header_inner nav ul li a {
+    display: flex;
+    font-size: 18px;
+    color: #606060;
+    padding: 27px 31px;
+    transition: all 0.5s;
+}
+
+header .header_inner nav ul li a:hover {
+    color: #6DCBFF;
+}
+
+header .header_inner .util {
+    width: 20%;
+    /* background-color: rgb(228, 255, 202); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .header_inner .util ul {
+    display: flex;
+}
+
+header .header_inner .util ul li {}
+
+header .header_inner .util ul li a {
+    color: #606060;
+    font-size: 14px;
+    display: block;
+    padding: 13px;
+    transition: all 0.5s;
+}
+
+header .header_inner .util ul li a:hover {
+    color: #6DCBFF;
+}
+
+header .header_inner .util ul li a i {
+    color: #606060;
+    font-size: 22px;
+    transition: all 0.5s;
+}
+
+header .header_inner .util ul li a:hover i {
+    color: #6DCBFF;
+}
+
+/* section1 설정 */
+.section1 {
+    position: relative;
+}
+
+.section1 .heroBox {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    z-index: 2;
+}
+
+.section1 .heroBox .topBox {}
+
+.section1 .heroBox .topBox h1 {
+    font-size: 80px;
+}
+
+.section1 .heroBox .topBox h1 span {}
+
+.section1 .heroBox .topBox h1 span:nth-child(1) {
+    color: #34b7ff;
+}
+
+.section1 .heroBox .topBox h1 span:nth-child(2) {
+    color: #FF818E;
+}
+
+.section1 .heroBox .topBox h1 span:nth-child(3) {
+    color: #A2D735;
+}
+
+.section1 .heroBox .topBox h2 {
+    font-size: 40px;
+}
+
+.section1 .heroBox .topBox .topBox_inner {
+    display: flex;
+    margin-top: 65px;
+}
+
+.section1 .heroBox .topBox p {
+    font-size: 24px;
+    width: 70%;
+}
+
+/* section1의 협회 소개 버튼 설정 */
+.section1 .heroBox .topBox .introduce {
+    width: 30%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.section1 .heroBox .topBox .introduce a {
+    display: flex;
+    align-items: center;
+}
+
+.section1 .heroBox .topBox .introduce a span {
+    font-size: 20px;
+    padding-right: 10px;
+    transition: all 0.5s;
+}
+
+.section1 .heroBox .topBox .introduce a i {
+    font-size: 20px;
+    padding-top: 3px;
+}
+
+/* section1 의 협회소개 버튼 hover underline transition */
+.section1 .heroBox .topBox .introduce:hover a span {
+    text-decoration: underline #34b7ff 2px;
+    text-underline-position: under;
+    text-underline-offset: 5px;
+}
+
+/* section1의 오시는길, 연락처 및 SNS 버튼 설정 */
+.section1 .heroBox .bottomBox {
+    margin-top: 50px;
+}
+
+.section1 .heroBox .bottomBox ul {
+    display: flex;
+}
+
+.section1 .heroBox .bottomBox ul li {}
+
+.section1 .heroBox .bottomBox ul li a {
+    display: block;
+    width: 150px;
+    text-align: center;
+    padding: 14px 12px;
+    font-size: 16px;
+    margin-right: 12px;
+    border-radius: 70px;
+    color: #363636;
+    border: 1px solid #E0E0E0;
+    transition: all 0.3s;
+}
+
+.section1 .heroBox .bottomBox ul li a i {
+    padding-right: 14px;
+}
+
+/* section1 의 bottomBox hover transition */
+.section1 .heroBox .bottomBox ul li:hover a {
+    background-color: #363636;
+    color: #fcfcfc;
+}
+
+/* section1 의 이미지 설정 */
+.section1 .img {
+    position: relative;
+}
+
+.section1 .img .img_inner {
+    width: 240px;
+    height: auto;
+    z-index: 2;
+    position: absolute;
+}
+
+.section1 .img .img_inner:nth-child(1) {
+    right: 24%;
+    top: 200px;
+}
+
+.section1 .img .img_inner:nth-child(2) {
+    right: 10%;
+    top: 400px;
+}
+
+.section1 .img .img_inner:nth-child(3) {
+    right: 25%;
+    top: 600px;
+}
+
+.section1 .img .img_inner .imgBox {
+    width: 240px;
+    height: 240px;
+    transition: all 0.5s;
+}
+
+.section1 .img .img_inner:nth-child(1) .imgBox {
+    background-image: url(img/section1_img1.png);
+}
+
+.section1 .img .img_inner:nth-child(2) .imgBox {
+    background-image: url(img/section1_img2.png);
+}
+
+.section1 .img .img_inner:nth-child(3) .imgBox {
+    background-image: url(img/section1_img3.png);
+}
+
+.section1 .img .img_inner a {
+    display: block;
+    width: 240px;
+    height: 240px;
+    color: #fcfcfc;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.section1 .img .img_inner a span {
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+/* section1 의 이미지 hover transition */
+.section1 .img .img_inner:hover .imgBox {
+    transform: scale(1.2);
+    filter: brightness(50%);
+}
+
+.section1 .img .img_inner:hover a span {
+    opacity: 1;
+}
+
+/* section1 의 이미지 floating 애니메이션 설정 */
+@keyframes floating {
+    0% {
+        transform: translatey(0px);
+    }
+
+    50% {
+        transform: translatey(-20px);
+    }
+
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+.section1 .img .img_inner:nth-child(1) {
+    animation: floating 6s ease-in-out infinite;
+}
+
+.section1 .img .img_inner:nth-child(2) {
+    animation: floating 6s 0.3s ease-in-out infinite;
+}
+
+.section1 .img .img_inner:nth-child(3) {
+    animation: floating 6s 0.6s ease-in-out infinite;
+}
+
+/* section1 의 후원/입양/자원봉사 문의버튼 설정 */
+.section1 .qna {
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
+}
+
+.section1 .qna a {
+    display: block;
+    color: #fcfcfc;
+    font-size: 24px;
+    padding: 19px;
+    width: 468px;
+    /* height: 71px; */
+    text-align: center;
+    background-color: #363636;
+    border-radius: 70px;
+    border: 1px solid #363636;
+    transition: all 0.3s;
+}
+
+.section1 .qna a i {
+    padding-left: 27px;
+}
+
+/* section1 의 후원/입양/자원봉사 문의버튼 hover transition */
+.section1 .qna:hover a {
+    color: #363636;
+    background-color: #fcfcfc;
+    border: 1px solid #e0e0e0;
+}
+
+/* section의 배경에 떠다니는 gradient 공통설정 */
+section .gradient {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+section .gradient div {
+    border-radius: 50%;
+    filter: blur(70px);
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+
+/* gradient moving 애니메이션 설정 */
+@keyframes moving {
+    0% {
+        transform: rotate(0deg) translateX(70px) rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg) translateX(70px) rotate(-360deg);
+    }
+}
+section .gradient div:nth-child(1) {
+    animation: moving 12s forwards infinite;
+    animation-timing-function: ease-in-out;
+}
+
+section .gradient div:nth-child(2) {
+    animation: moving 12s reverse infinite;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.5s;
+}
+
+section .gradient div:nth-child(3) {
+    animation: moving 12s forwards infinite;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.3s;
+}
+
+/* section1의 배경에 떠다니는 gradient 개별설정 */
+.section1 .gradient div:nth-child(1) {
+    left: -80px;
+    top: -50px;
+    width: 348px;
+    height: 348px;
+    opacity: 0.8;
+    background: linear-gradient(22deg, rgba(166, 211, 252, 1) 0%, rgba(166, 242, 252, 1) 100%);
+}
+
+.section1 .gradient div:nth-child(2) {
+    left: 850px;
+    top: 230px;
+    width: 362px;
+    height: 362px;
+    opacity: 0.8;
+    background: linear-gradient(207deg, rgba(252, 166, 176, 1) 0%, rgba(252, 202, 166, 1) 100%);
+}
+
+.section1 .gradient div:nth-child(3) {
+    right: -100px;
+    bottom: -1000px;
+    width: 547px;
+    height: 547px;
+    opacity: 0.8;
+    background: linear-gradient(207deg, rgba(117, 205, 110, 1) 0%, rgba(187, 239, 80, 1) 100%);
+}
+
+/* section2의 배경에 떠다니는 gradient 개별설정 */
+.section2 .gradient div:nth-child(1) {
+    left: -300px;
+    bottom: -1200px;
+    width: 547px;
+    height: 547px;
+    opacity: 0.35;
+    background: linear-gradient(22deg, rgba(166, 211, 252, 1) 0%, rgba(166, 242, 252, 1) 100%);
+}
+
+/* section3의 배경에 떠다니는 gradient 개별설정 */
+.section3 .gradient div:nth-child(1) {
+    right: -300px;
+    bottom: -1300px;
+    width: 547px;
+    height: 547px;
+    opacity: 0.35;
+    background: linear-gradient(207deg, rgba(117, 205, 110, 1) 0%, rgba(187, 239, 80, 1) 100%);
+}
+
+/* section4의 배경에 떠다니는 gradient 개별설정 */
+.section4 .gradient div:nth-child(1) {
+    left: -300px;
+    bottom: -1200px;
+    width: 547px;
+    height: 547px;
+    opacity: 0.35;
+    background: linear-gradient(207deg, rgba(252, 166, 176, 1) 0%, rgba(252, 202, 166, 1) 100%);
+}
+
+/* section6의 배경에 떠다니는 gradient 개별설정 */
+.section6 .gradient div:nth-child(1) {
+    left: -400px;
+    bottom: -700px;
+    width: 547px;
+    height: 547px;
+    opacity: 0.35;
+    background: linear-gradient(34deg, rgba(221,113,239,1) 0%, rgba(255,198,204,1) 100%);
+}
+.section6 .gradient div:nth-child(2) {
+    right: -400px;
+    bottom: -1300px;
+    width: 547px;
+    height: 547px;
+    opacity: 0.35;
+    background: linear-gradient(34deg, rgba(221,113,239,1) 0%, rgba(255,198,204,1) 100%);
+}
+.section6 .gradient div:nth-child(3) {
+    left: -400px;
+    bottom: -2000px;
+    width: 547px;
+    height: 547px;
+    opacity: 0.35;
+    background: linear-gradient(34deg, rgba(221,113,239,1) 0%, rgba(255,198,204,1) 100%);
+}
+
+/* section2 설정 */
+.section2 {
+    position: relative;
+}
+
+.section2 .txtBox {
+    position: absolute;
+    z-index: 2;
+    left: calc(50% - 300px);
+    top: 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    height: 430px;
+}
+
+.section2 .txtBox img {
+    width: 200px;
+}
+
+.section2 .txtBox h2 {
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 22px;
+}
+
+.section2 .txtBox p {
+    font-size: 20px;
+    line-height: 2;
+}
+
+.section2 .listBox {
+    display: flex;
+    position: absolute;
+    z-index: 3;
+    left: calc(50% - 440px);
+    bottom: 8%;
+}
+
+.section2 .listBox>div {
+    width: 260px;
+    height: 355px;
+
+    border-radius: 18px;
+    margin: 0 25px;
+}
+
+/* section2의 listBox 공통설정 */
+.section2 .listBox>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: #fcfcfc;
+}
+
+.section2 .listBox img {
+    width: 100px;
+    height: 100px;
+}
+
+.section2 .listBox h3 {
+    margin-top: 32px;
+    border-radius: 40px;
+    transition: all 0.3s;
+}
+
+.section2 .listBox h3 a {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fcfcfc;
+    padding: 10px 25px;
+    border-radius: 70px;
+    transition: all 0.3s;
+}
+
+.section2 .listBox ul {
+    margin-top: 22px;
+}
+
+.section2 .listBox ul li {}
+
+.section2 .listBox ul li a {
+    display: flex;
+    text-align: center;
+    font-size: 16px;
+    /* background-color: red; */
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 6px;
+    margin-bottom: 10px;
+}
+
+.section2 .listBox ul li a span {
+    margin-right: 18px;
+}
+
+.section2 .listBox ul li a i {}
+
+/* section2의 listBox 개별설정 */
+.section2 .listBox .support {
+    border: 2px solid #6DCBFF;
+    box-shadow: 0px 5px 11px 0px #6DCBFF;
+    transition: all 0.3s
+}
+
+.section2 .listBox .adopt {
+    border: 2px solid #FFAEB7;
+    box-shadow: 0px 5px 11px 0px #FFAEB7;
+    transition: all 0.3s
+}
+
+.section2 .listBox .volunteer {
+    border: 2px solid #B5E74E;
+    box-shadow: 0px 5px 11px 0px #B5E74E;
+    transition: all 0.3s
+}
+
+.section2 .listBox .support h3 a {
+    background-color: #6DCBFF;
+    border: 1px solid #6DCBFF;
+
+}
+
+.section2 .listBox .adopt h3 a {
+    background-color: #FFAEB7;
+    border: 1px solid #FFAEB7;
+
+}
+
+.section2 .listBox .volunteer h3 a {
+    background-color: #B5E74E;
+    border: 1px solid #B5E74E;
+}
+
+/* section2의 listBox hover transition*/
+.section2 .listBox .support:hover {
+    transform: translateY(-10px);
+    box-shadow: -0px 5px 40px 1px #6DCBFF
+}
+
+.section2 .listBox .adopt:hover {
+    transform: translateY(-10px);
+    box-shadow: -0px 5px 40px 1px #FFAEB7
+}
+
+.section2 .listBox .volunteer:hover {
+    transform: translateY(-10px);
+    box-shadow: -0px 5px 40px 1px #B5E74E
+}
+
+/* section2의 listBox의 타이틀 버튼 hover transition */
+.section2 .listBox .support h3 a:hover {
+    color: #6dcbff;
+    background-color: #fcfcfc;
+}
+
+.section2 .listBox .adopt h3 a:hover {
+    color: #FFAEB7;
+    background-color: #fcfcfc;
+}
+
+.section2 .listBox .volunteer h3 a:hover {
+    color: #B5E74E;
+    background-color: #fcfcfc;
+}
+
+/* section2의 listBox의 li의 a hover transition */
+.section2 .listBox li a:hover {
+    font-weight: 500;
+}
+
+/* section3 설정 */
+.section3 {
+    position: relative;
+}
+
+.section3 .txtBox {
+    position: absolute;
+    z-index: 2;
+    top: 12%;
+    left: calc(50% - 190px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 380px;
+    height: 110px;
+}
+
+.section3 .txtBox img {position: absolute;
+                        top: -70px;}
+
+.section3 .txtBox h2 {
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 22px;
+}
+
+.section3 .txtBox p {
+    font-size: 20px;
+}
+
+.section3 .listBox {
+    position: absolute;
+    z-index: 2;
+    top: 30%;
+    left: calc(50% - 292px);
+    width: 585px;
+    height: 610px;
+    /* height: 495px; */
+    /* background-color: blue; */
+}
+
+.section3 .listBox .listBoxDetail {
+    margin-bottom: 20px;
+    
+ 
+    /* background-color: red; */
+}
+
+.section3 .listBox .listBoxDetail a {
+    display: flex;
+    transition: all 0.5s;
+    justify-content: center;
+}
+
+.section3 .listBox .listBoxDetail a .img {
+    position: absolute;
+    left: -145px;
+    margin-left: 40px;
+    width: 145px;
+    height: 145px;
+    background-size: cover;
+
+    border-radius: 18px;
+    box-shadow: 0px 2px 10px 0px #c2c2c2
+}
+
+.section3 .listBox .listBoxDetail.on a .img {
+    left: 100%;
+    margin-left: -40px;
+}
+
+
+.section3 .listBox .listBoxDetail a .txt {
+    width: 420px;
+    height: 145px;
+    padding: 20px;
+    background-color: #fcfcfc;
+    border: 2px solid #A6DDFC;
+    border-radius: 18px;
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+
+.section3 .listBox .listBoxDetail a .txt h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.section3 .listBox .listBoxDetail a .txt p {
+    font-size: 14px;
+    color: #606060;
+    margin-bottom: 4px;
+}
+
+.section3 .listBox .listBoxDetail a .txt span {
+    font-size: 13px;
+    color: #9e9e9e;
+    display: block;
+    text-align: right;
+}
+
+/* section3 의 listBox 의 a hover transition */
+.section3 .listBox .listBoxDetail a:hover {
+    transform: translateY(-10px);
+}
+
+.section3 .listBox .listBoxDetail a:hover .txt {
+    background-color: #F0FAFF;
+    box-shadow: 0px 5px 7px 0px #A6DDFC
+}
+
+/* section3 의 listBoxDetail 개별설정 */
+.section3 .listBox>.listBoxDetail:nth-child(1) {
+    top: 0;
+    left: 0;
+}
+
+.section3 .listBox>.listBoxDetail:nth-child(2) {
+    top: 175px;
+    left: 0;
+}
+
+.section3 .listBox>.listBoxDetail:nth-child(3) {
+    top: 350px;
+    left: 0;
+}
+
+.section3 .listBox>.listBoxDetail:nth-child(1) a .img {
+    background-image: url(img/section3_img1.jpg);
+}
+
+.section3 .listBox>.listBoxDetail:nth-child(2) a .img {
+    background-image: url(img/section3_img2.jpg);
+}
+
+.section3 .listBox>.listBoxDetail:nth-child(3) a .img {
+    background-image: url(img/section3_img3.png);
+}
+
+/* section3 의 listBox의 더보기 버튼 설정 */
+.section3 .listBox {}
+
+.section3 .listBox>span {
+    position: absolute;
+    z-index: 2;
+    left: calc(50% - 71px);
+    bottom: 2%;
+}
+
+.section3 .listBox>span a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    background-color: #6DCBFF;
+    color: #fcfcfc;
+    width: 142px;
+    height: 56px;
+    border-radius: 70px;
+    transition: all 0.3s;
+}
+
+/* section3 의 listBox의 더보기 버튼 hover transition */
+.section3 .listBox>span a:hover {
+    background-color: #fcfcfc;
+    color: #6dcbff;
+    border: 1px solid #6DCBFF;
+    box-sizing: border-box;
+}
+
+/* section4 설정 */
+.section4 {
+    position: relative;
+}
+
+.section4 .txtBox {
+    position: absolute;
+    z-index: 2;
+    top: 14%;
+    left: calc(50% - 400px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+    height: 110px;
+}
+
+.section4 .txtBox img {position: absolute;
+    top: -10px;}
+
+.section4 .txtBox h2 {
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 22px;
+}
+
+.section4 .txtBox p {
+    font-size: 20px;
+}
+
+.section4 .listBox {
+    position: absolute;
+    z-index: 3;
+    top: 25%;
+     /* left,right 버튼에 좌우 margin값 주기 전 너비 계산하여 가운데 정렬한 결과  */
+    /* left: calc(50% - 547px); */ 
+     /* left,right 버튼에 좌우 margin값 준 후 너비 계산하여 가운데 정렬  */
+    left: calc(50% - 607px);
+    /* width: 585px; */
+    height: 610px;
+    display: flex;
+    align-items: center;
+    /* background-color: blue; */
+}
+
+/* section4 의 버튼 설정 */
+.section4 .listBox .left, .right {
+    display: flex;
+    background-color: #C2EB70;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 70px;
+    border: 2px solid #B5E74E;
+    box-sizing: border-box;
+    margin: 0 30px ;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.section4 .listBox .left i, .right i {
+    font-size: 28px;
+    color: #fcfcfc;
+}
+/* section4 의 버튼 hover transition 설정 */
+.section4 .listBox .left:hover, .right:hover {filter: brightness(105%);}
+/* section4 의 이미지 슬라이더 설정 */
+.section4 .listBox .listBoxMain {
+    width: 994px;
+    height: 450px;
+    padding: 40px 0;
+    overflow: hidden;
+    /* background-color: red; */
+}
+
+.section4 .listBox .listBoxMain ul {
+    display: flex;
+}
+
+.section4 .listBox .listBoxMain ul li {margin-right: 32px;
+                                    transition: all 0.3s;}
+
+.section4 .listBox .listBoxMain ul li a {}
+
+.section4 .listBox .listBoxMain ul li a .img {
+    width: 310px;
+    height: 200px;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 18px 18px 0 0;
+}
+.section4 .listBox .listBoxMain ul li:nth-child(1) a .img {background-image: url(img/section4_img1.jpg);}
+.section4 .listBox .listBoxMain ul li:nth-child(2) a .img {background-image: url(img/section4_img2.jpg);}
+.section4 .listBox .listBoxMain ul li:nth-child(3) a .img {background-image: url(img/section4_img3.jpg);}
+.section4 .listBox .listBoxMain ul li:nth-child(4) a .img {background-image: url(img/section4_img4.jpg);}
+.section4 .listBox .listBoxMain ul li:nth-child(5) a .img {background-image: url(img/section4_img5.jpg);}
+.section4 .listBox .listBoxMain ul li:nth-child(6) a .img {background-image: url(img/section4_img6.jpg);}
+
+.section4 .listBox .listBoxMain ul li a .txt {
+    background-color: #FCFCFC;
+    width: 310px;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 0 0 18px 18px;
+    border: 2px solid #C2EB70;
+    transition: all 0.3s;
+}
+
+.section4 .listBox .listBoxMain ul li a .txt h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.section4 .listBox .listBoxMain ul li a .txt p {
+    font-size: 16px;
+    color: #606060;
+    margin-bottom: 18px;
+}
+
+.section4 .listBox .listBoxMain ul li a .txt span {
+    font-size: 14px;
+    color: #9e9e9e;
+    display: block;
+    text-align: right;
+}
+
+/* section4 의 카드 hover transition */
+.section4 .listBox .listBoxMain ul li:hover {transform: translateY(-10px);}
+.section4 .listBox .listBoxMain ul li:hover a .txt {
+    background-color: #F8FFE9;
+    box-shadow: 0px 5px 11px 0px #C2EB70
+}
+
+/* section4 의 더보기 버튼 설정 */
+.section4>span {
+    position: absolute;
+    z-index: 4;
+    left: calc(50% - 71px);
+    bottom: 12%;
+}
+
+.section4>span a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    background-color: #B5E74E;
+    color: #fcfcfc;
+    width: 142px;
+    height: 56px;
+    border-radius: 70px;
+    transition: all 0.3s;
+}
+
+/* section4 의 더보기 버튼 hover transition */
+.section4>span a:hover {
+    background-color: #fcfcfc;
+    color: #B5E74E;
+    border: 1px solid #B5E74E;
+    box-sizing: border-box;
+}
+
+/* section5 설정 */
+.section5 {display: flex;
+        justify-content: center;
+        position: relative;}
+.section5 .section5_inner {display: flex;
+                        width: 1184px;
+                        position: absolute;
+                        z-index: 2;
+                        top: calc(50% - 345px);
+                        left: calc(50% - 592px);}
+/* section5 가로정렬 */
+.section5 .section5_inner .adoptReview {
+    width: 562px;
+    height: 730px;
+    margin-right: 30px;}
+.section5 .section5_inner .volunteerReview {
+    width: 562px;
+    height: 730px;
+    margin-left: 30px;}
+/* section5의 입양후기,자원봉사후기 카테고리 공통설정 */
+.section5 .section5_inner>div {background-color: #fcfcfc;
+                            border: 2px solid #FFAEB7;
+                            border-radius: 18px;
+                            padding: 44px;
+                            box-sizing: border-box;
+                            transition: all 0.3s;}
+/* section5의 .adoptReview와 .volunteerReview hover transition */
+.section5 .section5_inner>div:hover {box-shadow: 0px 5px 11px 0px #FFAEB7;
+                                    transform: translateY(10px);}
+
+.section5 .section5_inner>div>h2 {font-size: 40px;
+                                font-weight: bold;}
+.section5 .section5_inner>div>div {margin-top: 30px;}
+.section5 .section5_inner>div .listBox ul li {margin-bottom: 26px;
+                                            transition: all 0.3s;}
+/* .section5 .section5_inner>div .listBox ul li hover transition */
+.section5 .section5_inner>div .listBox ul li:hover {transform: translateY(1px);}
+.section5 .section5_inner>div .listBox ul li a {display: flex;
+                                                        justify-content: space-between;
+                                                        }
+.section5 .section5_inner>div .listBox ul li a .txt {width: 346px;}
+.section5 .section5_inner>div .listBox ul li a .txt>div {width: 346px;
+                                                        display: flex;}
+.section5 .section5_inner>div .listBox ul li a .txt>div h3 {display: inline;
+                                                                font-size: 19px;
+                                                                font-weight: 400;
+                                                                margin-bottom: 8px;}
+.section5 .section5_inner>div .listBox ul li a .txt>div i {background-image: url(img/pinkNewBtn.png);
+                                                        background-size: cover;
+                                                        width: 19px;
+                                                        height: 19px;
+                                                        display: inline-block;
+                                                        margin-top: 5px;
+                                                        margin-left: 6px;}                                                          
+
+.section5 .section5_inner>div .listBox ul li a .txt p {font-size: 14px;
+                                                                color: #606060;
+                                                                margin-bottom: 2px;}
+.section5 .section5_inner>div .listBox ul li a .txt span {font-size: 14px;
+                                                                    color: #7e7e7e;}
+.section5 .section5_inner>div .listBox ul li a .txt em {font-size: 14px;
+                                                                color: #9e9e9e;
+                                                                font-style: normal;
+                                                                margin-left: 20px;}
+.section5 .section5_inner>div .listBox ul li a .txt b {font-size: 14px;
+                                                                color: #7e7e7e;
+                                                                font-weight: normal;}
+.section5 .section5_inner>div .listBox ul li a img {width: 105px;
+                                                            height: 105px;
+                                                            object-fit: cover;
+                                                            border-radius: 12px;}
+/* section5의 더보기 버튼 설정 */
+.section5 .section5_inner>div>span {display: block;
+                                    text-align: center;}
+.section5 .section5_inner>div>span a {font-size: 22px;
+                                    color: #fcfcfc;
+                                    background-color: #FFAEB7;
+                                    border: 1px solid #FFAEB7;
+                                    padding: 10px 40px;
+                                    border-radius: 70px;
+                                    transition: all 0.3s;}
+/* section5의 더보기 버튼 hover transition */
+.section5 .section5_inner>div>span a:hover {background-color: #fcfcfc;
+                                            color: #ffaeb7;}
+
+/* section6 설정 */
+.wrap>section:nth-child(6) {
+    width: 100%;
+    height: 2200px;
+    /* scroll-snap-align: start; */
+    position: relative;
+}
+/* section6 레이아웃 설정 */
+.section6 .section6_inner {width: 1184px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        position: absolute;
+                        z-index: 3;
+                        top: 15%;
+                        left: calc(50% - 592px);
+                        }
+.section6 .section6_inner>div {border: 2px solid #E0E0E0;
+                            background-color: #fcfcfc;
+                            box-sizing: border-box;
+                            border-radius: 22px;
+                            padding: 40px;
+                            transition: all 0.3s;}
+.section6 .section6_inner .know {width: 100%;
+                                margin-bottom: 50px;}
+.section6 .section6_inner .notice {width: 48%;
+                                margin-bottom: 50px;}
+.section6 .section6_inner .news {width: 48%;
+                                margin-bottom: 50px;}
+.section6 .section6_inner .map {width: 48%;}
+.section6 .section6_inner .contact {width: 48%;}
+/* section6의 공통 hover transition */
+.section6 .section6_inner>div:hover {box-shadow: 0px 5px 11px 0px #E0E0E0;
+    transform: translateY(10px);}
+
+/* section6의 흑백 배경 설정 */
+.section6 .bg {position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 2;
+                width: 100%;}
+.section6 .bg img {width: 100%;
+                height: 420px;
+                object-fit: cover;
+                object-position: center 60%;
+                border-radius: 36px;}
+/* section6의 반려동물알기 설정*/
+.section6 .section6_inner .know {display: flex;
+                                position: relative;}
+.section6 .section6_inner .know .imgBox {
+                                        /* background-color: green; */
+                                        width: 20%;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;}
+.section6 .section6_inner .know .imgBox img {}
+.section6 .section6_inner .know .txtBox {width: 62%;}
+.section6 .section6_inner .know .txtBox a {}
+.section6 .section6_inner .know .txtBox a h2 {font-size: 44px;
+                                            font-weight: bold;
+                                            /* background-color: red; */
+                                            margin-bottom: 30px;
+                                            }
+.section6 .section6_inner .know .txtBox a h3 {font-size: 20px;
+                                            color: #363636;
+                                            /* background-color: yellow; */
+                                            margin-bottom: 10px;}
+.section6 .section6_inner .know .txtBox a p {font-size: 17px;
+                                            color: #606060;
+                                            /* background-color: rgb(160, 160, 225); */
+                                        }
+/* section6의 반려동물알기 더보기 버튼 설정 */
+.section6 .section6_inner .know span {width: 15%;
+                                    position: absolute;
+                                    right: 40px;
+                                    bottom: 40px;
+                                    text-align: right;
+                                    /* background-color: #ccc; */
+                                }
+.section6 .section6_inner .know span a {display: inline-block;
+                                        font-size: 22px;
+                                        background-color: #6DCBFF;
+                                        color: #fcfcfc;
+                                        padding: 10px 40px;
+                                        border-radius: 70px;
+                                        border: 1px solid #6DCBFF;
+                                        transition: all 0.3s;
+                                    }
+/* section6의 반려동물알기 더보기 버튼 hover transition */
+.section6 .section6_inner .know span a:hover {background-color: #fcfcfc;
+                                            color: #6dcbff;}
+/* section6의 공지사항,보도자료,오시는길,연락처 및 SNS 공통설정 */
+.section6 .section6_inner .know ~ div {}
+.section6 .section6_inner .know ~ div a h2 {font-size: 30px;
+                                            font-weight: bold;
+                                            margin-bottom: 30px;}
+.section6 .section6_inner .know ~ div p {font-size: 16px;}
+/* section6의 공지사항,보도자료 공통세부설정 */
+.section6 .section6_inner .notice ul,.news ul {}
+.section6 .section6_inner .notice ul li,.news ul li {margin-bottom: 26px;
+                                            transition: all 0.3s;}
+.section6 .section6_inner .notice ul li a,.news ul li a {
+                                            /* background-color: rgb(161, 161, 255); */
+                                            display: block;}
+.section6 .section6_inner .notice ul li a h3,.news ul li a h3 {font-size: 16px;
+                                                    display: inline;
+                                                    font-weight: normal;}
+.section6 .section6_inner .notice ul li a i,.news ul li a i {background-image: url(img/pinkNewBtn.png);
+    background-size: cover;
+    width: 19px;
+    height: 19px;
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 6px;}
+.section6 .section6_inner .notice ul li a span,.news ul li a span {font-size: 14px;
+                                                    color: #7e7e7e;
+                                                    /* background-color: rgb(255, 255, 179); */
+                                                    display: block;
+                                                    text-align: right;}
+/* .section6의 공지사항,보도자료 컨텐츠 hover transition */
+.section6 .section6_inner .know ~ div ul li:hover {transform: translateY(1px);}
+/* section6의 공지사항,보도자료 더보기 버튼 설정 */
+.section6 .section6_inner .know ~ div>span {display: block;
+                                            text-align: center;
+                                            /* background-color: red; */
+                                            margin-top: 40px;
+                                        }
+.section6 .section6_inner .know ~ div>span a {font-size: 22px;
+                                            color: #fcfcfc;
+                                            background-color: #FFAEB7;
+                                            border: 1px solid #FFAEB7;
+                                            padding: 10px 40px;
+                                            border-radius: 70px;
+                                            transition: all 0.3s;}
+/* section6의 공지사항,보도자료 더보기 버튼 hover transition */
+.section6 .section6_inner .know ~ div>span a:hover {background-color: #fcfcfc;
+                                                    color: #ffaeb7;}
+/* section6의 오시는 길 세부설정 */
+.section6 .section6_inner .map {display: flex;
+                                flex-direction: column;
+                                /* background-color: blue; */
+                                }
+.section6 .section6_inner iframe {border-radius: 12px;
+                                width : 400px; 
+                                height: 222px;
+                                margin-top: 40px;
+                                margin-left: calc(50% - 200px);}             
+/* .section6 .section6_inner .map .mapApi {
+                                        background-image: url(img/section6_map.png);
+                                        background-size: cover;
+                                        width: 400px;
+                                        height: 222px;
+                                        border-radius: 12px;
+                                        margin-top: 40px;
+                                        margin-left: calc(50% - 200px);
+                                        transition: all 0.3s;} */
+/* .section6의 오시는길 mapApi hover transition */
+/* .section6 .section6_inner .map .mapApi:hover {transform: scale(1.15);} */
+/* section6의 연락처 및 SNS 세부설정 */
+.section6 .section6_inner .contact ul {display: flex;
+                                        flex-wrap: wrap;
+                                        justify-content: center;
+                                        margin-top: 40px;
+                                        /* background-color: yellow; */
+                                        }
+.section6 .section6_inner .contact ul li {margin: 5px;}
+.section6 .section6_inner .contact ul li a {display: flex;
+                                            justify-content: space-between;
+                                            align-items: center;
+                                            width: 230px;
+                                            height: 80px;
+                                            border-radius: 18px;
+                                            border: 1px solid #E0E0E0;
+                                            /* background-color: red; */
+                                            transition: all 0.3s;
+                                            }
+/* section6의 연락처 및 SNS li a hover transition */
+.section6 .section6_inner .contact ul li a:hover {background-color: #f7f7f7;}
+
+.section6 .section6_inner .contact ul li a span {padding-left: 45px;}
+.section6 .section6_inner .contact ul li a img {padding-right: 45px;}
+.section6 .section6_inner .contact ul li:nth-child(1) a img {width: 48px;
+                                                            height: 48px;}
+.section6 .section6_inner .contact ul li:nth-child(2) a img {width: 50px;
+                                                            height: 35px;}
+.section6 .section6_inner .contact ul li:nth-child(3) a img {width: 48px;
+                                                            height: 45px;}
+.section6 .section6_inner .contact ul li:nth-child(4) a img {width: 48px;
+                                                            height: 48px;}
+
+/* section6의 협찬사링크 설정 */
+.section6 .link {position: absolute;
+                z-index: 2;
+                left: calc(50% - 113px);
+                bottom: 17%;}
+.section6 .link a {font-size: 24px;
+                    display: block;
+                    width: 226px;
+                    height: 70px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 40px;
+                    color: #fcfcfc;
+                    background-color: #131313;
+                    border: 2px solid #131313;
+                    transition: all 0.3s;}
+/* section6의 협찬사링크 버튼 hover transition */
+.section6 .link a:hover {background-color: #fcfcfc;
+                        color: #131313;}
+
+/* footer 설정 */
+footer {height: 300px;
+        background-color: #fcfcfc;
+        color: #131313;
+        border-top: 1px solid #dadada;
+    }
+footer .footer_inner {width: 50%;
+                    margin: 0 auto;
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding-bottom: 20px;
+                    border-bottom: 1px solid #dadada;}
+footer .footer_inner>div {margin-top: 50px;}  
+footer .footer_inner .logo {
+                        /* background-color:rgb(245, 245, 245); */
+                            height: 100%;
+                            width: 15%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;}
+
+footer .footer_inner .logo a img {width: 120px;}
+footer .footer_inner .txtBox {
+    /* background-color: red; */
+                            width: 80%;}
+footer .footer_inner .txtBox>div {margin-bottom: 20px;}
+footer .footer_inner .txtBox a:hover {text-decoration: underline;
+                                    text-underline-offset: 8px;}
+footer .footer_inner .txtBox span {margin-left: 30px;
+    color: #131313;}
+footer .footer_inner .txtBox .txt1 {
+    /* background-color: #ddd; */
+}
+footer .footer_inner .txtBox .txt2 {
+    /* background-color: #333; */
+}
+footer .footer_inner .txtBox .txt3 {
+    /* background-color: #555; */
+}
+footer .copyright {width: 100%;
+                    /* background-color: green; */
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: 36px;}
+
+
+
+
+
+
+/* 미디어쿼리 설정 ########################################################### */
+/* 모바일 구간 설정 */
+@media (max-width:599px) {
+    
+}
+/* 태블릿 구간 설정 */
+@media (min-width:600px)and(max-width:768px) {
+    
+}
+/* 데스크탑 구간 설정 */
+@media (min-width:769px) {
+    
+}
+/* 와이드데스크탑 구간 설정 */
+@media (min-width:1280px) {
+         
+}

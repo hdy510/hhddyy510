@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국동물보호협회</title>
+    <!-- 외부 스타일시트 연결 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- 제이쿼리 CDN 연결-->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- 외부스크립트 연결 -->
+    <script src="js/js.js"></script>
+    <!-- fontawesome 연결 -->
+    <script src="https://kit.fontawesome.com/fb97202f89.js" crossorigin="anonymous"></script>
+    <!-- 제이쿼리실행문 -->
+    <script>
+            $(function() { // 보이기 | 숨기기
+        $(window).scroll(function() {
+        if ($(this).scrollTop() > 250) { //250 넘으면 버튼이 보여짐니다. 
+        $('.topBtn').fadeIn();
+        } else {
+        $('.topBtn').fadeOut();
+        }
+    }); // 버튼 클릭시 
+    $(".topBtn").click(function() { 
+        $('html, body').animate({ scrollTop : 0 // 0 까지 animation 이동합니다. 
+        }, 400); // 속도 400 
+        return false; 
+    }); 
+    });
+    </script>
+</head>
+
+<body>
+    <div class="btn">
+        <ul>
+            <li class="on"><div></div></li>
+            <li><div></div></li>
+            <li><div></div></li>
+            <li><div></div></li>
+            <li><div></div></li>
+            <li><div></div></li>
+        </ul>
+    </div>
+    <div class="topBtn"><i class="fa-solid fa-angle-up"></i><span>TOP</span></div>
+    <header>
+        <div class="header_inner">
+            <h1><a href=""><img src="img/logo_h.png" alt=""></a></h1>
+            <nav>
+                <ul>
+                    <li><a href="">협회</a></li>
+                    <li><a href="">쉼터</a></li>
+                    <li><a href="">후원</a></li>
+                    <li><a href="">입양</a></li>
+                    <li><a href="">자원봉사</a></li>
+                    <li><a href="">커뮤니티</a></li>
+                </ul>
+            </nav>
+            <div class="util">
+                <ul>
+                    <li><a href="">로그인</a></li>
+                    <li><a href="">회원가입</a></li>
+                    <!-- 이부분은 별도로 빼서 작성 -->
+                    <li><a href=""><i class="fa-solid fa-bars"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="wrap">
+        <section class="section1">
+            <div class="gradient">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="heroBox">
+                <div class="topBox">
+                    <h1>
+                        <span>한국</span><span>동물</span><span>보호</span>협회
+                    </h1>
+                    <h2>Korea Animal Protection Society</h2>
+                    <div class="topBox_inner">
+                        <p>"사람과 동물, 함께하는 행복한 미래"</p>
+                        <div class="introduce">
+                            <a href="">
+                                <span>협회 소개</span>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottomBox">
+                    <ul>
+                        <li><a href=""><i class="fa-solid fa-location-dot"></i>오시는 길</a></li>
+                        <li><a href=""><i class="fa-solid fa-phone"></i>연락처 및 SNS</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="img">
+                    <div class="img_inner">
+                        <div class="imgBox"></div>
+                        <a href=""><span>후원 후기</span></a>
+                    </div>
+                    <div class="img_inner">
+                        <div class="imgBox"></div>
+                        <a href=""><span>입양 후기</span></a>
+                    </div>
+                    <div class="img_inner">
+                        <div class="imgBox"></div>
+                        <a href=""><span>쉼터 이야기</span></a>
+                    </div>
+            </div>
+            <div class="qna">
+                <a href="">후원 / 입양 / 자원봉사 문의<i class="fa-solid fa-chevron-down"></i></a>
+            </div>
+        </section>
+        <section class="section2">
+            <div class="gradient">
+                <div></div>
+            </div>
+            <div class="txtBox">
+                <img src="img/section2_title.png" alt="">
+                <h2>따뜻한 손길을 기다립니다</h2>
+                <p>우리의 소중한 동물 친구들을 위한 작은 도움이 되어주세요.</p>
+                <p>그들은 우리의 사랑과 보호를 기다리고 있습니다.</p>
+            </div>
+            <div class="listBox">
+                <div class="support">
+                    <img src="img/section2_support.png" alt="">
+                    <h3><a href="">금액/물품 후원</a></h3>
+                    <ul>
+                        <li>
+                            <a href=""><span>후원 후기</span><i class="fa-solid fa-angle-right"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><span>후원자 게시판</span><i class="fa-solid fa-angle-right"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><span>후원인 명단</span><i class="fa-solid fa-angle-right"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="adopt">
+                    <img src="img/section2_adopt.png" alt="">
+                    <h3><a href="">입양 문의</a></h3>
+                    <ul>
+                        <li>
+                            <a href=""><span>입양 절차</span><i class="fa-solid fa-angle-right"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><span>입양 후기</span><i class="fa-solid fa-angle-right"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="volunteer">
+                    <img src="img/section2_volunteer.png" alt="">
+                    <h3><a href="">자원봉사 예약</a></h3>
+                    <ul>
+                        <li>
+                            <a href=""><span>오시는 길</span><i class="fa-solid fa-angle-right"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><span>자원봉사 후기</span><i class="fa-solid fa-angle-right"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="section3">
+            <div class="gradient">
+                <div></div>
+            </div>
+            <div class="txtBox">
+                <img src="img/section3_mail.png" alt="">
+                <h2>후원후기</h2>
+                <p>여러분의 소중한 후원에 깊은 감사를 전합니다.</p>
+            </div>
+            <div class="listBox">
+                <div class="listBoxDetail">
+                    <a href="">
+                        <div class="img"></div>
+                        <div class="txt">
+                            <h3>한아현님 고양이 사료 후원에 감사드립니다.</h3>
+                            <p>한아현님께서 내추럴발란스 고양이 사료 1포대를 후원해주셨습니다. 양이들에게 잘 먹이겠습니다. 감사합니다.</p>
+                            <span>2024.05.01</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="listBoxDetail on">
+                    <a href="">
+                      
+                        <div class="txt">
+                            <h3>연심에서 반려동물 샴푸 "골드모"를 후원해 주셨습니다.</h3>
+                            <p>연심에서 반려동물 샴푸 "골드모"를 후원해 주셨습니다. 골드모는 12가지 한방복합추출물을 고농도로 함유하고, 자연유래...</p>
+                            <span>2024.04.17</span>
+                        </div>
+                        <div class="img"></div>
+                    </a>
+                </div>
+                <div class="listBoxDetail">
+                    <a href="">
+                        <div class="img"></div>
+                        <div class="txt">
+                            <h3>배우 전성우님께서 사료 100kg을 후원해 주셨습니다.</h3>
+                            <p>드라마 "검사내전"에 출연하신 배우 전성우님께서 사료 100kg을 후원해 주셨습니다. 보호소에 큰 도움이 되었습니다. 저희...</p>
+                            <span>2024.04.12</span>
+                        </div>
+                    </a>
+                </div>
+                <span><a href="">더보기</a></span>
+            </div>
+        </section>
+        <section class="section4">
+            <div class="gradient">
+                <div></div>
+            </div>
+            <div class="txtBox">
+                <img src="img/section4_message.png" alt="">
+                <h2>쉼터이야기</h2>
+                <p>KAPS 쉼터 친구들의 안타까운 사연 및 구조 스토리와 현재 친구들의 사랑스러운 일상을 전합니다.</p>
+            </div>
+            <div class="listBox">
+                <div class="left">
+                    <i class="fa-solid fa-angle-left"></i>
+                </div>
+                <div class="listBoxMain">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <div class="img"></div>
+                                <div class="txt">
+                                    <h3>앤디 이야기</h3>
+                                    <p>고양이 쉼터에는 "앤디"라는 이름의 2살된 남자 고양이가 살고 있습니다. 앤디가 이곳에 오게된 건 2년전 10월...</p>
+                                    <span>2024.04.23</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="img"></div>
+                                <div class="txt">
+                                    <h3>설아 이야기</h3>
+                                    <p>2021년 3월 31일에 협회 카카오톡 채널을 통해 이런 내용의 문의를 받았습니다. " 안녕하세요?? 관문시장 주...</p>
+                                    <span>2024.03.06</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="img"></div>
+                                <div class="txt">
+                                    <h3>쉼터 최근 모습: 낮잠 컬렉션</h3>
+                                    <p>오랜만의 쉼터 아이들 최근 모습. 사진 찍은이 : 희경 ps: 주로 자는 모습들이 많네요. 야옹이들은 주로 낮잠을 자...</p>
+                                    <span>2024.02.05</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="img"></div>
+                                <div class="txt">
+                                    <h3>새끼고양이 '치즈' 구조 이야기</h3>
+                                    <p>아직 날씨가 추웠던 2015년 2월 20일 서울에 사는 최원형 씨에게 한 통의 구조 전화를 받았습니다. 원형 씨는 일 때문에...</p>
+                                    <span>2024.01.26</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="img"></div>
+                                <div class="txt">
+                                    <h3>눈 내린 보호소의 모습</h3>
+                                    <p>재작년 12월에 몇 차례 눈이 보은에 왔었지만 올해 1월 10일은 정말 전국적으로 많은 눈이 내렸답니다. 양소장님이 즉시...</p>
+                                    <span>2024.01.12</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="img"></div>
+                                <div class="txt">
+                                    <h3>이사온 새 친구 개와 고양이들</h3>
+                                    <p>새 친구 사모예드 "새미' 뒤에 역시 새 친구 그레이트 피레네즈 '보순' 왼쪽부터 새미, 보순, 보리 새 친구 사모예드 "새미'...</p>
+                                    <span>2024.01.09</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+            </div>
+            <span><a href="">더보기</a></span>
+        </section>
+        <section class="section5">
+            <div class="section5_inner">
+                <div class="adoptReview">
+                    <h2>입양후기</h2>
+                    <div class="listBox">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <div class="txt">
+                                        <div>
+                                            <h3>또띠와 가족이 된 지 1년이 되었어요!</h3>
+                                            <i></i>
+                                        </div>
+                                        <p>작년 4월 5일 정말 운명적으로 만나게 된 듯한 또띠와의 만남! 그리고 벌써 일년이 흘렀네요~ 그동안의 근황 전해요!</p>
+                                        <span>2024.04.10</span>
+                                        <em>조회수</em>
+                                        <b>109</b>
+                                    </div>
+                                    <img src="img/section5_adopt_img1.jpg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="txt">
+                                        <div>
+                                            <h3>토니는 잘 지내고 있어요</h3>
+                                            <i></i>
+                                        </div>
+                                        <p>2월말에 조금 더 넓고 쾌적한 곳으로 이사왔어요 이사하는날은 얌전히 이동가방에서 기다려주었답니다 이사전 눈왔던...</p>
+                                        <span>2024.04.01</span>
+                                        <em>조회수</em>
+                                        <b>112</b>
+                                    </div>
+                                    <img src="img/section5_adopt_img2.jpg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="txt">
+                                        <div>
+                                            <h3>봉순이 잘 지내고 있습니다! ㅎㅎㅎ</h3>
+                                        </div>
+                                        <p>사람을 너무 좋아하는 봉순이 사냥놀이를 너무 좋아하는 봉순이 무조건 잠은 사람이 있는 곳에서만 자는 애교냥이...</p>
+                                        <span>2024.03.25</span>
+                                        <em>조회수</em>
+                                        <b>121</b>
+                                    </div>
+                                    <img src="img/section5_adopt_img3.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="txt">
+                                        <div>
+                                            <h3>지난 달 입양한 로로는 지금~</h3>
+                                        </div>
+                                        <p>첫 날 걱정이 많았습니다. 집에 도착하자마자 숨을 곳을 찾았고 경계심이 굉장히많아서 눈물이 나올 지경이었어요...</p>
+                                        <span>2024.03.17</span>
+                                        <em>조회수</em>
+                                        <b>180</b>
+                                    </div>
+                                    <img src="img/section5_adopt_img4.jpg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <span><a href="">더보기</a></span>
+                </div>
+                <div class="volunteerReview">
+                    <h2>자원봉사후기</h2>
+                    <div class="listBox">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <div class="txt">
+                                        <div>
+                                            <h3>대구한의대 RCY 봉사 모습</h3>
+                                            <i></i>
+                                        </div>
+                                        <p>대구한의대 RCY에서 고양이 쉼터로 봉사하러 오셨습니다. 모두모두 수고하셨습니다!</p>
+                                        <span>2024.05.15</span>
+                                        <em>조회수</em>
+                                        <b>109</b>
+                                    </div>
+                                    <img src="img/section5_volunteer_img1.jpg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="txt">
+                                        <div>
+                                            <h3>"낚시하는 고양이"팀 5월 봉사</h3>
+                                            <i></i>
+                                        </div>
+                                        <p>낚시하는 고양이 팀에서 봉사를 오셨습니다. 항상 그러듯이 사진으로 남깁니다. 수고하셨습니다!</p>
+                                        <span>2024.05.05</span>
+                                        <em>조회수</em>
+                                        <b>156</b>
+                                    </div>
+                                    <img src="img/section5_volunteer_img2.jpg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="txt">
+                                        <div>
+                                            <h3>"낚시하는 고양이"팀 4월 봉사</h3>
+                                        </div>
+                                        <p>한적한 일요일 오후에 낚시하는 고양이 팀에서 정기 봉사를 오셨습니다. 모두 모두 수고하셨습니다.</p>
+                                        <span>2024.04.14</span>
+                                        <em>조회수</em>
+                                        <b>270</b>
+                                    </div>
+                                    <img src="img/section5_volunteer_img3.jpg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="txt">
+                                        <div>
+                                            <h3>"낚시하는 고양이"팀 3월 봉사</h3>
+                                        </div>
+                                        <p>오랜만에 낚시하는 고양이팀에서 봉사를 오셨습니다. 처음 뵙는 분들도 많이 계셨습니다. 모두 수고하셨습니다.</p>
+                                        <span>2024.03.17</span>
+                                        <em>조회수</em>
+                                        <b>360</b>
+                                    </div>
+                                    <img src="img/section5_volunteer_img4.jpg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <span><a href="">더보기</a></span>
+                </div>
+            </div>
+        </section>
+        <section class="section6">
+            <div class="gradient">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="bg">
+                <img src="img/section6_knowBg.jpg" alt="">
+            </div>
+            <div class="section6_inner">
+                <div class="know">
+                    <div class="imgBox">
+                        <img src="img/section6_knowIcon.png" alt="">
+                    </div>
+                    <div class="txtBox">
+                        <a href=""><h2>반려동물알기</h2></a>
+                        <a href="">
+                            <h3>'야옹'의 의미(The Meaning of Meow)</h3>
+                            <p>'야옹'은 대부분 우리를 향합니다.</p>
+                            <p>고양이들 사이의 커뮤니케이션에서 어른고양이는 거의 울지 않습니다.<br>
+                                어린고양이들은 그들이 필요한 것이 있거나 문제가 생겼을 때 말하는 방법으로 '야옹'하고 웁니다.
+                            </p>
+                        </a>
+                    </div>
+                    <span><a href="">더보기</a></span>
+                </div>
+                <div class="notice">
+                    <a href=""><h2>공지사항</h2></a>
+                    <ul>
+                        <li>
+                            <a href=""><h3>2024년 기부금 영수증 신청 받습니다.</h3><span>2024.01.07</span></a>
+                        </li>
+                        <li>
+                            <a href=""><h3>고양이 쉼터 이사하였습니다</h3><span>2024.01.05</span></a>
+                        </li>
+                        <li>
+                            <a href=""><h3>2024년 KAPS 후원달력이 나왔습니다.</h3><span>2023.12.22</span></a>
+                        </li>
+                    </ul>
+                    <span><a href="">더보기</a></span>
+                </div>
+                <div class="news">
+                    <a href=""><h2>보도자료</h2></a>
+                    <ul>
+                        <li>
+                            <a href=""><h3>한국동물보호협회 :: 유기동물들에게 따뜻한 관심을 가져주세요.</h3><i></i><span>2024.05.18</span></a>
+                        </li>
+                        <li>
+                            <a href=""><h3>한국동물보호협회 - HCN 대구본색 65회</h3><span>2024.05.12</span></a>
+                        </li>
+                        <li>
+                            <a href=""><h3>스위트 메거진 - 사람과 동물의 아름다운 공존 ' 한국동물보호협회'</h3><span>2023.05.10</span></a>
+                        </li>
+                    </ul>
+                    <span><a href="">더보기</a></span>
+                </div>
+                <div class="map">
+                    <a href=""><h2>오시는 길</h2></a>
+                    <p>대구광역시 남구 대명10동 1593-19</p>
+                    <!-- <a href="">
+                        <div class="mapApi"></div>
+                    </a> -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d73144.56823276606!2d128.4371719978583!3d35.88420593293047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3565e498a5f44f67%3A0x196420e1a6ea20e3!2z7ZWc6rWt64-Z66y867O07Zi47ZiR7ZqM!5e0!3m2!1sko!2skr!4v1718181147872!5m2!1sko!2skr"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="contact">
+                    <a href=""><h2>연락처 및 SNS</h2></a>
+                    <p>e-mail : kapsanimal@naver.com</p>
+                    <p>TEL : 053-622-3588 (오후2시~5시) FAX: 053-656-3587</p>
+                    <ul>
+                        <li>
+                            <a href="">
+                                <span>Instagram</span>
+                                <img src="img/section6_contact_insta.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Youtube</span>
+                                <img src="img/section6_contact_youtube.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Blog</span>
+                                <img src="img/section6_contact_blog.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Post</span>
+                                <img src="img/section6_contact_post.png" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="link">
+                <a href="">협찬사 링크</a>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer_inner">
+                <div class="logo">
+                    <a href=""><img src="img/logo_v.png" alt=""></a>
+                </div>
+                <div class="txtBox">
+                    <div class="txt1">
+                        <a href=""><span>이용약관</span></a>
+                        <a href=""><span>개인정보처리방침</span></a>
+                    </div>
+                    <div class="txt2">
+                        <span>재단법인 한국동물보호협회</span>
+                        <span>대구광역시 남구 대명동</span>
+                    </div>
+                    <div class="txt3">
+                        <span>kapsanimal@naver.com</span>
+                        <span>TEL: 053-622-3588 (오후2시~5시) </span>
+                        <span>FAX: 053-656-3587</span>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">COPYRIGHT &copy; KOREA ANIMAL PROTECTION SOCIETY. ALL RIGHT RESERVED</div>
+        </footer>
+
+    </div>
+</body>
+
+</html>
