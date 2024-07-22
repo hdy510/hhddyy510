@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project3 - NewJeans</title>
+    <!-- fontawesome cdn 연결 -->
+    <script src="https://kit.fontawesome.com/fb97202f89.js" crossorigin="anonymous"></script>
+    <!-- 외부스타일시트 연결 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- 구글폰트 연결 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Press+Start+2P&family=Zen+Dots&display=swap" rel="stylesheet">
+    <!-- 제이쿼리 CDN 연결 -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <!-- Typeit js CDN 연결 -->
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <!-- 외부스크립트 연결 -->
+    <script src="script.js"></script>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><img src="img/gnb_home.png" alt=""></li>
+                <li><img src="img/gnb_profile.png" alt=""></li>
+                <li><img src="img/gnb_music.png" alt=""></li>
+                <li><img src="img/gnb_gallery.png" alt=""></li>
+                <li><img src="img/gnb_video.png" alt=""></li>
+            </ul>
+            <img src="img/gnb_ring.png" alt="">
+        </nav>
+    </header>
+    <section>
+        <article class="home">
+            <ul class="home_slide_inner">
+                <li class="home_slide1">
+                    <div class="txtBox">
+                        <h2><em>S</em>upernatural</h2>
+                        <h3>더블 싱글 'Supernatural'과 함께 돌아온 NewJeans가 일본에서 정식 데뷔한다.</h3>
+                        <p>타이틀 곡 'Supernatural'은 세계적인 아티스트 Pharrell Williams의 2009년 프로듀싱작 'Back of My Mind'에서 
+                            그만의 아이코닉한 애드립과 브릿지를 따와 NewJeans에 맞게 Mellow한 뉴잭스윙으로 재해석한 곡이다. 노스텔지어를 불러일으키는 듯한 멜로디가 
+                            NewJeans 멤버들의 감성적인 보컬과 절묘한 조화를 이루어 독특한 매력을 극대화한다.</p>
+                        <p>수록곡 'Right Now'는 밝고 캐치한 느낌의 세련된 Pop 스타일 곡으로 NewJeans 멤버들의 통통 튀는 보컬과 드럼 & 베이스 장르의 비트감이 잘 
+                            어우러져 여름 느낌을 물씬 풍기는 매력적인 곡이다.</p>
+                    </div>
+                </li>
+                <li class="home_slide2">
+                    <div class="txtBox">
+                        <h2>THE FACE 2024 Summer Issue</h2>
+                        <h3>뉴진스(NewJeans)가 29일 발간된 영국 매거진 <br>
+                            ‘더 페이스’ 2024 여름호(Summer Issue) 표지를 장식했다.</h3>
+                        <p>지난 1980년 창간된 ‘더 페이스’는 음악, 패션, 문화 전반에 걸쳐 다양한 주제를 다룬다.</p>
+                        <p>이번 여름호는 세계적인 아티스트이자 포토그래퍼인 페트라 콜린스(Petra Collins)가 포토그래퍼 겸 크리에이티브 총괄로 참여해 뉴진스와 호흡을 맞췄다. 뉴진스를 통해 고풍스럽고 몽환적인 청춘의 모습을 다양하게 표현한 그의 시선이 이색적이어서 눈길을 끈다.</p>
+                    </div>
+                </li>
+                <li class="home_slide3">
+                    <div class="txtBox">
+                        <h2>Billboard</h2>
+                        <h3>‘2024 빌보드 위민 인 뮤직 어워드’의 ‘올해의 그룹’에 선정된 뉴진스가<br>
+                            빌보드 매거진 표지를 장식했다.</h3>
+                        <p>빌보드는 2월 28일(이하 현지시간) 공식 홈페이지에 한옥을 배경으로 한 뉴진스의 사진과 인터뷰를 게재했다. 
+                            빌보드는 뉴진스에 대해 “2022년 7월에 데뷔해 단숨에 K-팝 정상에 올랐다”라고 소개한 뒤 “이들은 전염성 강한 
+                            에너지로 한국은 물론이고 전 세계 팬들의 사랑을 받고 있다”라며 이들이 글로벌 차트에서 거둔 뛰어난 성과를 조명했다.</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="btn_left">
+                <div></div>
+                <i class="fa-solid fa-angle-left"></i>
+            </div>
+            <div class="btn_right">
+                <div></div>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+            <div class="btn_center">
+                <span class="on"></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="go_profile">
+                <img src="img/home_profile.png" alt="">
+                <img src="img/go_profile.png" alt="">
+            </div>
+        </article>
+        <article class="profile on">
+            <div class="profile_main">
+                <ul>
+                    <li>
+                        <img src="img/profile_hologram_danielle.png" alt="">
+                        <img src="img/profile_hover_danielle.png" alt="" class="hover">
+                        <p>Danielle</p>
+                    </li>
+                    <li>
+                        <img src="img/profile_hologram_haerin.png" alt="">
+                        <img src="img/profile_hover_haerin.png" alt="" class="hover">
+                        <p>Haerin</p>
+                    </li>
+                    <li>
+                        <img src="img/profile_hologram_minji.png" alt="">
+                        <img src="img/profile_hover_minji.png" alt="" class="hover">
+                        <p>Minji</p>
+                    </li>
+                    <li>
+                        <img src="img/profile_hologram_hanni.png" alt="">
+                        <img src="img/profile_hover_hanni.png" alt="" class="hover">
+                        <p>Hanni</p>
+                    </li>
+                    <li>
+                        <img src="img/profile_hologram_hyein.png" alt="">
+                        <img src="img/profile_hover_hyein.png" alt="" class="hover">
+                        <p>Hyein</p>
+                    </li>
+                </ul>
+                <p>select your character</p>
+            </div>
+            <div class="profile_scroll">
+                <div class="profile_danielle">
+                    <img src="img/profile_danielle_bg.png" alt="" class="bg_stuff">
+                    <img src="img/profile_danielle_danielle.png" alt="" class="person">
+                    <div class="arrowBox">
+                        <img src="img/profile_danielle_arrowTopLeft.png" alt="">
+                        <img src="img/profile_danielle_arrowTop.png" alt="">
+                        <img src="img/profile_danielle_arrowRight.png" alt="">
+                        <img src="img/profile_danielle_arrowBottomLeft.png" alt="">
+                    </div>
+                    <div class="txtBox">
+                        <img src="img/profile_danielle_title.png" alt="">
+                        <div class="txtBox_inner">
+                            <ul>
+                                <li>
+                                    <ul>
+                                        <li>이름</li>
+                                        <li>출생</li>
+                                        <li>국적</li>
+                                        <li>혈액형</li>
+                                        <li>MBTI</li>
+                                        <li>강점</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li>다니엘</li>
+                                        <li>2005년 4월 11일</li>
+                                        <li>호주, 대한민국</li>
+                                        <li>AB형</li>
+                                        <li>ENFP</li>
+                                        <li>넓은 보컬 레인지, 다양한 톤</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile_haerin">
+                    <img src="img/profile_haerin_wire.png" alt="" class="bg_big">
+                    <img src="img/profile_haerin_bg.png" alt="" class="bg_stuff">
+                    <img src="img/profile_haerin_haerin.png" alt="" class="person">
+                    <div class="arrowBox">
+                        <img src="img/profile_haerin_arrowTopLeft.png" alt="">
+                        <img src="img/profile_haerin_arrowTop.png" alt="">
+                        <img src="img/profile_haerin_arrowRight.png" alt="">
+                        <img src="img/profile_haerin_arrowBottomLeft.png" alt="">
+                    </div>
+                    <div class="txtBox">
+                        <img src="img/profile_haerin_title.png" alt="">
+                        <div class="txtBox_inner">
+                            <ul>
+                                <li>
+                                    <ul>
+                                        <li>이름</li>
+                                        <li>출생</li>
+                                        <li>국적</li>
+                                        <li>혈액형</li>
+                                        <li>MBTI</li>
+                                        <li>강점</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li>해린</li>
+                                        <li>2006년 5월 15일</li>
+                                        <li>대한민국</li>
+                                        <li>B형</li>
+                                        <li>INTP</li>
+                                        <li>음색, 힙합기반 춤</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile_minji">
+                    <img src="img/profile_minji_wire.png" alt="" class="bg_big">
+                    <img src="img/profile_minji_bg.png" alt="" class="bg_stuff">
+                    <img src="img/profile_minji_minji.png" alt="" class="person">
+                    <div class="arrowBox">
+                        <img src="img/profile_minji_arrowTopLeft.png" alt="">
+                        <img src="img/profile_minji_arrowTop.png" alt="">
+                        <img src="img/profile_minji_arrowRight.png" alt="">
+                        <img src="img/profile_minji_arrowBottomLeft.png" alt="">
+                    </div>
+                    <div class="txtBox">
+                        <img src="img/profile_minji_title.png" alt="">
+                        <div class="txtBox_inner">
+                            <ul>
+                                <li>
+                                    <ul>
+                                        <li>이름</li>
+                                        <li>출생</li>
+                                        <li>국적</li>
+                                        <li>혈액형</li>
+                                        <li>MBTI</li>
+                                        <li>강점</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li>민지</li>
+                                        <li>2004년 5월 7일</li>
+                                        <li>대한민국</li>
+                                        <li>A형</li>
+                                        <li>ESTJ</li>
+                                        <li>정석적인 춤, 차분하고 담백한 보컬</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile_hanni">
+                    <img src="img/profile_hanni_bg.png" alt="" class="bg_stuff">
+                    <img src="img/profile_hanni_hanni.png" alt="" class="person">
+                    <div class="arrowBox">
+                        <img src="img/profile_hanni_arrowTopLeft.png" alt="">
+                        <img src="img/profile_hanni_arrowTop.png" alt="">
+                        <img src="img/profile_hanni_arrowRight.png" alt="">
+                        <img src="img/profile_hanni_arrowBottomLeft.png" alt="">
+                    </div>
+                    <div class="txtBox">
+                        <img src="img/profile_hanni_title.png" alt="">
+                        <div class="txtBox_inner">
+                            <ul>
+                                <li>
+                                    <ul>
+                                        <li>이름</li>
+                                        <li>출생</li>
+                                        <li>국적</li>
+                                        <li>혈액형</li>
+                                        <li>MBTI</li>
+                                        <li>강점</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li>하니</li>
+                                        <li>2004년 10월 6일</li>
+                                        <li>호주, 베트남</li>
+                                        <li>O형</li>
+                                        <li>INFP</li>
+                                        <li>흘리는 듯한 발음, 안정적인 보컬,<br> 다양한 표정연기</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile_hyein">
+                    <img src="img/profile_hyein_bg.png" alt="" class="bg_stuff">
+                    <img src="img/profile_hyein_hyein.png" alt="" class="person">
+                    <img src="img/profile_hyein_bg2.png" alt="" class="bg_big">
+                    <div class="arrowBox">
+                        <img src="img/profile_hyein_arrowTopLeft.png" alt="">
+                        <img src="img/profile_hyein_arrowTop.png" alt="">
+                        <img src="img/profile_hyein_arrowRight.png" alt="">
+                        <img src="img/profile_hyein_arrowBottomLeft.png" alt="">
+                    </div>
+                    <div class="txtBox">
+                        <img src="img/profile_hyein_title.png" alt="">
+                        <div class="txtBox_inner">
+                            <ul>
+                                <li>
+                                    <ul>
+                                        <li>이름</li>
+                                        <li>출생</li>
+                                        <li>국적</li>
+                                        <li>혈액형</li>
+                                        <li>MBTI</li>
+                                        <li>강점</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li>혜인</li>
+                                        <li>2008년 4월 21일</li>
+                                        <li>대한민국</li>
+                                        <li>O형</li>
+                                        <li>ISFP</li>
+                                        <li>정확한 음감, 호소력 짙은 보컬, <br>무대장악력</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn_back">
+                <img src="img/profile_arrow_left.png" alt="">
+                <img src="img/profile_arrow_back.png" alt="">
+            </div>
+            <div class="btn_next">
+                <img src="img/profile_arrow_next.png" alt="">
+                <img src="img/profile_arrow_right.png" alt="">
+            </div>
+        </article>
+        <article class="music">
+            <img src="https://picsum.photos/id/206/200/300" alt="">
+            <div class="music_cd">
+                <ul>
+                    <li>
+                        <img src="" alt="">
+                        <p></p>
+                    </li>
+                    <li>
+                        <img src="" alt="">
+                        <p></p>
+                    </li>
+                    <li>
+                        <img src="" alt="">
+                        <p></p>
+                    </li>
+                    <li>
+                        <img src="" alt="">
+                        <p></p>
+                    </li>
+                    <li>
+                        <img src="" alt="">
+                        <p></p>
+                    </li>
+                    <li>
+                        <img src="" alt="">
+                        <p></p>
+                    </li>
+                </ul>
+                <p></p>
+            </div>
+            <div class="music_player">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+                <div class="music_bar">
+                    <img src="" alt="">
+                    <span><em></em></span>
+                </div>
+                <img src="" alt="">
+            </div>
+            <div class="music_detail">
+                <div class="back">
+                    <i></i>
+                    <p></p>
+                </div>
+                <div class="music_detail_inner">
+                    <div class="imgBox">
+                        <img src="" alt="">
+                    </div>
+                    <div class="txtBox">
+                        <div class="title">
+                            <h2></h2>
+                        </div>
+                        <div class="detail">
+                            <ul>
+                                <li><h3></h3></li>
+                                <li><h3></h3></li>
+                                <li><h3></h3></li>
+                                <li><h3></h3></li>
+                            </ul>
+                        </div>
+                        <div class="introduce">
+                            <h3></h3>
+                            <span><i></i></span>
+                            <p></p>
+                        </div>
+                        <div class="tracklist">
+                            <h3></h3>
+                            <ul>
+                                <li>
+                                    <img src="" alt="">
+                                    <span></span>
+                                    <h4><em></em></h4>
+                                    <b></b>
+                                </li>
+                                <li>
+                                    <img src="" alt="">
+                                    <span></span>
+                                    <h4><em></em></h4>
+                                    <b></b>
+                                </li>
+                                <li>
+                                    <img src="" alt="">
+                                    <span></span>
+                                    <h4><em></em></h4>
+                                    <b></b>
+                                </li>
+                                <li>
+                                    <img src="" alt="">
+                                    <span></span>
+                                    <h4><em></em></h4>
+                                    <b></b>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article class="gallery">
+            <div class="supernatural">
+                <img src="img/gallery_chrome_supernatural.png" alt="" class="img1">
+                <img src="img/gallery_chrome_supernatural.png" alt="" class="img2">
+                <div class="supernatural_inner">
+                    <p class="innerTxt1">Supernatural</p>
+                    <div class="imgBox">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <p class="innerTxt2">Supernatural</p>
+                </div>
+            </div>
+            <div class="rightnow">
+                <img src="" alt="">
+                <img src="" alt="">
+                <div class="rightnow_inner">
+                    <p></p>
+                    <div class="imgBox">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                    </div>
+                    <p></p>
+                </div>
+            </div>
+        </article>
+        <article class="video">
+            <img src="https://picsum.photos/id/28/200/300" alt="">
+            <div class="tvBox">
+                <video>
+                    <source>
+                </video>
+                <img src="" alt="" class="tv">
+            </div>
+            <img src="" alt="">
+            <div class="ringStar">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+            </div>
+            <div class="txtBox">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </article>
+        <article class="black"></article>
+    </section>
+</body>
+</html>
