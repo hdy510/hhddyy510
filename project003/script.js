@@ -11,7 +11,6 @@ $(document).ready(function(){
         // 3. black article 위로 올라감
         $('section article.black').css({'top':'0'}).stop().animate({'top':'-101%'},1000)
         // 4. gnb_ring 이미지 이동
-        // i == 1 일 때,
         if (i == 0) {
             $('header nav>img').stop().animate({'left':'74px'},500)
         } else if (i == 1) {
@@ -139,6 +138,17 @@ $(document).ready(function(){
 
         autoSlideTimeout = setTimeout(startAutoSlide, 5000);
     });
+    // 우측하단 Profile 가기 버튼 설정
+    $('.go_profile').click(function(){
+        $('section>article').removeClass('on')
+        $('section>article').eq(1).addClass('on')
+        $('.profile_scroll').hide();
+        $('.profile_main').show();
+
+        $('section article.black').css({'top':'0'}).stop().animate({'top':'-101%'},1000)
+
+        $('header nav>img').stop().animate({'left':'224px'},500)
+    })
     
     // ###### Profile ######
     // profile_main 에서 li 를 클릭하면 profile_scroll 로 이동하는 듯한 효과
@@ -181,14 +191,96 @@ $(document).ready(function(){
     // btn_back 을 누르면 현재 보고 있는 페이지의 앞페이지로 넘어가고
     // btn_next 를 누르면 현재 보고 있는 페이지의 뒷페이지로 넘어간다.
     
+    // ###### Music ######
+    // GNB의 Music 을 클릭하면 .music_detail과 .music_player 은 숨기고 .music_inner 는 나타나라
+    $('nav li').eq(2).click(function(){
+        $('.music_detail').hide()
+        $('.music_player').hide()
+        $('.music_inner').show()
+    })
+    // music_cd 안에 마우스가 들어가면 music_inner>p가 사라져라
+    $('.music_cd').mouseenter(function(){
+        $('.music_inner>p').hide()
+    })
+    // music_cd 에서 마우스가 나오면 music_inner>p가 나타나라
+    $('.music_cd').mouseleave(function(){
+        $('.music_inner>p').show()
+    })
+
+    // music_cd 의 가로 스크롤 설정
+    // GNB의 Music 을 클릭하면 body 값이 커져서 옆에 스크롤이 생긴다.
+    $('nav li').eq(2).click(function(){
+        $('body').addClass('cd')
+    })
+        // 나머지 메뉴들은 초기화
+    $('nav li').eq(0).click(function(){
+        $('body').removeClass('cd')
+    })
+    $('nav li').eq(1).click(function(){
+        $('body').removeClass('cd')
+    })
+    $('nav li').eq(3).click(function(){
+        $('body').removeClass('cd')
+    })
+    $('nav li').eq(4).click(function(){
+        $('body').removeClass('cd')
+    })
+    // music_cd 안에 들어갔을 때, 스크롤탑값과 ul의 left값을 연동시키기
+    $('.music_cd').mouseenter(function(){
+        $('.music_cd ul').css({'left':-500})
+         $(window).scroll(function(){
+            let scCd = $(this).scrollTop()
+            $('.music_cd ul').css({'left':-500-scCd})
+        })
+    })
+    // music_cd 밖에 나갔을 때, 연동 끊기
+    $('.music_cd').mouseleave(function(){
+        $('.music_cd ul').css({'left':0})
+        $(window).scroll(function(){
+            let scCd2 = $(this).scrollTop()
+            $('.music_cd ul').css({'left':0*scCd2})
+        })
+    })
+    // music_cd 의 li를 클릭했을 때, music_detail과 .music_player 나타나기
+    $('.music_cd li').click(function(){
+        $('.music_inner').hide()
+        $('.music_detail').fadeIn()
+        $('.music_player').fadeIn()
+        
+        // body 의 cd 클래스 지워서 스크롤 없애기
+        $('body').removeClass('cd')
+    })
+   
 
 
 
 
-
-
-
-
+    // ###### Gallery ######
+    // nav 의 gallery 를 클릭할 때, Supernatural 이미지들 등장
+    function supernaturalOn(selector) {
+        let element = $(selector);
+        element.addClass('on');
+        
+        setTimeout(function() {
+            element.removeClass('on');
+        }, 1500);  
+    }
+    $('nav li').eq(3).click(function() {
+        supernaturalOn('.supernatural_inner .imgBox div');
+    });
+    // supernatural 텍스트 클릭시,
+    function supernaturalOff(selector) {
+        let element2 = $(selector);
+        element2.addClass('off');
+        
+        setTimeout(function() {
+            element2.removeClass('off');
+        }, 1500);  
+    }
+    $('.innerTxt1, .innerTxt2').click(function() {
+        // Supernatural 이미지들 사라짐
+        supernaturalOff('.supernatural_inner .imgBox div');
+    })
 
 
 
