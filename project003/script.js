@@ -4,7 +4,6 @@ $(document).ready(function(){
     $('nav li').click(function(){
         // 1. 순번찾기
         let i = $(this).index()
-        console.log(i)
         // 2. 클릭한 순번에 맞춰서 article 에게 class 값 주기
         $('section>article').removeClass('on')
         $('section>article').eq(i).addClass('on')
@@ -26,32 +25,6 @@ $(document).ready(function(){
     
     // ###### Home ######
     //  자동슬라이드 설정
-    // let homeIndex = 0
-    // setInterval(function(){
-    //     console.log(homeIndex)
-    //     homeIndex++;
-    //     if (homeIndex == 3) {
-    //         homeIndex = 0
-    //     }
-
-    //     $('.home_slide_inner li').eq(homeIndex-1).css({'opacity':'1'}).stop().animate({'opacity':'0'},2000)
-    //     $('.home_slide_inner li').eq(homeIndex).css({'opacity':'0'}).stop().animate({'opacity':'1'},2000)
-    // },5000)
-
-    // // home 의 버튼 클릭 설정
-    // // 1. 하단 센터 버튼
-    // $('.home .btn_center span').click(function(){
-    //     $('.home .btn_center span').removeClass('on')
-    //     $(this).addClass('on')
-
-    //     let btnCenterIndex = $(this).index()
-    //     // 현재 보고 있는 슬라이드 순번
-        
-    //     // 순번에 맞게 home_slide 나타남
-    //     $('.home_slide_inner li').eq(homeIndex).css({'opacity':'1'}).stop().animate({'opacity':'0'},2000)
-    //     $('.home_slide_inner li').eq(btnCenterIndex).css({'opacity':'0'}).stop().animate({'opacity':'1'},2000)
-    // })
-
     let homeIndex = 0;
     let autoSlideInterval;
     let isAnimating = false;
@@ -177,7 +150,7 @@ $(document).ready(function(){
         $('.profile_scroll>div').eq(3).css({'transform':'translateZ('+(-15000+sc)+'px)'})
         $('.profile_scroll>div').eq(4).css({'transform':'translateZ('+(-20000+sc)+'px)'})
     })
-    // nav li를 클릭했을 때
+    // profile_main li를 클릭했을 때
     // 클릭한 순번에 맞춰서 profile_scroll>div 에게 class 값 주기
     $('.profile_main li').click(function(){
         let i = $(this).index()
@@ -197,6 +170,12 @@ $(document).ready(function(){
         $('.music_detail').hide()
         $('.music_player').hide()
         $('.music_inner').show()
+        // .music_player .play img 에 on 클래스가 있다면 제거
+        $('.music_player .play img').removeClass('on')
+        // .music_player .cd 에 on 클래스가 있다면 제거
+        $('.music_player .cd').removeClass('on')
+        // .music_player .cd 의 속성값 src 가 music_player_cd.png 로 초기화
+        $('.music_player .cd').attr('src','img/music_player_cd.png')
     })
     // music_cd 안에 마우스가 들어가면 music_inner>p가 사라져라
     $('.music_cd').mouseenter(function(){
@@ -250,14 +229,31 @@ $(document).ready(function(){
         // body 의 cd 클래스 지워서 스크롤 없애기
         $('body').removeClass('cd')
     })
+    // music_player 의 .play 의 img 를 클릭했을 때, on 클래스 추가해서 정지 이미지로 top 값 변경
+    $('.music_player .play img').click(function(){
+        $(this).toggleClass('on')
+        
+        // music_player 의 cd 의 속성값 src 가 music-cd6.png 로 변경
+        if ($(this).hasClass('on')) {
+            $('.music_player .cd').attr('src','img/music-cd6.png')
+            // 빙글빙글 도는 애니메이션 추가
+            $('.music_player .cd').addClass('on')
+        } else {
+            $('.music_player .cd').attr('src','img/music-cd6.png')
+            // 빙글빙글 도는 애니메이션 제거
+            $('.music_player .cd').removeClass('on')
+        }
+        
+    })
+
    
 
 
 
 
     // ###### Gallery ######
-    // nav 의 gallery 를 클릭할 때, Supernatural 이미지들 등장
-    function supernaturalOn(selector) {
+    // nav 의 gallery 를 클릭할 때, 회전이미지들 등장
+    function galleryOn(selector) {
         let element = $(selector);
         element.addClass('on');
         
@@ -266,21 +262,68 @@ $(document).ready(function(){
         }, 1500);  
     }
     $('nav li').eq(3).click(function() {
-        supernaturalOn('.supernatural_inner .imgBox div');
+        galleryOn('.gallery .imgBox div');
+
+        // 배경 이미지 등장
+        function galleryBgOn(selector) {
+            let element2 = $(selector);
+            element2.addClass('on');
+            
+            setTimeout(function() {
+                element2.removeClass('on');
+            }, 2000);  
+        }
+        galleryBgOn('.gallery .bgBox img');
     });
-    // supernatural 텍스트 클릭시,
-    function supernaturalOff(selector) {
-        let element2 = $(selector);
-        element2.addClass('off');
-        
-        setTimeout(function() {
-            element2.removeClass('off');
-        }, 1500);
-    }
-    $('.innerTxt1, .innerTxt2').click(function() {
-        // Supernatural 이미지들 사라짐
-        supernaturalOff('.supernatural_inner .imgBox div');
+    // supernatural 이미지 호버시 큰 이미지 등장
+    $('.gallery .supernatural .imgBox div').click(function(){
+        let hoverImg = $(this).index()
+        $('.gallery .hoverBox').addClass('on')
+        if (hoverImg == 0) {
+            $('.gallery .hoverBox img').attr('src','img/gallery_supernatural_1.jpg')
+        } else if (hoverImg == 1) {
+            $('.gallery .hoverBox img').attr('src','img/gallery_supernatural_2.jpg')
+        } else if (hoverImg == 2) {
+            $('.gallery .hoverBox img').attr('src','img/gallery_supernatural_3.jpg')
+        } else if (hoverImg == 3) {
+            $('.gallery .hoverBox img').attr('src','img/gallery_supernatural_4.jpg')
+        } else if (hoverImg == 4) {
+            $('.gallery .hoverBox img').attr('src','img/gallery_supernatural_5.jpg')
+        } else if (hoverImg == 5) {
+            $('.gallery .hoverBox img').attr('src','img/gallery_supernatural_6.jpg')
+        } else if (hoverImg == 6) {
+            $('.gallery .hoverBox img').attr('src','img/gallery_supernatural_7.jpg')
+        }
     })
+    // hoverBox 클릭시 hoverBox 의 on 클래스 제거
+    $('.gallery .hoverBox').click(function(){
+        $(this).removeClass('on')
+    })
+    // rightnow 이미지 호버시 큰 이미지 등장
+    $('.gallery .rightnow .imgBox div').click(function(){
+        let hoverImg = $(this).index()
+        $('.gallery .hoverBox').addClass('on')
+        if (hoverImg == 0) {
+            $('.gallery .hoverBox img').attr('src','img/gallery_rightnow_1.jpg')
+        } else if (hoverImg == 1) {
+            $('.gallery .hoverBox img').attr('src','img/gallery_rightnow_2.jpg')
+        } else if (hoverImg == 2) {
+            $('.gallery .hoverBox img').attr('src','img/gallery_rightnow_3.jpg')
+        } else if (hoverImg == 3) {
+            $('.gallery .hoverBox img').attr('src','img/gallery_rightnow_4.jpg')
+        } else if (hoverImg == 4) {
+            $('.gallery .hoverBox img').attr('src','img/gallery_rightnow_5.jpg')
+        } else if (hoverImg == 5) {
+            $('.gallery .hoverBox img').attr('src','img/gallery_rightnow_6.jpg')
+        } 
+    })
+    // hoverBox 클릭시 hoverBox 의 on 클래스 제거
+    $('.gallery .hoverBox').click(function(){
+        $(this).removeClass('on')
+    })
+    
+    
+    
 
     // Video 설정
     // .video 의 .txtBox 의 li 를 클릭할 때, .tvBox 의 source 의 src 속성 주소가 바뀌어라
@@ -300,6 +343,12 @@ $(document).ready(function(){
         }
         // 변경된 소스로 비디오를 다시 로드
         videoPlayer.load();
+    })
+    // gnb 의 video 클릭할때마다 .video .tvBox source 의 src가 vid/video_glitch.mp4 가 되어라
+    $('nav li').eq(4).click(function(){
+        $('.video .tvBox source').attr('src','vid/video_glitch.mp4')
+        let videoPlayer2 = $('.video .tvBox video')[0];
+        videoPlayer2.load();
     })
 
     // matrix 배경 오픈소스 첨부
