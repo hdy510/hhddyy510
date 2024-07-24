@@ -1007,7 +1007,7 @@ section article.on {
 .gallery {}
 /* supernatural 설정 */
 .gallery .supernatural {
-    width: 100%;
+    width: 50%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -1026,7 +1026,7 @@ section article.on {
     right: 0;
 }
 .gallery .supernatural .supernatural_inner {
-    width: 70%;
+    width: 86%;
     height: 85%;
     /* background-color: rgb(247, 189, 189); */
     position: relative;
@@ -1037,7 +1037,6 @@ section article.on {
 }
 .gallery .supernatural .supernatural_inner p {
     display: inline-block;
-    /* background-color: #fff; */
     color: #38FF9F;
     font-family: "Press Start 2P", system-ui;
     font-size: 30px;
@@ -1146,10 +1145,10 @@ section article.on {
 }
 /* right now 설정 */
 .gallery .rightnow {
-    width: 100%;
+    width: 50%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
 }
@@ -1165,7 +1164,7 @@ section article.on {
     right: 0;
 }
 .gallery .rightnow .rightnow_inner {
-    width: 70%;
+    width: 86%;
     height: 85%;
     /* background-color: rgb(247, 189, 189); */
     position: relative;
@@ -1176,11 +1175,10 @@ section article.on {
 }
 .gallery .rightnow .rightnow_inner p {
     display: inline-block;
-    /* background-color: #fff; */
     color: #FF3880;
     font-family: "Press Start 2P", system-ui;
     font-size: 30px;
-    padding: 20px 10px;
+    padding: 20px 0px;
     cursor: pointer;
     position: absolute;
     line-height: 1.5;
@@ -1284,4 +1282,131 @@ section article.on {
     right: 0;
     bottom: 0;
     background-image: url(img/gallery_rightnow_7.jpg);
+}
+
+/* video 설정 */
+/* matrix 배경 설정 */
+.video canvas {
+    width: 100%;
+    height: 100%;
+}
+/* TV 설정 */
+.video .tvBox {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+}
+.video .tvBox .videoBox {
+    width: 700px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-62.5%, -58%);
+    overflow: hidden;
+}
+.video .tvBox .videoBox video {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -90px;
+}
+.video .tvBox img {
+    width: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+}
+/* 이미지 설정 */
+.video .greenStar {
+    position: absolute;
+    top: 5%;
+    right: 18%;
+    animation: greenStar 5s linear infinite;
+    z-index: 2;
+}
+@keyframes greenStar {
+    0% {
+        transform: rotateZ(0);
+    }
+    50% {
+        transform: rotateZ(180deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+.video .ringStar {
+    position: absolute;
+    bottom: 0;
+    left: 14%;
+    width: 480px;
+    height: 400px;
+    z-index: 1;
+}
+.video .ringStar img {
+    position: absolute;
+}
+.video .ringStar img:nth-child(1) {
+    top: 0;
+    left: 0;
+}
+.video .ringStar img:nth-child(2) {
+    top: 210px;
+    left: 125px;
+    animation: ringStar 1s linear infinite alternate;
+}
+.video .ringStar img:nth-child(3) {
+    transform: scale(0.6);
+    top: 235px;
+    left: 160px;
+    animation: ringStar2 1s linear 0.5s infinite alternate;
+}
+@keyframes ringStar {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.6);
+    }
+}
+@keyframes ringStar2 {
+    0% {
+        transform: scale(0.6);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+/* 버튼 설정 */
+.video .txtBox {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1400px;
+    z-index: 2;
+}
+.video .txtBox ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between
+}
+.video .txtBox li {
+    color: #ffffff;
+    font-size: 20px;
+    font-family: "Press Start 2P", system-ui;
+    padding: 26px 30px;
+    border: 1px solid #38FF9F;
+    background-color: #121212;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: filter 0.3s;
+}
+.video .txtBox li:hover {
+    color: #121212;
+    background-color: #38FF9F;
+    filter: drop-shadow(0px 0px 7px #38ff9f);
 }

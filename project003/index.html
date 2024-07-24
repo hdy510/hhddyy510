@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Press+Start+2P&family=Zen+Dots&display=swap" rel="stylesheet">
     <!-- 제이쿼리 CDN 연결 -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
     <!-- Typeit js CDN 연결 -->
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
     <!-- 외부스크립트 연결 -->
@@ -36,7 +36,7 @@
         </nav>
     </header>
     <section>
-        <article class="home on">
+        <article class="home">
             <ul class="home_slide_inner">
                 <li class="home_slide1">
                     <div class="txtBox">
@@ -447,10 +447,10 @@
                 </div>
             </div>
         </article>
-        <article class="gallery">
-            <div class="supernatural"  style="display: none;">
-                <img src="img/gallery_chrome_supernatural.png" alt="" class="img1">
-                <img src="img/gallery_chrome_supernatural.png" alt="" class="img2">
+        <article class="gallery on">
+            <div class="supernatural">
+                <!-- <img src="img/gallery_chrome_supernatural.png" alt="" class="img1">
+                <img src="img/gallery_chrome_supernatural.png" alt="" class="img2"> -->
                 <div class="supernatural_inner">
                     <p class="innerTxt1">Supernatural</p>
                     <div class="imgBox">
@@ -466,7 +466,7 @@
                 </div>
             </div>
             <div class="rightnow">
-                <img src="img/gallery_chrome_rightnow.png" alt="">
+                <!-- <img src="img/gallery_chrome_rightnow.png" alt=""> -->
                 <img src="" alt="">
                 <div class="rightnow_inner">
                     <p class="innerTxt1">R<br>i<br>g<br>h<br>t<br> N<br>o<br>w</p>
@@ -483,26 +483,28 @@
             </div>
         </article>
         <article class="video">
-            <img src="https://picsum.photos/id/28/200/300" alt="">
+            <canvas id="Matrix"></canvas>
             <div class="tvBox">
-                <video>
-                    <source>
-                </video>
-                <img src="" alt="" class="tv">
+                <div class="videoBox">
+                    <video autoplay muted loop>
+                        <source src="vid/video_glitch.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <img src="img/video_tv.png" alt="" class="tv">
             </div>
-            <img src="" alt="">
+            <img src="img/video_star_green.png" alt="" class="greenStar">
             <div class="ringStar">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
+                <img src="img/video_ring_green.png" alt="">
+                <img src="img/video_star_small_green.png" alt="">
+                <img src="img/video_star_small_green.png" alt="">
             </div>
             <div class="txtBox">
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>RIGHT NOW</li>
+                    <li>SUPERNATURAL</li>
+                    <li>BUBBLE GUM</li>
+                    <li>HOW SWEET</li>
+                    <li>NEW JEANS</li>
                 </ul>
             </div>
         </article>

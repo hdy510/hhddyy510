@@ -275,12 +275,86 @@ $(document).ready(function(){
         
         setTimeout(function() {
             element2.removeClass('off');
-        }, 1500);  
+        }, 1500);
     }
     $('.innerTxt1, .innerTxt2').click(function() {
         // Supernatural 이미지들 사라짐
         supernaturalOff('.supernatural_inner .imgBox div');
     })
+
+    // Video 설정
+    // .video 의 .txtBox 의 li 를 클릭할 때, .tvBox 의 source 의 src 속성 주소가 바뀌어라
+    $('.video .txtBox li').click(function(){
+        let videoIndex = $(this).index();
+        let videoPlayer = $('.video .tvBox video')[0];
+        if (videoIndex == 0) {
+            $('.video .tvBox source').attr('src','vid/rightnow.mp4')
+        } else if (videoIndex == 1) {
+            $('.video .tvBox source').attr('src','vid/supernatural.mp4')
+        } else if (videoIndex == 2) {
+            $('.video .tvBox source').attr('src','vid/bubblegum.mp4')
+        } else if (videoIndex == 3) {
+            $('.video .tvBox source').attr('src','vid/howsweet.mp4')
+        } else if (videoIndex == 4) {
+            $('.video .tvBox source').attr('src','vid/newjeans.mp4')
+        }
+        // 변경된 소스로 비디오를 다시 로드
+        videoPlayer.load();
+    })
+
+    // matrix 배경 오픈소스 첨부
+    const canvas = document.getElementById('Matrix');
+    const context = canvas.getContext('2d');
+    
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    // const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+    const katakana = 'NEWJEANS'
+    // const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    // const latin = 'NEWJEANS'
+    // const nums = '0123456789';
+    
+    // const alphabet = katakana + latin + nums;
+    const alphabet = katakana;
+    
+    const fontSize = 18;
+    const columns = canvas.width/fontSize;
+    
+    const rainDrops = [];
+    
+    for( let x = 0; x < columns; x++ ) {
+        rainDrops[x] = 1;
+    }
+    
+    const draw = () => {
+        context.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        context.fillRect(0, 0, canvas.width, canvas.height);
+    
+        context.fillStyle = '#1B955B';
+        context.font = fontSize + 'px "Press Start 2P"';
+    
+        for(let i = 0; i < rainDrops.length; i++)
+        {
+            const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+            context.fillText(text, i*fontSize, rainDrops[i]*fontSize);
+    
+            if(rainDrops[i]*fontSize > canvas.height && Math.random() > 0.975){
+                rainDrops[i] = 0;
+            }
+            rainDrops[i]++;
+        }
+    };
+    
+    setInterval(draw, 80);
+
+
+
+
+
+
+
+
 
 
 
