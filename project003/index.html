@@ -7,8 +7,6 @@
     <title>Project3 - NewJeans</title>
     <!-- fontawesome cdn 연결 -->
     <script src="https://kit.fontawesome.com/fb97202f89.js" crossorigin="anonymous"></script>
-    <!-- 외부스타일시트 연결 -->
-    <link rel="stylesheet" href="style.css">
     <!-- 구글폰트 연결 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,9 +16,12 @@
     <script src="jquery-3.7.1.min.js"></script>
     <!-- Typeit js CDN 연결 -->
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <!-- lottiefiles CDN 연결 -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!-- 외부스타일시트 연결 -->
+    <link rel="stylesheet" href="style.css">
     <!-- 외부스크립트 연결 -->
     <script src="script.js"></script>
-
 </head>
 <body>
     <header>
@@ -33,12 +34,30 @@
                 <li><img src="img/gnb_video.png" alt=""></li>
             </ul>
             <img src="img/gnb_ring.png" alt="">
+            <div class="img"></div>
         </nav>
     </header>
     <section>
-        <article class="home on">
+        <div class="intro on">
+            <div class="intro_inner">
+                <img src="img/intro_img.png" alt="">
+                <div class="text"><lottie-player src="img/intro_text.json" background="transparent"  speed="0.9" loop autoplay></lottie-player></div>
+                <p>loading...</p>
+                <div class="bar"><lottie-player src="img/intro_bar.json" background="transparent"  speed="0.3" loop autoplay></lottie-player></div>
+            </div>
+        </div>
+        <article class="home">
             <ul class="home_slide_inner">
                 <li class="home_slide1">
+                    <div class="txtBox">
+                        <h2>THE FACE 2024 Summer Issue</h2>
+                        <h3>뉴진스(NewJeans)가 29일 발간된 영국 매거진 <br>
+                            ‘더 페이스’ 2024 여름호(Summer Issue) 표지를 장식했다.</h3>
+                        <p>지난 1980년 창간된 ‘더 페이스’는 음악, 패션, 문화 전반에 걸쳐 다양한 주제를 다룬다.</p>
+                        <p>이번 여름호는 세계적인 아티스트이자 포토그래퍼인 페트라 콜린스(Petra Collins)가 포토그래퍼 겸 크리에이티브 총괄로 참여해 뉴진스와 호흡을 맞췄다. 뉴진스를 통해 고풍스럽고 몽환적인 청춘의 모습을 다양하게 표현한 그의 시선이 이색적이어서 눈길을 끈다.</p>
+                    </div>
+                </li>
+                <li class="home_slide2">
                     <div class="txtBox">
                         <h2><em>S</em>upernatural</h2>
                         <h3>더블 싱글 'Supernatural'과 함께 돌아온 NewJeans가 일본에서 정식 데뷔한다.</h3>
@@ -47,15 +66,6 @@
                             NewJeans 멤버들의 감성적인 보컬과 절묘한 조화를 이루어 독특한 매력을 극대화한다.</p>
                         <p>수록곡 'Right Now'는 밝고 캐치한 느낌의 세련된 Pop 스타일 곡으로 NewJeans 멤버들의 통통 튀는 보컬과 드럼 & 베이스 장르의 비트감이 잘 
                             어우러져 여름 느낌을 물씬 풍기는 매력적인 곡이다.</p>
-                    </div>
-                </li>
-                <li class="home_slide2">
-                    <div class="txtBox">
-                        <h2>THE FACE 2024 Summer Issue</h2>
-                        <h3>뉴진스(NewJeans)가 29일 발간된 영국 매거진 <br>
-                            ‘더 페이스’ 2024 여름호(Summer Issue) 표지를 장식했다.</h3>
-                        <p>지난 1980년 창간된 ‘더 페이스’는 음악, 패션, 문화 전반에 걸쳐 다양한 주제를 다룬다.</p>
-                        <p>이번 여름호는 세계적인 아티스트이자 포토그래퍼인 페트라 콜린스(Petra Collins)가 포토그래퍼 겸 크리에이티브 총괄로 참여해 뉴진스와 호흡을 맞췄다. 뉴진스를 통해 고풍스럽고 몽환적인 청춘의 모습을 다양하게 표현한 그의 시선이 이색적이어서 눈길을 끈다.</p>
                     </div>
                 </li>
                 <li class="home_slide3">
@@ -122,6 +132,7 @@
                 <div class="profile_danielle">
                     <img src="img/profile_danielle_bg.png" alt="" class="bg_stuff">
                     <img src="img/profile_danielle_danielle.png" alt="" class="person">
+                    <img src="img/profile_danielle_gauge.png" alt="" class="gauge">
                     <div class="arrowBox">
                         <img src="img/profile_danielle_arrowTopLeft.png" alt="">
                         <img src="img/profile_danielle_arrowTop.png" alt="">
@@ -160,6 +171,7 @@
                     <img src="img/profile_haerin_wire.png" alt="" class="bg_big">
                     <img src="img/profile_haerin_bg.png" alt="" class="bg_stuff">
                     <img src="img/profile_haerin_haerin.png" alt="" class="person">
+                    <img src="img/profile_haerin_gauge.png" alt="" class="gauge">
                     <div class="arrowBox">
                         <img src="img/profile_haerin_arrowTopLeft.png" alt="">
                         <img src="img/profile_haerin_arrowTop.png" alt="">
@@ -198,6 +210,7 @@
                     <img src="img/profile_minji_wire.png" alt="" class="bg_big">
                     <img src="img/profile_minji_bg.png" alt="" class="bg_stuff">
                     <img src="img/profile_minji_minji.png" alt="" class="person">
+                    <img src="img/profile_minji_gauge.png" alt="" class="gauge">
                     <div class="arrowBox">
                         <img src="img/profile_minji_arrowTopLeft.png" alt="">
                         <img src="img/profile_minji_arrowTop.png" alt="">
@@ -235,6 +248,7 @@
                 <div class="profile_hanni">
                     <img src="img/profile_hanni_bg.png" alt="" class="bg_stuff">
                     <img src="img/profile_hanni_hanni.png" alt="" class="person">
+                    <img src="img/profile_hanni_gauge.png" alt="" class="gauge">
                     <div class="arrowBox">
                         <img src="img/profile_hanni_arrowTopLeft.png" alt="">
                         <img src="img/profile_hanni_arrowTop.png" alt="">
@@ -273,6 +287,7 @@
                     <img src="img/profile_hyein_bg.png" alt="" class="bg_stuff">
                     <img src="img/profile_hyein_hyein.png" alt="" class="person">
                     <img src="img/profile_hyein_bg2.png" alt="" class="bg_big">
+                    <img src="img/profile_hyein_gauge.png" alt="" class="gauge">
                     <div class="arrowBox">
                         <img src="img/profile_hyein_arrowTopLeft.png" alt="">
                         <img src="img/profile_hyein_arrowTop.png" alt="">

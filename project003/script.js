@@ -1,5 +1,21 @@
 $(document).ready(function(){
-    // ###### GNB ######
+    // header 안보인 상태에서 시작
+    $('header').hide()
+    // intro img 은은하게 등장
+    $('.intro_inner').css({'opacity':'0'}).stop().animate({'opacity':'1'},2000)
+    // intro 나온 뒤 7초 후 home 으로 넘어가기
+    setTimeout(function(){
+        $('section>.intro').removeClass('on')
+        $('section>.home').addClass('on')
+        // gnb_ring 나타남
+        $('header nav>img').css({'opacity':'1'})
+        // gnb_ring 이미지 이동
+        $('header nav>img').css({'left':'74px'})
+        // header 나타남
+        $('header').show()
+    },5500)
+
+    // ###### Nav ######
     // nav li를 클릭했을 때,
     $('nav li').click(function(){
         // 1. 순번찾기
@@ -21,6 +37,36 @@ $(document).ready(function(){
         } else if (i == 4) {
             $('header nav>img').stop().animate({'left':'678px'},500)
         }
+        // 5. gnb_ring 나타남
+        $('header nav>img').css({'opacity':'1'})
+    })
+    // 인트로 설정
+    // nav 의 .img 를 클릭했을 때, section>.intro 에 on class 추가 
+    $('nav .img').click(function(){
+        $('section>article').removeClass('on')
+        $('section>.intro').addClass('on')
+
+        // intro_inner 가 천천히 커짐
+        $('.intro_inner').css({'opacity':'0'}).stop().animate({'opacity':'1'},2000)
+
+        // 헤더 사라짐
+        $('header').hide()
+
+        // 스크롤을 없애기 위해 body 에 on class, cd class 제거
+        $('body').removeClass('on')
+        $('body').removeClass('cd')
+        
+        // 3초 뒤에 home 에 on class 추가
+        setTimeout(function(){
+            $('section>.intro').removeClass('on')
+            $('section>.home').addClass('on')
+
+        // header 나타남
+        $('header').show()
+            
+        // gnb_ring 이미지 이동
+            $('header nav>img').css({'left':'74px'})
+        },5500)
     })
     
     // ###### Home ######
@@ -151,19 +197,83 @@ $(document).ready(function(){
         $('.profile_scroll>div').eq(4).css({'transform':'translateZ('+(-20000+sc)+'px)'})
     })
     // profile_main li를 클릭했을 때
-    // 클릭한 순번에 맞춰서 profile_scroll>div 에게 class 값 주기
+    // 클릭한 순번에 맞춰서 스크롤 이동
     $('.profile_main li').click(function(){
         let i = $(this).index()
-
-        $('.profile_scroll>div').removeClass('on')
-        $('.profile_scroll>div').eq(i).addClass('on')
 
         $('html, body').stop().animate({'scrollTop':i*5000},1200)
     })
     // btn_back 과 btn_next 설정
+    // btn_back 과 btn_next 가 profile_main 에선 안보이고, profile_scroll 에서 보이게 하기
+        // nav 의 profile 을 클릭할 때, .btn_back 과 .btn_next 사라지게 설정
+    $('nav li').eq(1).click(function(){
+        $('.btn_back').hide()
+        $('.btn_next').hide()
+    })
+        // profile_main li 를 클릭했을 때, .btn_back 과 .btn_next 나타나게 설정
+    $('.profile_main li').click(function(){
+        $('.btn_next').fadeIn(1000)
+        $('.btn_back').fadeIn(1000)
+    })
+
+    //     profile_scroll 각 멤버 페이지 영역 구분 참조!!!!
+    //     // 만약 0 <= scGlobal < 2500 이라면 (다니엘페이지)
+    //     // 만약 2500 <= scGlobal < 7500  이라면 (해린페이지)
+    //     // 만약 7500 <= scGlobal < 12500 이라면 (민지페이지)
+    //     // 만약 12500 <= scGlobal < 17500 이라면 (하니페이지)
+    //     // 만약 17500 <= scGlobal <= 20081 이라면 (혜인페이지)
+    //     if (scGlobal >= 0 && scGlobal < 2500) {
+            
+    //     } else if (scGlobal >= 2500 && scGlobal < 7500) {
+
+    //     } else if (scGlobal >= 7500 && scGlobal < 12500) {
+
+    //     } else if (scGlobal >= 12500 && scGlobal < 17500) {
+
+    //     } else if (scGlobal >= 17500 && scGlobal <= 20081) {
+
+    //     }
+    // });
+
     // btn_back 을 누르면 현재 보고 있는 페이지의 앞페이지로 넘어가고
-    // btn_next 를 누르면 현재 보고 있는 페이지의 뒷페이지로 넘어간다.
+    $('.btn_back').click(function(){
+        let scback = $(window).scrollTop()
+        $('html, body').stop().animate({'scrollTop':scback-5000},300)
+        // 해린 페이지에서 btn_back 을 클릭한거라면, 다니엘 페이지에서 btn_back 은 사라진다.
+        if (scback >= 2500 && scback < 7500) {
+            $('.btn_back').fadeOut(1000)
+        }
+        // 혜인 페이지에서 btn_back 을 눌러 이전 페이지로 온거라면, btn_next 나타난다.
+        if (scback >= 17500 && scback <= 20081) {
+            $('.btn_next').fadeIn(1000)
+        }
+    })
+        // btn_next 를 누르면 현재 보고 있는 페이지의 뒷페이지로 넘어간다.
+    $('.btn_next').click(function(){
+        let scnext = $(window).scrollTop()
+        $('html, body').stop().animate({'scrollTop':scnext+5000},300)
+        // 하니 페이지에서 btn_next 를 클릭한거라면, 혜인 페이지에서 btn_next 는 사라진다.
+        if (scnext >= 12500 && scnext < 17500) {
+            $('.btn_next').fadeOut(1000)
+        }
+        // 다니엘 페이지에서 btn_next 를 클릭한거라면, 해린 페이지에서 btn_back 은 나타난다.
+        if (scnext >= 0 && scnext < 2500) {
+            $('.btn_back').fadeIn(1000)
+        }
+    })
     
+
+
+
+
+    
+
+
+
+
+
+
+
     // ###### Music ######
     // GNB의 Music 을 클릭하면 .music_detail과 .music_player 은 숨기고 .music_inner 는 나타나라
     $('nav li').eq(2).click(function(){
@@ -228,6 +338,19 @@ $(document).ready(function(){
         
         // body 의 cd 클래스 지워서 스크롤 없애기
         $('body').removeClass('cd')
+    })
+
+    // music_detail 의 .back 을 클릭할 때, gnb 에서 music 메뉴를 눌렀을 때와 같은 효과
+    $('.music_detail .back').click(function(){
+        $('.music_detail').hide()
+        $('.music_player').hide()
+        $('.music_inner').show()
+        // .music_player .play img 에 on 클래스가 있다면 제거
+        $('.music_player .play img').removeClass('on')
+        // .music_player .cd 에 on 클래스가 있다면 제거
+        $('.music_player .cd').removeClass('on')
+        // .music_player .cd 의 속성값 src 가 music_player_cd.png 로 초기화
+        $('.music_player .cd').attr('src','img/music_player_cd.png')
     })
     // music_player 의 .play 의 img 를 클릭했을 때, on 클래스 추가해서 정지 이미지로 top 값 변경
     $('.music_player .play img').click(function(){
