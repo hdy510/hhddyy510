@@ -215,6 +215,14 @@ $(document).ready(function(){
         $('.btn_next').fadeIn(1000)
         $('.btn_back').fadeIn(1000)
     })
+        // profile_main li 중 첫번째를 클릭했을 때, .btn_back 사라지게 설정
+    $('.profile_main li').eq(0).click(function(){
+        $('.btn_back').hide()
+    })
+        // profile_main li 중 마지막을 클릭했을 때, .btn_next 사라지게 설정
+    $('.profile_main li').eq(4).click(function(){
+        $('.btn_next').hide()
+    })
 
     //     profile_scroll 각 멤버 페이지 영역 구분 참조!!!!
     //     // 만약 0 <= scGlobal < 2500 이라면 (다니엘페이지)

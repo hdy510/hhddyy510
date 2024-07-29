@@ -475,6 +475,29 @@ section article.on {
         opacity: 0;
     }
 }
+.profile_main .click {
+    position: absolute;
+    bottom: 17%;
+    left: 11%;
+    width: 70px;
+    animation: click 0.8s linear infinite alternate;
+}
+.profile_main .click img {
+    width: 100px;
+}
+.profile_main .click span {
+    font-size: 17px;
+    font-family: "Press Start 2P", system-ui;
+    color: #fff;
+}
+@keyframes click {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
 /* profile_scroll 설정 */
 .profile_scroll {
     width: 100%;
@@ -1270,7 +1293,7 @@ section article.on {
     transition: filter 0.5s;
 }
 .gallery .supernatural .supernatural_inner .imgBox div:hover {
-    filter: brightness(3);
+    filter: brightness(2);
 }
 .gallery .supernatural .supernatural_inner .imgBox div.on {
     animation: rotateImg 1.5s ease-in-out;
@@ -1392,7 +1415,7 @@ section article.on {
     transition: filter 0.5s;
 }
 .gallery .rightnow .rightnow_inner .imgBox div:hover {
-    filter: brightness(3);
+    filter: brightness(2);
 }
 .gallery .rightnow .rightnow_inner .imgBox div.on {
     animation: rotateImg 1.5s ease-in-out;
