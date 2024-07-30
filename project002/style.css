@@ -101,11 +101,28 @@ header .util a {
     font-size: 22px;
     padding: 10px 15px;
     transition: all 0.5s;
+    position: relative;
 }
 header .util a:hover {
     color: #e20e17;
 }
-header .util i {
+header .util a span {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #e20e17;
+    color: #fff;
+    font-size: 14px;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+header .util a span.on {
+    opacity: 1;
 }
 
 /* top버튼 설정 */
@@ -1585,7 +1602,7 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
     margin-bottom: 28px;
 }
 .sub_section1_wrap .protxt .detail .detail_title li:nth-child(3) {
-    margin-bottom: 48px;
+    margin-bottom: 56px;
 }
 .sub_section1_wrap .protxt .detail .detail_content {
     width: 80%;
@@ -1597,11 +1614,65 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
     color: #616161;
     margin-bottom: 28px;
 }
+.sub_section1_wrap .protxt .detail .detail_content li .btn {
+    display: flex;
+    border: 1px solid #a8a8a8;
+    width: 90px;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+.sub_section1_wrap .protxt .detail .detail_content li .btn button {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sub_section1_wrap .protxt .detail .detail_content li .btn button:hover {
+    background-color: #ececec;
+}
+.sub_section1_wrap .protxt .detail .detail_content li input {
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    text-align: center;
+    border-right: 1px solid #a8a8a8;
+    border-left: 1px solid #a8a8a8;
+}
+.sub_section1_wrap .protxt .detail .detail_content li input:focus {
+    outline: none;
+}
+/* input number type 화살표 제거 */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox  */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+.sub_section1_wrap .protxt .detail .detail_content li .minus {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.sub_section1_wrap .protxt .detail .detail_content li .plus {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+}
 .sub_section1_wrap .protxt .share {
     font-size: 16px;
     font-weight: 700;
     color: #a8a8a8;
     cursor: pointer;
+    display: inline;
 }
 .sub_section1_wrap .protxt .share i {
     padding-left: 4px;
@@ -2255,6 +2326,27 @@ td {
     color: #d8232a;
 }
 
+/* 스크롤에 반응하여 등장하는 애니메이션을 위한 설정 */
+.scroll_on.bottom {
+    opacity: 0;
+    transform: translate(0, 50px);
+    transition: all 1s;
+}
+.scroll_on.left {
+    opacity: 0;
+    transform: translate(-50px, 0);
+    transition: all 1s;
+}
+.scroll_on.right {
+    opacity: 0;
+    transform: translate(50px, 0);
+    transition: all 1s;
+}
+.scroll_on.active {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
 /* 로그인페이지 설정 ###################################################### */
 .loginPage {
     background-color: white;
@@ -2627,21 +2719,18 @@ footer .snsBox a img {
     width: 530px;
     height: 400px;
     margin-bottom: 20px;
+    overflow: hidden;
 }
 .popup_bag2 .popup .bagBox>p {
     font-size: 18px;
     color: #616161;
-    padding-left: 120px;
+    padding-left: 200px;
     padding-bottom: 20px;
     /* background-color: yellow; */
 }
-.popup_bag2 .popup .bagBox>p span {
-    /* background-color: red; */
-    margin-left: 200px;
-}
 .popup_bag2 .popup .bagBox>p em {
     font-style: normal;
-    margin-left: 52px;
+    margin-left: 202px;
     /* background-color: blue; */
 }
 .popup_bag2 .popup .bagBox .purchase_list {
@@ -2669,7 +2758,7 @@ footer .snsBox a img {
 }
 .popup_bag2 .popup .bagBox .purchase_list span {
     /* background-color: green; */
-    width: 220px;
+    width: 322px;
     cursor: pointer;
 
 }

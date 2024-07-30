@@ -42,7 +42,7 @@
                 <ul>
                     <li><a href=""><i class="fa-solid fa-magnifying-glass"></i></a></li>
                     <li><a href=""><i class="fa-regular fa-heart"></i></a></li>
-                    <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-bag-shopping"></i><span></span></a></li>
                     <li><a href=""><i class="fa-regular fa-user"></i></a></li>
                 </ul>
             </div>
@@ -611,17 +611,23 @@
                                     </div>
                                     <div class="detail_content">
                                         <ul>
-                                            <li> 독일</li>
-                                            <li> 택배</li>
-                                            <li> 3,000원<br>(동일 배송유형 상품 30,000원 이상 구매시 무료)</li>
-                                            <li> 버튼</li>
+                                            <li>독일</li>
+                                            <li>택배</li>
+                                            <li>3,000원<br>(동일 배송유형 상품 30,000원 이상 구매시 무료)</li>
+                                            <li>
+                                                <div class="btn">
+                                                    <button class="minus">-</button>
+                                                        <input type="number" name="countNum" id="countNum" value="1" readonly></input>
+                                                    <button class="plus">+</button>
+                                                </div>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
                                 <p class="share">링크 공유하기<i class="fa-solid fa-angle-right"></i></p>
                             </div>
                             <div class="middleBox">
-                                <p class="total_price">총 금액<span>3,000원</span></p>
+                                <p class="total_price">총 금액<span>1,500원</span></p>
                             </div>
                             <div class="bottomBox">
                                 <ul>
@@ -637,8 +643,8 @@
         </section>
         <section class="sub_section2">
             <div class="sub_section2_wrap">
-                <h5>이런 상품은 어때요?</h5>
-                <div class="listBox">
+                <h5 class="scroll_on bottom">이런 상품은 어때요?</h5>
+                <div class="listBox scroll_on bottom">
                     <div class="btn left"><i class="fa-solid fa-angle-left"></i></div>
                     <div class="btn right"><i class="fa-solid fa-angle-right"></i></div>
                     <div class="listBox_wrap">
@@ -755,16 +761,16 @@
         <section class="sub_section3">
             <div class="sub_section3_wrap">
                 <div class="product_detail">
-                    <h5>제품 정보</h5>
+                    <h5 class="scroll_on bottom">제품 정보</h5>
                     <div class="imgBox">
-                        <h6>함께해요 모두 다,<br> 행복해요 하리보!<br><b>하리보</b><br><em>골드베렌</em></h6>
-                        <img class="goldbaren" src="img/section2_goldbaren.png" alt="">
-                        <img class="jellyPile" src="img/jellyPile.png" alt="">
+                        <h6 class="scroll_on bottom">함께해요 모두 다,<br> 행복해요 하리보!<br><b>하리보</b><br><em>골드베렌</em></h6>
+                        <img class="goldbaren scroll_on bottom" src="img/section2_goldbaren.png" alt="">
+                        <img class="jellyPile scroll_on bottom" src="img/jellyPile.png" alt="">
                     </div>
                 </div>
                 <div class="product_review">
-                    <h5>리뷰</h5>
-                    <div class="reviewBox">
+                    <h5 class="scroll_on bottom">리뷰</h5>
+                    <div class="reviewBox scroll_on bottom">
                         <p><i class="fa-solid fa-star"></i><b>4.9점</b>총99개</p>
                         <ul>
                             <li>
@@ -816,24 +822,23 @@
         <section class="sub_section4">
             <div class="sub_section4_wrap">
                 <div class="infoBox1">
-                    <img src="img/sub_section4_old.png" alt="">
-                    <div class="txtBox">
+                    <img src="img/sub_section4_old.png" alt="" class="scroll_on left">
+                    <div class="txtBox scroll_on bottom">
                         <p><b>100년</b>이상 사랑받는 하리보 골드베렌</p>
                         <p>지난 100년 이상 동안 하리보는 <i>남녀노소 모두를 위한</i> 맛있는 음식을 만들어 왔습니다</p>
                     </div>
                 </div>
                 <div class="infoBox2">
-                    <div class="txtBox">
+                    <div class="txtBox scroll_on bottom">
                         <p>매일 전세계에서 <b>1억 6천개</b>의 골드베렌을 생산합니다</p>
                         <p>1년에 생산되는 젤리곰을 옆으로 줄지어 세우면 우리 <i>지구둘레의 10배의 길이</i>나 된답니다</p>
                     </div>
-                    <img src="img/sub_section4_earth.png" alt="">
+                    <img src="img/sub_section4_earth.png" alt="" class="scroll_on right">
                 </div>
                 <div class="infoBox3">
                     <div class="txtBox">
-                        <p><b>다양한 과일 맛</b>을 한 제품에서 즐길 수 있어요</p>
-                        
-                        <ul class="imgBox">
+                        <p class="scroll_on bottom"><b>다양한 과일 맛</b>을 한 제품에서 즐길 수 있어요</p>
+                        <ul class="imgBox scroll_on bottom">
                             <li class="imgBoxEach apple">
                                 <img src="img/sub_section4_apple.png" alt="">
                                 <span class="apple">사과</span>
@@ -865,13 +870,13 @@
         </section>
         <section class="sub_section5">
             <div class="sub_section5_wrap">
-                <div class="imgBox">
+                <div class="imgBox scroll_on left">
                     <img src="img/sub_section5_model1.jpg" alt="">
                     <img src="img/sub_section5_model2.jpg" alt="">
                     <img src="img/sub_section5_model3.jpg" alt="">
                     <img src="img/sub_section5_model4.jpg" alt="">
                 </div>
-                <div class="txtBox">
+                <div class="txtBox scroll_on right">
                     <table>
                         <tr>
                             <th>제품명</th>
@@ -1004,22 +1009,20 @@
             <h4>장바구니</h4>
             <span>장바구니 닫기</span>
             <div class="bagBox">
-                <p>상품정보<span>수량</span><em>상품금액</em></p>
+                <p>상품정보<em>상품금액</em></p>
                 <ul class="purchase_list">
-                    <li>
+                    <!-- <li>
                         <img src="img/check_icon-white.png" alt="" class="check">
                         <img src="img/section2_goldbaren.png" alt="" class="product">
                         <span>골드베렌 (100g, 1개입)</span>
-                        <div>버튼</div>
                         <b>3,000원</b>
                     </li>
                     <li>
                         <img src="img/check_icon-white.png" alt="" class="check">
                         <img src="img/section2_starmix.png" alt="" class="product">
                         <span>스타믹스 (100g, 1개입)</span>
-                        <div>버튼</div>
                         <b>1,200원</b>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <ul class="popup_bag2_button">

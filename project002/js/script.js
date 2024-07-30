@@ -217,19 +217,57 @@ $(document).ready(function () {
     });
 
     // 장바구니 버튼 토글 설정
-    $('.like_bag_btn .bag i').click(function () {
-        // 취소: 만약 on 클래스 있다면, on 클래스를 지워라.
-        // 버튼클릭: 만약 그렇지 않으면, on 클래스를 넣어라.
+    let bagNum = 1
+    $('.main_section2 .like_bag_btn .bag i').click(function () {
+        // 아이콘의 색이 변화하게 on 클래스를 넣어라.
+        $(this).addClass('on');
+        // 장바구니 팝업알림창(popup_bag1) 등장
+        $('.popup_bag1').css({ display: 'block' });
 
-        if ($(this).hasClass('on')) {
-            $(this).removeClass('on');
-            // !!!!!!!!!! '장바구니에서 상품이 삭제되었습니다.' 팝업알림창 등장 자리!!!!!!!!!!
-        } else {
-            $(this).addClass('on');
-            // 장바구니 팝업알림창(popup_bag1) 등장
-            $('.popup_bag1').css({ display: 'block' });
-            // 질문 : 천천히 등장하게 하려면?
+        // .util 의 ul li 의 eq(2)의 span 에 on 클래스 추가
+        $('.util ul li').eq(2).find('span').addClass('on');
+        // 클릭할 때마다 .util 의 ul li 의 eq(2)의 span 에 text 1씩 증가
+        $('.util ul li').eq(2).find('span').text(bagNum);
+        bagNum++;
+
+        // 누른 장바구니 버튼에 해당하는 상품의 li 의 순번을 찾아라
+        let productIndex = $(this).closest('li').index();
+        // 그 순번에 맞는 상품을 장바구니에 추가해라
+        if (productIndex == 0) {
+            // popup_bag2 의 purchase_list 에 각 상품에 맞는 li 를 추가해라
+            $('.popup_bag2 .purchase_list').append(
+                '<li><img src="img/check_icon-white.png" alt="" class="check"><img src="img/section2_goldbaren.png" alt="" class="product"><span>골드베렌 (100g, 1개입)</span><b>3,000원</b></li>'
+            );
+        } else if (productIndex == 1) {
+            $('.popup_bag2 .purchase_list').append(
+                '<li><img src="img/check_icon-white.png" alt="" class="check"><img src="img/section2_starmix.png" alt="" class="product"><span>스타믹스 (100g, 1개입)</span><b>1,200원</b></li>'
+            );
+        } else if (productIndex == 2) {
+            $('.popup_bag2 .purchase_list').append(
+                '<li><img src="img/check_icon-white.png" alt="" class="check"><img src="img/section2_happycola.png" alt="" class="product"><span>해피 콜라 (100g, 1개입)</span><b>1,500원</b></li>'
+            );
+        } else if (productIndex == 3) {
+            $('.popup_bag2 .purchase_list').append(
+                '<li><img src="img/check_icon-white.png" alt="" class="check"><img src="img/section2_worms.png" alt="" class="product"><span>웜즈 (100g, 1개입)</span><b>1,500원</b></li>'
+            );
+        } else if (productIndex == 4) {
+            $('.popup_bag2 .purchase_list').append(
+                '<li><img src="img/check_icon-white.png" alt="" class="check"><img src="img/section2_fruitybussi.png" alt="" class="product"><span>프루티 부시 (100g, 1개입)</span><b>1,500원</b></li>'
+            );
+        } else if (productIndex == 5) {
+            $('.popup_bag2 .purchase_list').append(
+                '<li><img src="img/check_icon-white.png" alt="" class="check"><img src="img/section2_wormszourr.png" alt="" class="product"><span>웜즈 사우어 (100g, 1개입)</span><b>1,500원</b></li>'
+            );
+        } else if (productIndex == 6) {
+            $('.popup_bag2 .purchase_list').append(
+                '<li><img src="img/check_icon-white.png" alt="" class="check"><img src="img/section2_happycolazourr.png" alt="" class="product"><span>해피 콜라 사우어 (100g, 1개입)</span><b>1,050원</b></li>'
+            );
+        } else if (productIndex == 7) {
+            $('.popup_bag2 .purchase_list').append(
+                '<li><img src="img/check_icon-white.png" alt="" class="check"><img src="img/section2_happygrapes.png" alt="" class="product"><span>해피 그레이프 (100g, 1개입)</span><b>1,500원</b></li>'
+            );
         }
+
     });
 
     // 장바구니 팝업알림창에서 '쇼핑 계속하기' 클릭하면 팝업알림창 사라짐
@@ -253,6 +291,7 @@ $(document).ready(function () {
     });
     // 선택항목 체크 아이콘 클릭시 색변화
     $('.purchase_list .check').click(function () {
+        console.log('클릭');
         let check = $(this).attr('src');
         let checkWhite = 'img/check_icon-white.png';
         let checkRed = 'img/check_icon-red.png';
@@ -435,4 +474,70 @@ $(document).ready(function () {
             $(this).find('p').css({ opacity: '0' });
         }
     });
+
+    // sub_section1 .detail_content 의 .btn 의 .minus 를 클릭할 때 , input 의 숫자가 줄고
+    $('.sub_section1 .detail_content .minus').click(function () {
+        // input 의 숫자가 1보다 크면, input 의 숫자를 1씩 줄여라
+        let num = $('.btn input').val();
+        if (num > 1) {
+            num--;
+            $('.btn input').val(num);
+        }
+        // sub_section1 의 .total_price 의 span 에 num 변수를 곱해라
+        let price1 = 1500;
+        let totalPrice1 = price1 * num;
+        let commaPrice1 = totalPrice1.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        $('.sub_section1 .total_price span').text(commaPrice1+'원');
+
+        
+
+    });
+    // sub_section1 .detail_content 의 .btn 의 .plus 를 클릭할 때 , input 의 숫자가 늘어남
+    $('.sub_section1 .detail_content .plus').click(function () {
+        // input 의 숫자를 1씩 늘려라
+        let num = $('.btn input').val();
+        num++;
+        $('.btn input').val(num);
+        // sub_section1 의 .total_price 의 span 에 num 변수를 곱해라
+        let price2 = 1500;
+        let totalPrice2 = price2 * num;
+        let commaPrice2 = totalPrice2.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        $('.sub_section1 .total_price span').text(commaPrice2+'원');
+    });
+
+    // sub_section2 의 스크롤에 반응하여 등장하는 애니메이션
+    // 클래스가 "scroll_on"인 모든 요소를 선택합니다.
+    const $counters = $(".scroll_on");
+    
+    // 노출 비율(%)과 애니메이션 반복 여부(true/false)를 설정합니다.
+    const exposurePercentage = 100; // ex) 스크롤 했을 때 $counters 컨텐츠가 화면에 100% 노출되면 숫자가 올라갑니다.
+    const loop = true; // 애니메이션 반복 여부를 설정합니다. (true로 설정할 경우, 요소가 화면에서 사라질 때 다시 숨겨집니다.)
+
+    // 윈도우의 스크롤 이벤트를 모니터링합니다.
+    $(window).on('scroll', function() {
+        // 각 "scroll_on" 클래스를 가진 요소에 대해 반복합니다.
+        $counters.each(function() {
+            const $el = $(this);
+    
+            // 요소의 위치 정보를 가져옵니다.
+            const rect = $el[0].getBoundingClientRect();
+            const winHeight = window.innerHeight; // 현재 브라우저 창의 높이
+            const contentHeight = rect.bottom - rect.top; // 요소의 높이
+            
+            // 요소가 화면에 특정 비율만큼 노출될 때 처리합니다.
+            if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
+                $el.addClass('active');
+            }
+            // 요소가 화면에서 완전히 사라졌을 때 처리합니다.
+            if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
+                $el.removeClass('active');
+            }
+        });
+    }).scroll();
+
+
+
+
+
 });
+
