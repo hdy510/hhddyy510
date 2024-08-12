@@ -15,34 +15,16 @@
     <script src="js/js.js"></script>
     <!-- fontawesome 연결 -->
     <script src="https://kit.fontawesome.com/fb97202f89.js" crossorigin="anonymous"></script>
-    <!-- 제이쿼리실행문 -->
-    <script>
-        $(function() { // 보이기 | 숨기기
-            $(window).scroll(function() {
-            if ($(this).scrollTop() > 250) { //250 넘으면 버튼이 보여짐니다. 
-            $('.topBtn').fadeIn();
-            } else {
-            $('.topBtn').fadeOut();
-            }
-            }); // 버튼 클릭시 
-            $(".topBtn").click(function() { 
-                $('html, body').animate({ scrollTop : 0 // 0 까지 animation 이동합니다. 
-                }, 400); // 속도 400 
-                return false; 
-            }); 
-        });
-    </script>
 </head>
-
 <body>
-    <div class="btn">
+    <div class="remote_control">
         <ul>
-            <li class="on"><div></div></li>
-            <li><div></div></li>
-            <li><div></div></li>
-            <li><div></div></li>
-            <li><div></div></li>
-            <li><div></div></li>
+            <li class="on"><div><img src="img/nav_paw_green.png" alt="" class="on"></div></li>
+            <li><div><img src="img/nav_paw_pink.png" alt=""></div></li>
+            <li><div><img src="img/nav_paw_blue.png" alt=""></div></li>
+            <li><div><img src="img/nav_paw_green.png" alt=""></div></li>
+            <li><div><img src="img/nav_paw_pink.png" alt=""></div></li>
+            <li><div><img src="img/nav_paw_blue.png" alt=""></div></li>
         </ul>
     </div>
     <div class="topBtn"><i class="fa-solid fa-angle-up"></i><span>TOP</span></div>
@@ -92,6 +74,15 @@
                         </div>
                     </div>
                 </div>
+                <div class="midBox">
+                    <ul>
+                        <li>#따뜻한후원</li>
+                        <li>#자원봉사체험</li>
+                        <li>#구조된천사들</li>
+                        <li>#반려동물꿀팁</li>
+                        <li>#입양은사랑입니다</li>
+                    </ul>
+                </div>
                 <div class="bottomBox">
                     <ul>
                         <li><a href=""><i class="fa-solid fa-location-dot"></i>오시는 길</a></li>
@@ -100,21 +91,21 @@
                 </div>
             </div>
             <div class="img">
-                    <div class="img_inner">
-                        <div class="imgBox"></div>
-                        <a href=""><span>후원 후기</span></a>
-                    </div>
-                    <div class="img_inner">
-                        <div class="imgBox"></div>
-                        <a href=""><span>입양 후기</span></a>
-                    </div>
-                    <div class="img_inner">
-                        <div class="imgBox"></div>
-                        <a href=""><span>쉼터 이야기</span></a>
-                    </div>
+                <div class="img_inner">
+                    <div class="imgBox"></div>
+                    <a href=""><span>후원 후기</span></a>
+                </div>
+                <div class="img_inner">
+                    <div class="imgBox"></div>
+                    <a href=""><span>입양 후기</span></a>
+                </div>
+                <div class="img_inner">
+                    <div class="imgBox"></div>
+                    <a href=""><span>쉼터 이야기</span></a>
+                </div>
             </div>
             <div class="qna">
-                <a href="">후원 / 입양 / 자원봉사 문의<i class="fa-solid fa-chevron-down"></i></a>
+                <div>후원 / 입양 / 자원봉사 문의<i class="fa-solid fa-chevron-down"></i></div>
             </div>
         </section>
         <section class="section2">
@@ -122,50 +113,56 @@
                 <div></div>
             </div>
             <div class="txtBox">
-                <img src="img/section2_title.png" alt="">
-                <h2>따뜻한 손길을 기다립니다</h2>
-                <p>우리의 소중한 동물 친구들을 위한 작은 도움이 되어주세요.</p>
-                <p>그들은 우리의 사랑과 보호를 기다리고 있습니다.</p>
+                <img src="img/section2_title.png" alt="" class="scroll_on top">
+                <h2 class="scroll_on top">따뜻한 손길을 기다립니다</h2>
+                <p class="scroll_on top">우리의 소중한 동물 친구들을 위한 작은 도움이 되어주세요.</p>
+                <p class="scroll_on top">그들은 우리의 사랑과 보호를 기다리고 있습니다.</p>
             </div>
             <div class="listBox">
-                <div class="support">
+                <div class="support scroll_on">
                     <img src="img/section2_support.png" alt="">
-                    <h3><a href="">금액/물품 후원</a></h3>
-                    <ul>
-                        <li>
-                            <a href=""><span>후원 후기</span><i class="fa-solid fa-angle-right"></i></a>
-                        </li>
-                        <li>
-                            <a href=""><span>후원자 게시판</span><i class="fa-solid fa-angle-right"></i></a>
-                        </li>
-                        <li>
-                            <a href=""><span>후원인 명단</span><i class="fa-solid fa-angle-right"></i></a>
-                        </li>
-                    </ul>
+                    <div class="listBox_wrap">
+                        <h3><a href="">금액/물품 후원</a></h3>
+                        <ul>
+                            <li>
+                                <a href=""><span>후원 후기</span><i class="fa-solid fa-angle-right"></i></a>
+                            </li>
+                            <li>
+                                <a href=""><span>후원자 게시판</span><i class="fa-solid fa-angle-right"></i></a>
+                            </li>
+                            <li>
+                                <a href=""><span>후원인 명단</span><i class="fa-solid fa-angle-right"></i></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="adopt">
+                <div class="adopt scroll_on">
                     <img src="img/section2_adopt.png" alt="">
-                    <h3><a href="">입양 문의</a></h3>
-                    <ul>
-                        <li>
-                            <a href=""><span>입양 절차</span><i class="fa-solid fa-angle-right"></i></a>
-                        </li>
-                        <li>
-                            <a href=""><span>입양 후기</span><i class="fa-solid fa-angle-right"></i></a>
-                        </li>
-                    </ul>
+                    <div class="listBox_wrap">
+                        <h3><a href="">입양 문의</a></h3>
+                        <ul>
+                            <li>
+                                <a href=""><span>입양 절차</span><i class="fa-solid fa-angle-right"></i></a>
+                            </li>
+                            <li>
+                                <a href=""><span>입양 후기</span><i class="fa-solid fa-angle-right"></i></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="volunteer">
+                <div class="volunteer scroll_on">
                     <img src="img/section2_volunteer.png" alt="">
-                    <h3><a href="">자원봉사 예약</a></h3>
-                    <ul>
-                        <li>
-                            <a href=""><span>오시는 길</span><i class="fa-solid fa-angle-right"></i></a>
-                        </li>
-                        <li>
-                            <a href=""><span>자원봉사 후기</span><i class="fa-solid fa-angle-right"></i></a>
-                        </li>
-                    </ul>
+                    <div class="listBox_wrap">
+                        <h3><a href="">자원봉사 예약</a></h3>
+                        <ul>
+                            <li>
+                                <a href=""><span>오시는 길</span><i class="fa-solid fa-angle-right"></i></a>
+                            </li>
+                            <li>
+                                <a href=""><span>자원봉사 후기</span><i class="fa-solid fa-angle-right"></i></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -175,10 +172,10 @@
             </div>
             <div class="txtBox">
                 <img src="img/section3_mail.png" alt="">
-                <h2>후원후기</h2>
-                <p>여러분의 소중한 후원에 깊은 감사를 전합니다.</p>
+                <h2 class="scroll_on top">후원후기</h2>
+                <p class="scroll_on top">여러분의 소중한 후원에 깊은 감사를 전합니다.</p>
             </div>
-            <div class="listBox">
+            <div class="listBox scroll_on">
                 <div class="listBoxDetail">
                     <a href="">
                         <div class="img"></div>
@@ -219,10 +216,10 @@
             </div>
             <div class="txtBox">
                 <img src="img/section4_message.png" alt="">
-                <h2>쉼터이야기</h2>
-                <p>KAPS 쉼터 친구들의 안타까운 사연 및 구조 스토리와 현재 친구들의 사랑스러운 일상을 전합니다.</p>
+                <h2 class="scroll_on top">쉼터이야기</h2>
+                <p class="scroll_on top">KAPS 쉼터 친구들의 안타까운 사연 및 구조 스토리와 현재 친구들의 사랑스러운 일상을 전합니다.</p>
             </div>
-            <div class="listBox">
+            <div class="listBox scroll_on">
                 <div class="left">
                     <i class="fa-solid fa-angle-left"></i>
                 </div>
@@ -532,7 +529,6 @@
                 <a href="">협찬사 링크</a>
             </div>
         </section>
-
         <footer>
             <div class="footer_inner">
                 <div class="logo">

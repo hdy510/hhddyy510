@@ -48,6 +48,26 @@ body {
     position: relative;
 }
 
+/* 스크롤바 커스터마이징 */
+/* width */
+::-webkit-scrollbar {
+    width: 16px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #d8232a;
+    border-radius: 14px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #b81218;
+}
+
+
 /* header 설정 */
 header {
     width: 100%;
@@ -57,7 +77,6 @@ header {
     left: 0;
     z-index: 10;
     backdrop-filter: blur(3px);
-    /* background-color: #fff; */
 }
 header .header_wrap {
     height: 100%;
@@ -66,19 +85,11 @@ header .header_wrap {
     align-items: center;
     padding: 0 80px;
 }
-header h1 {
-}
-header h1 a {
-}
 header h1 img {
     width: 190px;
 }
-header .nav {
-}
 header .nav ul {
     display: flex;
-}
-header .nav li {
 }
 header .nav a {
     display: block;
@@ -89,12 +100,8 @@ header .nav a {
 header .nav a:hover {
     color: #e20e17;
 }
-header .util {
-}
 header .util ul {
     display: flex;
-}
-header .util li {
 }
 header .util a {
     display: block;
@@ -102,6 +109,9 @@ header .util a {
     padding: 10px 15px;
     transition: all 0.5s;
     position: relative;
+}
+header .util li:nth-child(5) a {
+    font-size: 18px;
 }
 header .util a:hover {
     color: #e20e17;
@@ -150,13 +160,11 @@ header .util a span.on {
 
 /* main_section1 설정 */
 .main_section1 {
-    /* 질문 : .vid 에 video 태그를 꽉 채우는 법 */
     position: relative;
 }
 /* video 설정 */
 .vid {
     width: 100%;
-    min-width: 1124px;
     height: 100vh;
     overflow: hidden;
 }
@@ -279,17 +287,9 @@ header .util a span.on {
 .bear.visible {
     transform: scale(1);
 }
-.bear .jellyShape {
-}
-/* 질문 : 같은 클래스인 jelly 라는 새로운 클래스를 일괄적으로 부여하고
-jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
-세부적으로 top, 과 left 값을 덮어쓸 수 없나요? */
 .bear .bearStandard {
     width: 253px;
     position: absolute;
-    /* 질문 : 조부모:relative 부모: absolute 자식:absolute 인 상황이라면
-    자식은 조부모가 아닌 부모를 기준으로 위치를 잡는 것 맞나요?
-    부모는 relative 가 아닌 absolute 를 유지하는 게 맞나요? */
     top: 100px;
     right: 120px;
 }
@@ -404,13 +404,8 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
 }
 /* main_section2 의 listBox 설정 */
 .main_section2 .listBox {
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    align-items: center;
     margin-top: 200px;
-    /* 질문 : z-index 를 쓰기위해 position:absolute 를 주고 top, left 값을 쓰지 않아도
-    괜찮나요? top, left 값을 쓰는 순간 부모인 .main_section2 의 가운데 정렬 속성이 무시되네요 */
     position: absolute;
     top: 240px;
     z-index: 2;
@@ -424,6 +419,7 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
     display: flex;
     flex-wrap: wrap;
     width: 1200px;
+    margin: 0 auto;
 }
 .main_section2 .listBox li {
     width: 300px;
@@ -478,7 +474,6 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
 }
 /* main_section2 listBox 의 텍스트박스 설정 */
 .main_section2 .listBox .txtBox {
-    /* background-color: rgb(234, 160, 160); */
     width: 100%;
     box-sizing: border-box;
     padding: 20px;
@@ -513,7 +508,6 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
 }
 /* main_section2 listBox 의 좋아요와 장바구니 버튼 설정 */
 .main_section2 .like_bag_btn {
-    /* background-color: yellow; */
     position: absolute;
     right: 14px;
     bottom: 10px;
@@ -532,9 +526,11 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
     color: #d8232a;
 }
 /* main_section2 제품 더보기 버튼 설정 */
-.main_section2 .listBox > span {
+.main_section2 .listBox .span_wrap {
+    display: flex;
+    justify-content: center;
 }
-.main_section2 .listBox > span a {
+.main_section2 .listBox .span_wrap span a {
     display: inline-block;
     font-size: 18px;
     color: #fff;
@@ -544,7 +540,7 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
     border-radius: 12px;
     transition: all 0.5s;
 }
-.main_section2 .listBox > span a:hover {
+.main_section2 .listBox span a:hover {
     background-color: #fff;
     color: #d8232a;
 }
@@ -564,11 +560,10 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
 }
 /* main_section3 의 서브박스 설정 */
 .main_section3 .subBox {
-    /* background-color: gold; */
     width: 408px;
     color: #fff;
     position: absolute;
-    left: 120px;
+    left: 180px;
     top: 170px;
 }
 /* 상단텍스트 박스 */
@@ -576,10 +571,10 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
     opacity: 0;
     transition: all 0.5s;
 }
-.main_section3 .topBox.visible {
+/* .main_section3 .topBox.visible {
     opacity: 1;
     transform: translateX(60px);
-}
+} */
 .main_section3 .topBox h2 {
     font-size: 70px;
     font-weight: 700;
@@ -599,20 +594,16 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
 }
 /* 중간텍스트 박스 */
 .main_section3 .middleBox {
-    /* background-color: rgb(128, 128, 222); */
     display: flex;
     opacity: 0;
     transition: all 0.5s;
 }
-.main_section3 .middleBox.visible {
+/* .main_section3 .middleBox.visible {
     opacity: 1;
     transform: translateX(60px);
-}
+} */
 .main_section3 .middleBox .titleBox {
-    /* background-color: rgb(240, 158, 158); */
     width: 148px;
-}
-.main_section3 .middleBox .titleBox li {
 }
 .main_section3 .middleBox .titleBox h4 {
     font-size: 20px;
@@ -627,7 +618,6 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
     padding-left: 14px;
 }
 .main_section3 .middleBox .contentBox {
-    /* background-color: rgb(171, 228, 197); */
     width: 258px;
     position: relative;
 }
@@ -665,10 +655,10 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
     opacity: 0;
     transition: all 0.5s;
 }
-.main_section3 .bottomBox.visible {
+/* .main_section3 .bottomBox.visible {
     opacity: 1;
     transform: translateX(60px);
-}
+} */
 .main_section3 .bottomBox a {
     display: block;
 }
@@ -692,11 +682,11 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
 }
 .main_section3 .bottomBox .imgBox img {
     width: 80px;
+    margin: 0 14px;
     transition: all 0.5s;
 }
 /* main_section3 listBox 의 텍스트박스 설정 */
 .main_section3 .bottomBox .txtBox {
-    /* background-color: rgb(234, 160, 160); */
     width: 250px;
     box-sizing: border-box;
     padding: 20px;
@@ -724,7 +714,6 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
 }
 /* main_section3 listBox 의 좋아요와 장바구니 버튼 설정 */
 .main_section3 .like_bag_btn {
-    /* background-color: yellow; */
     position: absolute;
     display: flex;
     right: 20px;
@@ -781,19 +770,8 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
     background-image: url(img/section4_bg.png);
     background-size: cover;
     background-position: center 20%;
-    /* animation: sepia 6s linear infinite; */
 }
-@keyframes sepia {
-    0% {
-        filter: sepia(0.8);
-    }
-    50% {
-        filter: sepia(0);
-    }
-    100% {
-        filter: sepia(0.8);
-    }
-}
+
 .main_section4_wrap {
     width: 100%;
     height: 100%;
@@ -802,7 +780,7 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
 .main_section4 .topBox .txtBox {
     color: #fff;
     position: absolute;
-    left: 0;
+    left: 5%;
     bottom: 90px;
 }
 .main_section4 .topBox .txtBox h2 {
@@ -896,6 +874,8 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
     filter: brightness(110%);
 }
 .main_section4 .historyMain .txtBox {
+    width: 478px;
+    height: 330px;
 }
 .main_section4 .historyMain .txtBox h3 {
     font-size: 80px;
@@ -917,6 +897,56 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
     width: 478px;
     text-align: justify;
 }
+/* 좌우 버튼 설정 */
+.main_section4 .historyMain>span {
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #d7d7d7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.main_section4 .historyMain>span i {
+    font-size: 28px;
+    color: #d7d7d7;
+}
+.main_section4 .historyMain>span:hover {
+    background-color: #f8f8f8;
+}
+.main_section4 .historyMain .left_btn {
+    left: -150px;
+}
+.main_section4 .historyMain .right_btn {
+    right: -150px;
+}
+/* 처음으로,끝으로 버튼 설정 */
+.main_section4 .historyMain .list {
+    top: 100%;
+    width: 100px;
+    height: 50px;
+    border-radius: 10%;
+    font-size: 18px;
+    background-color: #d8232a;
+    color: #fff;
+    border: 1px solid #d8232a;
+    box-sizing: border-box;
+}
+.main_section4 .historyMain .list:hover {
+    background-color: #fff;
+    color: #d8232a;
+}
+.main_section4 .historyMain .list.first {
+    left: -150px;
+}
+.main_section4 .historyMain .list.last {
+    right: -150px;
+}
+    
 /* historySub 설정 */
 .main_section4 .historySub {
     background-color: #1c1c19;
@@ -937,7 +967,7 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
     align-items: center;
     position: absolute;
     top: 0;
-    left: 180px;
+    left: 880px;
     opacity: 0;
     transition: all 1s;
     transition-delay: 0.3s;
@@ -1002,31 +1032,26 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
 .main_section5 .quality_inner {
     width: 80%;
     height: 80%;
-    /* background-color: beige; */
     display: flex;
     flex-wrap: wrap;
     padding-left: 80px;
 }
 .main_section5 .quality_inner h2 {
-    /* background-color: purple; */
     width: 100%;
     height: 10%;
     margin-bottom: 10px;
 }
 .main_section5 .quality_inner .leftImgBox {
-    /* background-color: green; */
     width: 70%;
     height: 60%;
 }
 .main_section5 .quality_inner .rightTxtBox {
-    /* background-color: blue; */
     width: 18%;
     height: 60%;
     margin-left: 60px;
     box-sizing: border-box;
 }
 .main_section5 .quality_inner .bottomImgBox {
-    /* background-color: yellow; */
     width: 100%;
     height: 30%;
     padding-top: 40px;
@@ -1083,7 +1108,6 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
     left: 50%;
     font-size: 28px;
     cursor: pointer;
-    /* background-color: red; */
     width: 80px;
     height: 50px;
     margin-left: -40px;
@@ -1096,8 +1120,7 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
 }
 
 /* 품질 카테고리 세부 설정 */
-.main_section5 .rightTxtBox li {
-}
+.main_section5 .quality_inner .rightTxtBox ul {}
 .main_section5 .quality_inner .rightTxtBox a {
     font-size: 24px;
     color: #fff;
@@ -1218,17 +1241,11 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
 /* topImage 설정 */
 .main_section6 .topImage {
     opacity: 0;
-    /* animation: hueRotate 10s linear infinite; */
     transition: all 0.5s;
 }
 .main_section6 .topImage.visible {
     opacity: 1;
 }
-/* @keyframes hueRotate {
-    0% {filter: hue-rotate(0);}
-    50% {filter: hue-rotate(180deg);}
-    100% {filter: hue-rotate(0);}
-} */
 .main_section6 .topImage img {
     width: 140px;
 }
@@ -1266,7 +1283,6 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    /* background-color: beige; */
     position: relative;
     opacity: 0;
     transition: all 0.5s;
@@ -1312,8 +1328,6 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
     opacity: 1;
 }
 /* 숨겨진 제품정보 설정 */
-.main_section6 .listBox .reviewHide {
-}
 .main_section6 .bottomBox {
     position: relative;
     margin-top: 16px;
@@ -1329,7 +1343,6 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: #a64b4b; */
     transition: all 0.5s;
 }
 .main_section6 .bottomBox .imgBox img {
@@ -1338,7 +1351,6 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
 }
 /* main_section6 bottomBox 의 텍스트박스 설정 */
 .main_section6 .bottomBox .txtBox {
-    /* background-color: rgb(234, 160, 160); */
     /* width: 250px; */
     box-sizing: border-box;
     margin-left: 20px;
@@ -1373,7 +1385,6 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
 }
 /* main_section6 listBox 의 좋아요와 장바구니 버튼 설정 */
 .main_section6 .like_bag_btn {
-    /* background-color: yellow; */
     position: absolute;
     display: flex;
     right: 0px;
@@ -1393,7 +1404,6 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
 .main_section6 .like_bag_btn span i:hover {
     color: #d8232a;
 }
-/* 질문 : .main_section3, .main_section6 뒤에 .bottomBox 가 들어가면 클릭후 아이콘에서 벗어나면 빨간색에서 다시 회색을 변하는 이유? */
 /* 이미지 설정 */
 .main_section6 .listBox .img {
     margin-bottom: 30px;
@@ -1414,8 +1424,6 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
     object-fit: cover;
 }
 /* 텍스트 설정 */
-.main_section6 .listBox .txt {
-}
 .main_section6 .listBox .txt h4 {
     font-size: 16px;
     font-weight: 400;
@@ -1423,8 +1431,6 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
 }
 .main_section6 .listBox .txt .writer {
     margin-bottom: 12px;
-}
-.main_section6 .listBox .txt .writer span {
 }
 .main_section6 .listBox .txt .writer span:nth-child(1) {
     color: #a8a8a8;
@@ -1434,14 +1440,10 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
     color: #616161;
     font-size: 16px;
 }
-.main_section6 .listBox .txt .review {
-}
 .main_section6 .listBox .txt .review i {
     color: #fde700;
 }
 /* main_section6 리뷰 더보기 버튼 설정 */
-.main_section6 .listBox > span {
-}
 .main_section6 .listBox > span a {
     display: inline-block;
     font-size: 18px;
@@ -1467,13 +1469,11 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
     height: 730px;
 }
 .sub_section1_wrap {
-    /* background-color: rgb(200, 200, 255); */
     width: 100%;
     height: 100%;
 }
 /* 카테고리 브레드크럼 */
 .sub_section1_wrap .category {
-    /* background-color: #c2ffa3; */
     display: flex;
     align-items: center;
     width: 1080px;
@@ -1487,24 +1487,19 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
     font-size: 16px;
     color: #a8a8a8;
     font-weight: 400;
-    /* background-color: #ffc7c7; */
 }
 .sub_section1_wrap .category h2 i {
     font-size: 16px;
     color: #a8a8a8;
     padding-left: 4px;
 }
-.sub_section1_wrap .category h3 {
-}
 .sub_section1_wrap .category h3 a {
     font-size: 16px;
     color: #616161;
     font-weight: 400;
-    /* background-color: #4ccca1b1; */
 }
 /* 제품정보 설정 */
 .sub_section1_wrap .pro {
-    /* background-color: rgb(206, 255, 193); */
     width: 100%;
     margin-top: 36px;
 }
@@ -1515,7 +1510,6 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
 /* 제품 대표이미지 (proimg) 설정 */
 .sub_section1_wrap .proimg {
     padding-right: 100px;
-    /* background-color: rgb(231, 255, 145); */
 }
 .sub_section1_wrap .proimg .imgBox {
     width: 470px;
@@ -1560,7 +1554,6 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
 /* 제품 정보 (protxt) 설정 */
 .sub_section1_wrap .protxt {
     width: 30%;
-    /* background-color: rgb(255, 206, 206); */
 }
 /* topBox 설정 */
 .sub_section1_wrap .protxt .topBox {
@@ -1579,8 +1572,6 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
     font-weight: 700;
     color: #d8232a;
 }
-.sub_section1_wrap .protxt .topBox .review {
-}
 .sub_section1_wrap .protxt .topBox .review i {
     color: #fde700;
 }
@@ -1594,8 +1585,6 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
 .sub_section1_wrap .protxt .detail .detail_title {
     width: 20%;
 }
-.sub_section1_wrap .protxt .detail .detail_title ul {
-}
 .sub_section1_wrap .protxt .detail .detail_title li {
     font-size: 16px;
     color: #a8a8a8;
@@ -1606,8 +1595,6 @@ jelly 에게 공통적으로 position:absolute 와 top:0; left:0 을 준 후
 }
 .sub_section1_wrap .protxt .detail .detail_content {
     width: 80%;
-}
-.sub_section1_wrap .protxt .detail .detail_content ul {
 }
 .sub_section1_wrap .protxt .detail .detail_content li {
     font-size: 16px;
@@ -1667,22 +1654,30 @@ input[type='number'] {
     cursor: pointer;
     font-size: 20px;
 }
-.sub_section1_wrap .protxt .share {
+.sub_section1_wrap .protxt .sns {}
+.sub_section1_wrap .protxt .sns p {
     font-size: 16px;
     font-weight: 700;
     color: #a8a8a8;
-    cursor: pointer;
     display: inline;
 }
-.sub_section1_wrap .protxt .share i {
-    padding-left: 4px;
-    margin-top: 2px;
+.sub_section1_wrap .protxt .sns ul {
+    display: flex;
+    padding-top: 10px;
 }
+.sub_section1_wrap .protxt .sns li {
+    margin: 8px;
+    cursor: pointer;
+}
+.sub_section1_wrap .protxt .sns li:hover {
+    transform: scale(1.1);
+}
+
 /* middleBox 설정 */
 .sub_section1_wrap .protxt .middleBox {
-    /* background-color: rgb(255, 255, 183); */
-    height: 15%;
+    height: 40px;
     text-align: right;
+    margin-top: 55px;
 }
 .sub_section1_wrap .protxt .middleBox .total_price {
     font-size: 20px;
@@ -1710,17 +1705,32 @@ input[type='number'] {
     font-size: 16px;
     font-weight: 700;
     color: #d8232a;
-    padding: 16px 40px;
     background-color: #fff;
     border: 1px solid #d8232a;
     border-radius: 10px;
     cursor: pointer;
+    width: 130px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sub_section1_wrap .protxt .bottomBox li.on {
+    background-color: #fff2f2;
+    color: #d8232a;
 }
 .sub_section1_wrap .protxt .bottomBox li:nth-child(3) {
     background-color: #d8232a;
-    color: #fff;
+    border-radius: 10px;
+    height: 100%;
 }
-.sub_section1_wrap .protxt .bottomBox li i {
+.sub_section1_wrap .protxt .bottomBox li:nth-child(3) a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+    color: #fff;
 }
 /* 버튼 hover transition */
 .sub_section1_wrap .protxt .bottomBox li:nth-child(1):hover {
@@ -1742,13 +1752,11 @@ input[type='number'] {
     align-items: center;
     position: relative;
     overflow: hidden;
-    /* background-color: #ffffb9; */
 }
 .sub_section2_wrap {
     width: 100%;
     height: 100%;
     position: relative;
-    /* background-color: #ffdfdf; */
 }
 /* sub_section2 의 제목 설정  */
 .sub_section2_wrap h5 {
@@ -1765,20 +1773,17 @@ input[type='number'] {
     align-items: center;
     position: absolute;
     z-index: 2;
-    /* background-color: #637dff; */
 }
 .sub_section2 .listBox .listBox_wrap {
     position: relative;
-    width: 83.4%;
+    width: 1200px;
     height: 500px;
-    /* background-color: #ee5151; */
     overflow: hidden;
 }
 .sub_section2 .listBox ul {
     display: flex;
     /* flex-wrap: wrap; */
     /* width: 1200px; */
-    /* background-color: #c9fd1e; */
     position: absolute;
     top: 0;
     left: 0;
@@ -1791,7 +1796,6 @@ input[type='number'] {
     margin-bottom: 70px;
     box-sizing: border-box;
     position: relative;
-    /* background-color: yellow; */
 }
 .sub_section2 .listBox li > a {
     display: block;
@@ -1868,19 +1872,16 @@ input[type='number'] {
 }
 /* sub_section2 listBox 의 텍스트박스 설정 */
 .sub_section2 .listBox .txtBox {
-    /* background-color: rgb(234, 160, 160); */
     width: 200px;
     box-sizing: border-box;
     padding: 10px;
     margin-top: 10px;
     position: relative;
-    /* background-color: red; */
 }
 .sub_section2 .listBox .txtBox h4 {
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 8px;
-    /* background-color: blue; */
 }
 .sub_section2 .listBox .price {
     font-size: 20px;
@@ -1905,7 +1906,6 @@ input[type='number'] {
 }
 /* sub_section2 listBox 의 좋아요와 장바구니 버튼 설정 */
 .sub_section2 .like_bag_btn {
-    /* background-color: yellow; */
     position: absolute;
     right: 14px;
     bottom: 10px;
@@ -1933,12 +1933,10 @@ input[type='number'] {
 }
 /* 제품 정보 설정 */
 .sub_section3 .product_detail {
-    /* background-color: rgb(255, 255, 205); */
     width: 70%;
     height: 100%;
 }
 .sub_section3 .product_review {
-    /* background-color: rgb(208, 255, 236); */
     width: 30%;
     height: 100%;
 }
@@ -1947,7 +1945,6 @@ input[type='number'] {
     font-weight: 700;
 }
 .sub_section3 .product_detail .imgBox {
-    /* background-color: rgb(255, 211, 211); */
     height: 100%;
     position: relative;
 }
@@ -1993,7 +1990,6 @@ input[type='number'] {
 
 /* 리뷰 설정 */
 .product_review .reviewBox {
-    /* background-color: rgb(255, 217, 217); */
     padding: 40px;
     border: 1px solid #d7d7d7;
     border-radius: 18px;
@@ -2153,8 +2149,6 @@ input[type='number'] {
     /* padding: 0 100px; */
     height: 500px;
 }
-.sub_section4 .infoBox2 .txtBox p {
-}
 .sub_section4 .infoBox2 .txtBox p:nth-child(1) {
     font-size: 36px;
     font-weight: 600;
@@ -2305,8 +2299,7 @@ input[type='number'] {
 .sub_section5 .txtBox table tr td {
     border: 1px solid #f9f9f9;
 }
-.sub_section5 .txtBox table tr th,
-td {
+.sub_section5 .txtBox table tr th,td {
     vertical-align: top;
     text-align: justify;
     padding: 12px 15px;
@@ -2327,6 +2320,11 @@ td {
 }
 
 /* 스크롤에 반응하여 등장하는 애니메이션을 위한 설정 */
+.scroll_on.top {
+    opacity: 0;
+    transform: translate(0, -50px);
+    transition: all 1s;
+}
 .scroll_on.bottom {
     opacity: 0;
     transform: translate(0, 50px);
@@ -2383,7 +2381,6 @@ td {
     margin-top: 40px;
 }
 
-.loginPage .loginBox form {}
 .loginPage .loginBox form fieldset {
     border: none;
     margin-bottom: 30px;
@@ -2434,7 +2431,7 @@ td {
     font-weight: 400;
     cursor: pointer;
 }
-.option input + label em {
+.option label em {
     display: inline-block;
     width: 25px;
     height: 25px;
@@ -2485,9 +2482,6 @@ td {
     font-size: 16px;
     padding: 4px 10px;
 }
-.loginPage .loginBox .bottomBox .findID {}
-.loginPage .loginBox .bottomBox .findPassword {}
-.loginPage .loginBox .bottomBox .signUp {}
 
 .loginPage .imgBox {
     position: absolute;
@@ -2675,18 +2669,16 @@ footer .snsBox a img {
 /* popup_bag2 (장바구니 팝업창 설정) */
 .popup_bag2 {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 608px;
-    height: 600px;
-    margin-top: -300px;
-    margin-left: -304px;
     z-index: 100;
     display: none;
+    width: 608px;
+    height: 700px;
+    top: 50%;
+    left: 50%;
+    margin-top: -350px;
+    margin-left: -304px;
 }
 .popup_bag2 .popup {
-    width: 100%;
-    height: 100%;
     background-color: #fff;
     border: 1px solid #d7d7d7;
     border-radius: 18px;
@@ -2694,6 +2686,8 @@ footer .snsBox a img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
     position: relative;
 }
 .popup_bag2 .popup h4 {
@@ -2701,10 +2695,8 @@ footer .snsBox a img {
     font-weight: 700;
     margin-bottom: 30px;
     width: 530px;
-    /* background-color: red; */
 }
 .popup_bag2 .popup>span {
-    /* background-color: yellowgreen; */
     font-size: 20px;
     color: #a8a8a8;
     font-weight: 600;
@@ -2719,26 +2711,22 @@ footer .snsBox a img {
     width: 530px;
     height: 400px;
     margin-bottom: 20px;
-    overflow: hidden;
+    overflow-y: scroll;
 }
 .popup_bag2 .popup .bagBox>p {
     font-size: 18px;
     color: #616161;
     padding-left: 200px;
     padding-bottom: 20px;
-    /* background-color: yellow; */
 }
 .popup_bag2 .popup .bagBox>p em {
     font-style: normal;
-    margin-left: 202px;
-    /* background-color: blue; */
+    margin-left: 152px;
 }
 .popup_bag2 .popup .bagBox .purchase_list {
     width: 100%;
-    /* background-color: blue; */
 }
 .popup_bag2 .popup .bagBox .purchase_list li {
-    /* background-color: yellow; */
     width: 100%;
     height: 90px;
     display: flex;
@@ -2749,7 +2737,6 @@ footer .snsBox a img {
     height: 44px;
     margin-right: 10px;
     cursor: pointer;
-    /* background-color: red; */
 }
 .popup_bag2 .popup .bagBox .purchase_list .product {
     width: 50px;
@@ -2757,22 +2744,29 @@ footer .snsBox a img {
     cursor: pointer;
 }
 .popup_bag2 .popup .bagBox .purchase_list span {
-    /* background-color: green; */
-    width: 322px;
+    width: 272px;
     cursor: pointer;
-
 }
 .popup_bag2 .popup .bagBox .purchase_list div  {
-    /* background-color: blue; */
     width: 110px;
     text-align: center;
 }
 .popup_bag2 .popup .bagBox .purchase_list b {
-    /* background-color: purple; */
     width: 80px;
     font-size: 18px;
     font-weight: 700;
     text-align: right;
+}
+/* 총상품금액 설정 */
+.popup_bag2 .popup .total_price {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+.popup_bag2 .popup .total_price em {
+    font-style: normal;
+    padding-left: 20px;
+    color: #d8232a;
 }
 /* 버튼설정 */
 .popup_bag2 .popup .popup_bag2_button {
@@ -2781,9 +2775,6 @@ footer .snsBox a img {
 .popup_bag2 .popup .popup_bag2_button li {
     margin: 0 10px;
     text-align: center;
-}
-.popup_bag2 .popup .popup_bag2_button li:nth-child(1) {
-    width: 141px;
 }
 .popup_bag2 .popup .popup_bag2_button li span {
     display: block;
@@ -2798,7 +2789,7 @@ footer .snsBox a img {
 .popup_bag2 .popup .popup_bag2_button li span:hover {
     background-color: #fff2f2;
 }
-.popup_bag2 .popup .popup_bag2_button li em {
+.popup_bag2 .popup .popup_bag2_button li a {
     display: block;
     font-size: 16px;
     font-style: normal;
@@ -2809,7 +2800,7 @@ footer .snsBox a img {
     border-radius: 8px;
     cursor: pointer;
 }
-.popup_bag2 .popup .popup_bag2_button li em:hover {
+.popup_bag2 .popup .popup_bag2_button li a:hover {
     background-color: #b81218;
 }
 
@@ -2872,7 +2863,6 @@ footer .snsBox a img {
 
 /* popup_vid (비디오 팝업창 설정) */
 .popup_vid {
-    /* background-color: red; */
     width: 800px;
     height: auto;
     position: fixed;
@@ -2934,5 +2924,230 @@ footer .snsBox a img {
     .sub_section5_wrap {
         max-width: 1440px;
         margin: 0 auto;
+    }
+}
+/* 1420px 이하 main_section1 .vid 여백 해결 */
+@media (max-width: 1420px) {
+    .main_section1 .vid {
+        height: auto;
+    }
+}
+/* 1350px 이하 설정 */
+@media (max-width: 1350px) {
+    /* 곰 캐릭터 사라지기 */
+    .main_section2_wrap .bear {
+        display: none;
+    }
+}
+/* 1280px ~ 1349px 설정 */
+@media (min-width: 1280px) and (max-width: 1349px) {
+    
+}
+/* 데스크탑 구간. 769px ~ 1279px 설정 */
+@media (min-width: 769px) and (max-width: 1279px) {
+    /* main_section2 설정 */
+    .main_section2 {
+        height: 2726px;
+    }
+    .main_section2 .listBox ul {
+        width: 600px;
+    }
+    /* main_section4 설정 */
+    .main_section4 {
+        height: 2550px;
+    }
+    .main_section4 .intro {
+        width: 70%;
+        flex-direction: column;
+    }
+    .main_section4 .historyMain {
+        width: 50%;
+        flex-direction: column;
+    }
+    .main_section4 .historySub {
+        width: 1700px;
+    }
+    /* .main_section5 설정 */
+    .main_section5 .quality_inner .rightTxtBox ul {
+        display: flex;
+        width: 500px;
+    }
+    .main_section5 .quality_inner .rightTxtBox li {
+        width: 70px;
+    }
+   
+}
+/* 950px 이하 여백 해결 */
+@media(max-width: 950px) {
+    
+}
+/* 태블릿 구간. 481px ~ 768px 설정 */
+@media (min-width: 481px) and (max-width: 768px) {
+    /* main_section2 설정 */
+    .main_section2 .titleBox img {
+        width: 85%;
+    }
+    .main_section2 .titleBox p {
+        font-size: 20px;
+        margin-top: 60px;
+    }
+    .main_section2 {
+        height: 4926px;
+    }
+    .main_section2 .listBox ul {
+        width: 300px;
+    }
+    /* main_section3 설정 */
+    .main_section3 .topBox h2 {
+        font-size: 40px;
+    }
+    .main_section3 .subBox {
+        width: 70%;
+        left: 15%;
+    }
+    .main_section3 .middleBox .contentBox {
+        width: 70%;
+    }
+    .main_section3 .bottomBox .imgBox {
+        width: 100%;
+    }
+    /* main_section4 설정 */
+    .main_section4 {
+        height: 2550px;
+    }
+    .main_section4 .intro {
+        width: 70%;
+        flex-direction: column;
+    }
+    .main_section4 .historyMain {
+        width: 50%;
+        flex-direction: column;
+    }
+    .main_section4 .historyMain .imgBox {
+        width: 300px;
+        height: auto;
+    }
+    .main_section4 .historyMain .txtBox {
+        width: 300px;
+        height: 450px;
+        margin-top: 20px;
+    }
+    .main_section4 .historyMain .txtBox p {
+        width: 300px;
+    }
+    .main_section4 .historyMain>span {
+        width: 48px;
+        height: 48px;
+    }
+    .main_section4 .historyMain .left_btn {
+        left: -97px;
+    }
+    .main_section4 .historyMain .right_btn {
+        right: -97px;
+    }
+    .main_section4 .historyMain .list.first {
+        left: 190px;
+    }
+    .main_section4 .historyMain .list.last {
+        right: 190px;
+    }
+    .main_section4 .historySub {
+        width: 1700px;
+    }
+}
+/* 모바일 구간. 480px 이하 설정 */
+@media (max-width: 480px) {
+    /* main_section2 설정 */
+    .main_section2 .titleBox img {
+        width: 85%;
+    }
+    .main_section2 .titleBox p {
+        font-size: 20px;
+        margin-top: 60px;
+    }
+    .main_section2 {
+        height: 4926px;
+    }
+    .main_section2 .listBox ul {
+        width: 300px;
+    }
+    /* main_section3 설정 */
+    .main_section3 {
+        height: 1354px;
+    }
+    .main_section3 .subBox {
+        width: 70%;
+        top: 100px;
+        left: 15%;
+    }
+    .main_section3 .topBox h2 {
+        font-size: 40px;
+    }
+    .main_section3 .bottomBox {
+        margin-top: 300px;
+    }
+    .main_section3 .bottomBox .imgBox {
+        width: 100%;
+        height: 200px;
+    }
+    .main_section3 .bottomBox .txtBox {
+        width: 200px;
+        padding: 0;
+        margin-left: 0px;
+    }
+    /* main_section4 설정 */
+    .main_section4 {
+        height: 3050px;
+    }
+    .main_section4 .topBox .txtBox h2 {
+        font-size: 40px;
+    }
+    .main_section4 .topBox .txtBox h2 em {
+        font-size: 120px;
+    }
+    .main_section4 .intro {
+        width: 70%;
+        flex-direction: column;
+    }
+    .main_section4 .historyMain {
+        width: 50%;
+        flex-direction: column;
+    }
+    .main_section4 .historyMain .imgBox {
+        width: 200px;
+        height: auto;
+    }
+    .main_section4 .historyMain .txtBox {
+        width: 200px;
+        height: 500px;
+        margin-top: 20px;
+    }
+    .main_section4 .historyMain .txtBox h3 {
+        font-size: 48px;
+    }
+    .main_section4 .historyMain .txtBox h4 {
+        font-size: 32px;
+    }
+    .main_section4 .historyMain .txtBox p {
+        width: 200px;
+    }
+    .main_section4 .historyMain>span {
+        width: 48px;
+        height: 48px;
+    }
+    .main_section4 .historyMain .left_btn {
+        left: -77px;
+    }
+    .main_section4 .historyMain .right_btn {
+        right: -77px;
+    }
+    .main_section4 .historyMain .list.first {
+        left: 120px;
+    }
+    .main_section4 .historyMain .list.last {
+        right: 120px;
+    }
+    .main_section4 .historySub {
+        width: 1700px;
     }
 }

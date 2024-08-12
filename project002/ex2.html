@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            vertical-align: bottom;
+        }
+
+        header {
+            background-color: rgb(148, 212, 149);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        header nav ul {
+            display: flex;
+        }
+        header nav ul li a {
+            display: block;
+            padding: 20px;
+        }
+        header nav ul li a:hover {
+            color: rgb(241, 255, 242);
+        }
+        header .util ul {
+            display: flex;
+        }
+        header .util ul li a {
+            display: block;
+            padding: 10px;
+            position: relative;
+        }
+        header .util ul li span {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            background-color: red;
+            border-radius: 10px;
+            color: #fff;
+            text-align: center;
+            line-height: 1.8;
+            top: 0px;
+            right: -5px;
+        }
+        .wrap {
+            padding: 20px;
+        }
+        section {
+            background-color: #eee;
+            padding: 30px 0;
+        }
+        section h1 {}
+        article {}
+        article ul {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+        }
+        article li {
+            width: 20%;
+            height: 250px;
+            background-color: #fff;
+        }
+        article li a {
+            display: block;
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+        article li p {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        article li p img {
+            width: 100%;
+            transform: translateY(-12px);
+        }
+        article li span {
+            position: absolute;
+            z-index: 3;
+            right: 10px;
+            bottom: 10px;
+            background-color: rgb(120, 182, 121);
+            border-radius: 5px;
+            padding: 10px;
+            color: #fff;
+            transition: all 0.3s;
+        }
+        article li span:hover {
+            background-color: rgb(205, 250, 206);
+            color: rgb(36, 114, 36);
+        }
+        article li .price {
+            position: absolute;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            bottom: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            font-weight: bold;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function(){
+            // 장바구니를 클릭하면 .shop 이 보여라
+            $('.shopcart').click(function(e){
+                e.preventDefault();
+                $('.shop').css({'display':'flex'});
+            });
+            // .shop 에 있는 .reset 을 클릭하면 .shop 이 사라져라
+            $('.reset').click(function(){
+                $('.shop').css({'display':'none'});
+            });
+            // .cart 를 클릭했을 때 숫자(변수)가 증가하게 만들고
+            // 그 숫자를 .shopcart 의 span 에 출력해라
+            let i = 0;
+            $('.cart').click(function(e){
+                e.preventDefault();
+                i++;
+                console.log(i);
+                $('.shopcart').find('span').text(i);
+                // .product 의 span 에 출력해라
+                $('.product').find('span').text(i);
+
+                // 나의 부모 안에서 .price 를 찾아서 금액을 출력해라
+                let txt = $(this).parent().find('.price').text();
+                let timg = $(this).parent().find('p').html();
+                // .shop 의 .list 에 txt 를 계속 누적되게 출력해라
+                // $('.shop').find('.list').append('<div>'+txt+'</div>');
+                
+                // 나의 부모안에서 p 안에 있는 img 의 태그를 출력해라
+                console.log(timg);
+                // .shop 의 .list 에 timg 를 계속 누적되게 출력해라
+                $('.shop').find('.list').append('<div>'+(timg+txt)+'</div>');
+
+
+
+            })
+            // .empty 를 클릭하면 장바구니의 숫자가 0이 되고
+            // .shopcart 의 span 에 출력해라
+            // .product 의 span 에 출력해라
+            $('.empty').click(function(){
+                i = 0;
+                $('.shopcart').find('span').text(i);
+                $('.product').find('span').text(i);
+
+                // .shop 의 .list 를 비워라
+                $('.shop').find('.list').empty();
+            });
+
+
+
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>logo</h1>
+        <nav>
+            <ul>
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+            </ul>
+        </nav>
+        <div class="util">
+            <ul>
+                <li><a href="" class="shopcart">장바구니<span>0</span></a></li>
+                <li><a href="">로그인</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="wrap">
+        <section class="product1">
+            <h1>Title</h1>
+            <article>
+                <ul>
+                    <li><a href="">
+                        <p><img src="https://picsum.photos/id/305/200/300" alt=""></p>
+                        <span class="cart">담기</span>
+                        <div class="price">10,000원</div>
+                    </a></li>
+                    <li><a href="">
+                        <p><img src="https://picsum.photos/id/324/200/300" alt=""></p>
+                        <span class="cart">담기</span>
+                        <div class="price">20,000원</div>
+                    </a></li>
+                    <li><a href="">
+                        <p><img src="https://picsum.photos/id/340/200/300" alt=""></p>
+                        <span class="cart">담기</span>
+                        <div class="price">30,000원</div>
+                    </a></li>
+                    <li><a href="">
+                        <p><img src="https://picsum.photos/id/353/200/300" alt=""></p>
+                        <span class="cart">담기</span>
+                        <div class="price">40,000원</div>
+                    </a></li>
+                </ul>
+            </article>
+        </section>
+    </div>
+    <div class="shop">
+        <div class="product">
+            <h2>제품 리스트</h2>
+            <div class="list">
+                
+            </div>
+            <p>장바구니 갯수: <span>00</span></p>
+        </div>
+        <div class="btn">
+            <button class="login"><a href="login.html">결제하기</a></button>
+            <button class="reset">되돌아가기</button>
+            <button class="empty">장바구니 비우기</button>
+        </div>
+    </div>
+    <style>
+        .shop {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.5);
+            left: 0;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 999;
+            display: none;
+        }
+        .product {
+            width: 500px;
+            height: 300px;
+            background-color: #fff;
+            overflow-y: scroll;
+        }
+        .product .list div {
+            color: #69c779;
+        }
+        .product .list img {
+            width: 50px;
+            height: 50px;
+        }
+        .btn {
+            margin-top: 20px;
+        }
+        .btn button {
+            padding: 10px 15px;
+            border-radius: 3px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</body>
+</html>

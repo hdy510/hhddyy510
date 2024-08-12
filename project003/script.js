@@ -205,6 +205,11 @@ $(document).ready(function(){
     })
     // btn_back 과 btn_next 설정
     // btn_back 과 btn_next 가 profile_main 에선 안보이고, profile_scroll 에서 보이게 하기
+        // .home 의 .go_profile 을 클릭할 때, .btn_back 과 .btn_next 사라지게 설정
+        $('.home .go_profile').click(function(){
+            $('.btn_back').hide()
+            $('.btn_next').hide()
+        })
         // nav 의 profile 을 클릭할 때, .btn_back 과 .btn_next 사라지게 설정
     $('nav li').eq(1).click(function(){
         $('.btn_back').hide()
@@ -457,20 +462,20 @@ $(document).ready(function(){
     
 
     // Video 설정
-    // .video 의 .txtBox 의 li 를 클릭할 때, .tvBox 의 source 의 src 속성 주소가 바뀌어라
+    // .video 의 .txtBox 의 li 를 클릭할 때, .mv 의 source 의 src 속성 주소가 바뀌어라
     $('.video .txtBox li').click(function(){
         let videoIndex = $(this).index();
-        let videoPlayer = $('.video .tvBox video')[0];
+        let videoPlayer = $('.video .mv')[0];
         if (videoIndex == 0) {
-            $('.video .tvBox source').attr('src','vid/rightnow.mp4')
+            $('.video .mv source').attr('src','vid/rightnow.mp4')
         } else if (videoIndex == 1) {
-            $('.video .tvBox source').attr('src','vid/supernatural.mp4')
+            $('.video .mv source').attr('src','vid/supernatural.mp4')
         } else if (videoIndex == 2) {
-            $('.video .tvBox source').attr('src','vid/bubblegum.mp4')
+            $('.video .mv source').attr('src','vid/bubblegum.mp4')
         } else if (videoIndex == 3) {
-            $('.video .tvBox source').attr('src','vid/howsweet.mp4')
+            $('.video .mv source').attr('src','vid/howsweet.mp4')
         } else if (videoIndex == 4) {
-            $('.video .tvBox source').attr('src','vid/newjeans.mp4')
+            $('.video .mv source').attr('src','vid/newjeans.mp4')
         }
         // 변경된 소스로 비디오를 다시 로드
         videoPlayer.load();

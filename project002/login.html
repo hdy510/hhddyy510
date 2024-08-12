@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HARIBO - Login</title>
+    <!-- fontawesome 연결 -->
+    <script src="https://kit.fontawesome.com/fb97202f89.js" crossorigin="anonymous"></script>
+    <!-- 네이버 로그인 연결 -->
+    <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <style>
+        /* 언어설정 */
+        @charset "UTF-8";
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul, ol {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            vertical-align: bottom;
+        }
+        body {
+            font-family: 'Pretendard-Regular';
+        }
+
+        /* header 설정 */
+        header {
+            width: 100%;
+            height: 100px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            backdrop-filter: blur(3px);
+        }
+        header .header_wrap {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 80px;
+        }
+        header h1 img {
+            width: 190px;
+        }
+        header .nav ul {
+            display: flex;
+        }
+        header .nav a {
+            display: block;
+            font-size: 18px;
+            padding: 10px 30px;
+            transition: all 0.5s;
+        }
+        header .nav a:hover {
+            color: #e20e17;
+        }
+        header .util ul {
+            display: flex;
+        }
+        header .util a {
+            display: block;
+            font-size: 22px;
+            padding: 10px 15px;
+            transition: all 0.5s;
+            position: relative;
+        }
+        header .util a:hover {
+            color: #e20e17;
+        }
+        header .util a span {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: #e20e17;
+            color: #fff;
+            font-size: 14px;
+            position: absolute;
+            top: 1px;
+            right: 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+        }
+        header .util a span.on {
+            opacity: 1;
+        }
+
+        /* 로그인페이지 설정 */
+        .loginPage {
+            background-color: white;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        .loginPage .loginBox {
+            width: 480px;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #d7d7d7;
+            border-radius: 18px;
+            box-shadow: 0px 0px 13px 0px rgba(215,215,215,0.3);
+            transition: all 0.5s;
+            margin-top: 160px;
+        }
+        /* hover transition */
+        .loginPage .loginBox:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 13px 0px rgba(227, 227, 227, 0.5);
+        }
+        .loginPage .loginBox h4 {
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+
+        .loginPage .loginBox form fieldset {
+            border: none;
+            margin-bottom: 30px;
+        }
+        .loginPage .loginBox form fieldset div {
+            width: 400px;
+            height: 63px;
+            background-color: #fff;
+            border: 1px solid #ebebeb;
+            display: flex;
+            align-items: center;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            transition: all 0.2s;
+        }
+        /* hover transition */
+        .loginPage .loginBox form fieldset div:hover {
+            box-shadow: 0px 4px 9px 0px rgba(215,215,215,0.3);
+        }
+        .loginPage .loginBox form fieldset input {
+            border: none;
+            width: 90%;
+            height: 80%;
+            font-size: 17px;
+            margin-left: 20px;
+        }
+        .loginPage .loginBox form fieldset input:focus {
+            outline: none;
+        } 
+
+        .loginPage .loginBox form .option {
+            display: flex;
+            justify-content: center;
+        }
+        .loginPage .loginBox form .option div {
+            margin: 0 20px;
+            display: flex;
+            align-items: center;
+        }
+        .option input {
+            display: none;
+        }
+        .option label {
+            font-size: 16px;
+            color: #a8a8a8;
+            padding-left: 10px;
+            font-weight: 400;
+            cursor: pointer;
+        }
+        .option label em {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            margin-right: 5px;
+            background-image: url(img/login_checkbox.png);
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            vertical-align: top;
+        }
+        .option input:checked + label em {
+            background-position: -29px 0;
+        }
+
+        .loginPage .loginBox form .loginBtn_wrap {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .loginPage .loginBox form .loginBtn {
+            width: 280px;
+            height: 50px;
+            background-color: #d8232a;
+            border-radius: 8px;
+        }
+        .loginPage .loginBox form .loginBtn:hover {
+            background-color: #b81218;
+        }
+        .loginPage .loginBox form .loginBtn input {
+            border: none;
+            color: #fff;
+            background-color: transparent;
+            border-radius: 12px;
+            font-size: 20px;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        .loginPage .loginBox form .wrap {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+       
+        .loginPage .loginBox .bottomBox {
+            display: flex;
+        }
+        .loginPage .loginBox .bottomBox ul {
+            display: flex;
+        }
+        .loginPage .loginBox .bottomBox li {
+            margin: 0 10px;
+        }
+        .loginPage .loginBox .bottomBox a {
+            display: block;
+            color: #a8a8a8;
+            font-size: 16px;
+            padding: 4px 10px;
+        }
+
+        .loginPage .imgBox {
+            position: absolute;
+            right: 5%;
+            bottom: 5%;
+        }
+        .loginPage .imgBox img {
+            width: 300px;
+            opacity: 0.2;
+        }
+
+        /* 미디어쿼리 영역 설정 ################################### */
+        /* 와이드데스크탑 영역 설정 */
+        @media (min-width: 1440px) {
+            .header_wrap {
+                max-width: 1440px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header_wrap">
+            <h1><a href="index.html" title="홈으로"><img src="img/haribo-logo.png" alt="Haribo logo"></a></h1>
+            <div class="nav">
+                <ul>
+                    <li><a href="">제품</a></li>
+                    <li><a href="">품질</a></li>
+                    <li><a href="">생산</a></li>
+                    <li><a href="">역사</a></li>
+                    <li><a href="">책임</a></li>
+                    <li><a href="">문의</a></li>
+                    <li><a href="">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="util">
+                <ul>
+                    <li><a href=""><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a href=""><i class="fa-regular fa-heart"></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-bag-shopping"></i><span></span></a></li>
+                    <li><a href=""><i class="fa-regular fa-user"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section class="loginPage">
+        <div class="loginBox">
+            <h4>로그인</h4>
+            <form action="" method="post">
+                <fieldset>
+                    <div class="id">
+                        <input type="text" name="id" placeholder="아이디">
+                    </div>
+                    <div class="password">
+                        <input type="password" name="password" placeholder="비밀번호">
+                    </div>
+                </fieldset>
+                <div class="option">
+                    <div class="loginState">
+                        <input type="checkbox" id="loginState" name="loginState">
+                        <label for="loginState"><em></em>로그인 상태 유지</label>
+                    </div>
+                    <div class="saveID">
+                        <input type="checkbox" id="saveID" name="saveID">
+                        <label for="saveID"><em></em>아이디 저장</label>
+                    </div>
+                </div>
+                <div class="loginBtn_wrap">
+                    <div class="loginBtn">
+                        <input type="submit" value="로그인">
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div id="naver_id_login" class="naver"></div>
+                </div>
+            </form>
+            <div class="bottomBox">
+                <ul>
+                    <li class="findID"><a href="">아이디 찾기</a></li>
+                    <li class="findPassword"><a href="">비밀번호 찾기</a></li>
+                    <li class="signUp"><a href="">회원가입</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="imgBox">
+            <img src="img/jellyPile.png" alt="">
+        </div>
+    </section>
+
+    <!-- //네이버 로그인 버튼 노출 영역 -->
+    <script type="text/javascript">
+        var naver_id_login = new naver_id_login("aclpBnTNe_KvuUzN0gJT", "http://doyoungdd.dothome.co.kr");
+        var state = naver_id_login.getUniqState();
+        naver_id_login.setButton("white", 3,40);
+        naver_id_login.setDomain("YOUR_SERVICE_URL");
+        naver_id_login.setState(state);
+        naver_id_login.setPopup();
+        naver_id_login.init_naver_id_login();
+    </script>
+</body>
+</html>

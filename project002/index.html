@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HARIBO</title>
     <!-- 외부스타일시트 연결 -->
     <link rel="stylesheet" href="style.css">
     <!-- 구글폰트 연결 -->
@@ -44,6 +44,7 @@
                     <li><a href=""><i class="fa-regular fa-heart"></i></a></li>
                     <li><a href=""><i class="fa-solid fa-bag-shopping"></i><span></span></a></li>
                     <li><a href=""><i class="fa-regular fa-user"></i></a></li>
+                    <li><a href="login.html">로그인</a></li>
                 </ul>
             </div>
         </div>
@@ -86,14 +87,14 @@
                     <img src="img/section2_title.png" alt="">
                     <p>하리보는 아이들을 행복하게 해줍니다. 그리고 어른들도요.</p>
                 </div>
-                <div class="listBox">
+                <div class="listBox scroll_on bottom">
                     <ul>
                         <li>
                             <a href="">
                                 <div class="imgBox"><img src="img/section2_goldbaren.png" alt=""></div>
                                 <div class="txtBox">
                                     <h4>골드베렌 (100g, 1개입)</h4>
-                                    <p class="price">1,500원</p>
+                                    <p class="price"><b>1,500원</b></p>
                                     <p class="review"><i class="fa-solid fa-star"></i><span>4.9(99)</span></p>
                                 </div>
                             </a>
@@ -107,7 +108,7 @@
                                 <div class="imgBox"><img src="img/section2_starmix.png" alt=""></div>
                                 <div class="txtBox">
                                     <h4>스타믹스 (100g, 1개입)</h4>
-                                    <p class="price">1,200원<span>1,500원</span></p>
+                                    <p class="price"><b>1,200원</b><span>1,500원</span></p>
                                     <p class="review"><i class="fa-solid fa-star"></i><span>4.8(64)</span></p>
                                 </div>
                                 <div class="discount">
@@ -124,7 +125,7 @@
                                 <div class="imgBox"><img src="img/section2_happycola.png" alt=""></div>
                                 <div class="txtBox">
                                     <h4>해피 콜라 (100g, 1개입)</h4>
-                                    <p class="price">1,500원</p>
+                                    <p class="price"><b>1,500원</b></p>
                                     <p class="review"><i class="fa-solid fa-star"></i><span>4.7(81)</span></p>
                                 </div>
                             </a>
@@ -138,7 +139,7 @@
                                 <div class="imgBox"><img src="img/section2_worms.png" alt=""></div>
                                 <div class="txtBox">
                                     <h4>웜즈 (100g, 1개입)</h4>
-                                    <p class="price">1,500원</p>
+                                    <p class="price"><b>1,500원</b></p>
                                     <p class="review"><i class="fa-solid fa-star"></i><span>4.1(53)</span></p>
                                 </div>
                             </a>
@@ -152,7 +153,7 @@
                                 <div class="imgBox"><img src="img/section2_fruitybussi.png" alt=""></div>
                                 <div class="txtBox">
                                     <h4>프루티 부시 (100g, 1개입)</h4>
-                                    <p class="price">1,500원</p>
+                                    <p class="price"><b>1,500원</b></p>
                                     <p class="review"><i class="fa-solid fa-star"></i><span>4.3(24)</span></p>
                                 </div>
                             </a>
@@ -166,7 +167,7 @@
                                 <div class="imgBox"><img src="img/section2_wormszourr.png" alt=""></div>
                                 <div class="txtBox">
                                     <h4>웜즈 사우어 (100g, 1개입)</h4>
-                                    <p class="price">1,500원</p>
+                                    <p class="price"><b>1,500원</b></p>
                                     <p class="review"><i class="fa-solid fa-star"></i><span>4.4(75)</span></p>
                                 </div>
                             </a>
@@ -180,7 +181,7 @@
                                 <div class="imgBox"><img src="img/section2_happycolazourr.png" alt=""></div>
                                 <div class="txtBox">
                                     <h4>해피 콜라 사우어 (100g, 1개입)</h4>
-                                    <p class="price">1,050원<span>1,500원</span></p>
+                                    <p class="price"><b>1,050원</b><span>1,500원</span></p>
                                     <p class="review"><i class="fa-solid fa-star"></i><span>4.3(56)</span></p>
                                 </div>
                                 <div class="discount">
@@ -197,7 +198,7 @@
                                 <div class="imgBox"><img src="img/section2_happygrapes.png" alt=""></div>
                                 <div class="txtBox">
                                     <h4>해피 그레이프 (100g, 1개입)</h4>
-                                    <p class="price">1,500원</p>
+                                    <p class="price"><b>1,500원</b></p>
                                     <p class="review"><i class="fa-solid fa-star"></i><span>3.9(49)</span></p>
                                 </div>
                             </a>
@@ -207,19 +208,19 @@
                             </div>
                         </li>
                     </ul>
-                    <span><a href="">제품 더보기</a></span>
+                    <div class="span_wrap"><span><a href="">제품 더보기</a></span></div>
                 </div>
             </div>
         </section>
         <section class="main_section3">
             <div class="main_section3_wrap">
                 <div class="subBox">
-                    <div class="topBox">
+                    <div class="topBox scroll_on top">
                         <h2>Goldbären</h2>
                         <h3>달콤 깜찍한 골드베렌!</h3>
                         <p>누구에게나 친숙한 곰 모양 젤리. 하리보의 시그니처인 오리지널 곰돌이는 1922년부터 꾸준히 아이들은 물론 어른 팬들의 사랑을 받고 있습니다. 파인애플에서부터 레몬 맛까지 여섯 가지 알록달록한 골드베렌에는 공유하고 싶은 맛있는 즐거움이 담겨 있습니다.</p>
                     </div>
-                    <div class="middleBox">
+                    <div class="middleBox scroll_on left">
                         <ul class="titleBox">
                             <li><h4 class="on">영양정보<img src="img/asset-svg-nutrients-red.png" alt=""></h4></li>
                             <li><h4>원재료명<img src="img/asset-svg-ingredients-white.png" alt=""></h4></li>
@@ -242,14 +243,14 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="bottomBox">
+                    <div class="bottomBox scroll_on left">
                         <a href="">
                             <p>제품 보러가기</p>
                             <div class="imgBox">
                                 <img src="img/section2_goldbaren.png" alt="">
                                 <div class="txtBox">
                                     <h4>골드베렌 (100g, 1개입)</h4>
-                                    <p class="price">1,500원</p>
+                                    <p class="price"><b>1,500원</b></p>
                                     <p class="review"><i class="fa-solid fa-star"></i><span>4.9(99)</span></p>
                                 </div>
                             </div>
@@ -268,14 +269,14 @@
                 <div class="imgBox">
                     <div class="main_section4_wrap">
                         <div class="txtBox">
-                            <h2><em>100</em> 년 역사 하리보</h2>
-                            <p>집 뒷마당에서 세계시장 리더가 되기까지</p>
+                            <h2 class="scroll_on bottom"><em>100</em> 년 역사 하리보</h2>
+                            <p class="scroll_on bottom">집 뒷마당에서 세계시장 리더가 되기까지</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="bottomBox">
-                <div class="intro">
+                <div class="intro scroll_on top">
                     <div class="imgBox">
                         <img src="img/section4_bear.png" alt="">
                     </div>
@@ -286,7 +287,7 @@
                             정답은 회사 역사 페이지에 있습니다. 재미있게 찾아보세요!</p>
                     </div>
                 </div>
-                <div class="historyMain">
+                <div class="historyMain scroll_on left">
                     <div class="imgBox">
                         <img src="img/section4_historySub1.png" alt="">
                     </div>
@@ -295,6 +296,10 @@
                         <h4>작은 사탕가게</h4>
                         <p>한스 리겔은 1893년 본 근교에 있는 프리스도르프(Friesdorf)에서 태어났습니다. 그는 제과사 교육을 이수한 후에 Heinen & Riegel 회사의 공동 소유주가 됩니다. 1920년 12월 13일, 그는 HARIBO(HAns RIegel BOnn)를 설립하고 설탕 한 자루, 석판 하나, 의자 하나, 화덕 하나, 구리 솥 하나 그리고 롤러 하나를 가지고 집 뒷마당에 딸린 작은 세탁실에서 사탕류를 생산하기 시작합니다. 1921년 그의 아내 게르트루드가 젊은 회사의 첫 번째 직원이 됩니다.</p>
                     </div>
+                    <span class="left_btn"><i class="fa-solid fa-angle-left"></i></span>
+                    <span class="right_btn"><i class="fa-solid fa-angle-right"></i></span>
+                    <span class="list first">처음으로</span>
+                    <span class="list last">끝으로</span>
                 </div>
                 <div class="historySub">
                     <ul>
@@ -434,7 +439,7 @@
                                                 <img src="img/section2_starmix.png" alt="">
                                                 <div class="txtBox">
                                                     <h4>스타믹스 (100g, 1개입)</h4>
-                                                    <p class="price">1,200원<span>1,500원</span></p>
+                                                    <p class="price"><b>1,200원</b><span>1,500원</span></p>
                                                     <p class="review"><i class="fa-solid fa-star"></i><span>4.8 (64)</span></p>
                                                 </div>
                                             </div>
@@ -474,7 +479,7 @@
                                                 <img src="img/section2_starmix.png" alt="">
                                                 <div class="txtBox">
                                                     <h4>스타믹스 (100g, 1개입)</h4>
-                                                    <p class="price">1,200원<span>1,500원</span></p>
+                                                    <p class="price"><b>1,200원</b><span>1,500원</span></p>
                                                     <p class="review"><i class="fa-solid fa-star"></i><span>4.8 (64)</span></p>
                                                 </div>
                                             </div>
@@ -515,7 +520,7 @@
                                                 <img src="img/section2_worms.png" alt="">
                                                 <div class="txtBox">
                                                     <h4>웜즈 (100g, 1개입)</h4>
-                                                    <p class="price">1,500원</p>
+                                                    <p class="price"><b>1,500원</b></p>
                                                     <p class="review"><i class="fa-solid fa-star"></i><span>4.1 (53)</span></p>
                                                 </div>
                                             </div>
@@ -556,7 +561,7 @@
                                                 <img src="img/section2_happycola.png" alt="">
                                                 <div class="txtBox">
                                                     <h4>해피 콜라 (100g, 1개입)</h4>
-                                                    <p class="price">1,500원</p>
+                                                    <p class="price"><b>1,500원</b></p>
                                                     <p class="review"><i class="fa-solid fa-star"></i><span>4.7 (81)</span></p>
                                                 </div>
                                             </div>
@@ -624,7 +629,15 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <p class="share">링크 공유하기<i class="fa-solid fa-angle-right"></i></p>
+                                <div class="sns">
+                                    <p>SNS 공유</p>
+                                    <ul>
+                                        <li><img src="img/kakaotalk.png" alt=""></li>
+                                        <li><img src="img/instagram.png" alt=""></li>
+                                        <li><img src="img/facebook.png" alt=""></li>
+                                        <li><img src="img/x.png" alt=""></li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="middleBox">
                                 <p class="total_price">총 금액<span>1,500원</span></p>
@@ -633,7 +646,7 @@
                                 <ul>
                                     <li>관심상품<i></i></li>
                                     <li>장바구니</li>
-                                    <li>구매하기</li>
+                                    <li><a href="login.html">구매하기</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -643,8 +656,8 @@
         </section>
         <section class="sub_section2">
             <div class="sub_section2_wrap">
-                <h5 class="scroll_on bottom">이런 상품은 어때요?</h5>
-                <div class="listBox scroll_on bottom">
+                <h5 class="">이런 상품은 어때요?</h5>
+                <div class="listBox">
                     <div class="btn left"><i class="fa-solid fa-angle-left"></i></div>
                     <div class="btn right"><i class="fa-solid fa-angle-right"></i></div>
                     <div class="listBox_wrap">
@@ -654,7 +667,7 @@
                                     <div class="imgBox"><img src="img/section2_starmix.png" alt=""></div>
                                     <div class="txtBox">
                                         <h4>스타믹스 (100g, 1개입)</h4>
-                                        <p class="price">1,200원<span>1,500원</span></p>
+                                        <p class="price"><b>1,200원</b><span>1,500원</span></p>
                                         <p class="review"><i class="fa-solid fa-star"></i><span>4.8(64)</span></p>
                                     </div>
                                     <div class="discount">
@@ -671,7 +684,7 @@
                                     <div class="imgBox"><img src="img/section2_happycola.png" alt=""></div>
                                     <div class="txtBox">
                                         <h4>해피 콜라 (100g, 1개입)</h4>
-                                        <p class="price">1,500원</p>
+                                        <p class="price"><b>1,500원</b></p>
                                         <p class="review"><i class="fa-solid fa-star"></i><span>4.7(81)</span></p>
                                     </div>
                                 </a>
@@ -685,7 +698,7 @@
                                     <div class="imgBox"><img src="img/section2_worms.png" alt=""></div>
                                     <div class="txtBox">
                                         <h4>웜즈 (100g, 1개입)</h4>
-                                        <p class="price">1,500원</p>
+                                        <p class="price"><b>1,500원</b></p>
                                         <p class="review"><i class="fa-solid fa-star"></i><span>4.1(53)</span></p>
                                     </div>
                                 </a>
@@ -699,7 +712,7 @@
                                     <div class="imgBox"><img src="img/section2_fruitybussi.png" alt=""></div>
                                     <div class="txtBox">
                                         <h4>프루티 부시 (100g, 1개입)</h4>
-                                        <p class="price">1,500원</p>
+                                        <p class="price"><b>1,500원</b></p>
                                         <p class="review"><i class="fa-solid fa-star"></i><span>4.3(24)</span></p>
                                     </div>
                                 </a>
@@ -713,7 +726,7 @@
                                     <div class="imgBox"><img src="img/section2_wormszourr.png" alt=""></div>
                                     <div class="txtBox">
                                         <h4>웜즈 사우어 (100g, 1개입)</h4>
-                                        <p class="price">1,500원</p>
+                                        <p class="price"><b>1,500원</b></p>
                                         <p class="review"><i class="fa-solid fa-star"></i><span>4.4(75)</span></p>
                                     </div>
                                 </a>
@@ -727,7 +740,7 @@
                                     <div class="imgBox"><img src="img/section2_happycolazourr.png" alt=""></div>
                                     <div class="txtBox">
                                         <h4>해피 콜라 사우어 (100g, 1개입)</h4>
-                                        <p class="price">1,050원<span>1,500원</span></p>
+                                        <p class="price"><b>1,050원</b><span>1,500원</span></p>
                                         <p class="review"><i class="fa-solid fa-star"></i><span>4.3(56)</span></p>
                                     </div>
                                     <div class="discount">
@@ -744,7 +757,7 @@
                                     <div class="imgBox"><img src="img/section2_happygrapes.png" alt=""></div>
                                     <div class="txtBox">
                                         <h4>해피 그레이프 (100g, 1개입)</h4>
-                                        <p class="price">1,500원</p>
+                                        <p class="price"><b>1,500원</b></p>
                                         <p class="review"><i class="fa-solid fa-star"></i><span>3.9(49)</span></p>
                                     </div>
                                 </a>
@@ -1025,10 +1038,10 @@
                     </li> -->
                 </ul>
             </div>
+            <p class="total_price">총 상품금액<em>0원</em></p>
             <ul class="popup_bag2_button">
-                <li class="select_all"><span>전체 선택</span></li>
-                <li class="select_delete"><span>선택항목 삭제</span></li>
-                <li class="order"><em>주문하기</em></li>
+                <li class="empty"><span>장바구니 비우기</span></li>
+                <li class="order"><a href="login.html">주문하기</a></li>
             </ul>
         </div>
     </section>
