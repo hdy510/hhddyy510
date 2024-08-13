@@ -104,6 +104,29 @@ $(document).ready(function(){
         $('html, body').animate({scrollTop:sectionTop}, 1000);
     })
 
+    // datepicker
+    $( function() {
+        $( "#datepicker" ).datepicker({
+            onSelect: function(dateText, inst) {
+                // alert('선택한 날짜: '+dateText);
+            }
+        });
+    } );
+    // 예약하기버튼 클릭시 예약폼 나타나기
+    // 변수만들기
+    // 버튼을 클릭했을시 변수로 지정한 내용을 저장하기
+    $('.reservation_form').find('button').click(function (e) {
+        e.preventDefault();
+        // 날짜를 찾아오기
+        let selectDate = $('#datepicker').datepicker('getDate');
+        let selectMon = selectDate.getMonth() + 1; // 달은 0부터 시작
+        let selectDay = selectDate.getDate();
+        console.log(selectMon);
+        console.log(selectDay);
+        // 인원수 불러오기
+        let pel = $('#people').val();
+        console.log(pel)
+    })
 
 
 
