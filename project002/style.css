@@ -28,9 +28,15 @@
  */
 
 /* 전체설정 */
+body {
+    overflow-x: hidden;
+    /* section6 가로스크롤바 방지방법1 */
+}
 * {
     padding: 0;
     margin: 0;
+    /* box-sizing: border-box; */
+    /* section6 가로스크롤바 방지방법2 */
 }
 ul,
 ol {
@@ -86,7 +92,15 @@ header .header_wrap {
     padding: 0 80px;
 }
 header h1 img {
-    width: 190px;
+    width: 170px;
+}
+header .nav_wrap {
+    display: flex;
+    align-items: center;
+}
+header .nav {
+    margin-right: 60px;
+    margin-left: 20px;
 }
 header .nav ul {
     display: flex;
@@ -95,23 +109,27 @@ header .nav a {
     display: block;
     font-size: 18px;
     padding: 10px 30px;
-    transition: all 0.5s;
+    width: 93px;
+    box-sizing: border-box;
+    transition: all 0.3s;
 }
 header .nav a:hover {
     color: #e20e17;
 }
 header .util ul {
     display: flex;
+    align-items: center;
 }
 header .util a {
     display: block;
     font-size: 22px;
     padding: 10px 15px;
-    transition: all 0.5s;
+    transition: all 0.3s;
     position: relative;
 }
 header .util li:nth-child(5) a {
     font-size: 18px;
+    width: 93px;
 }
 header .util a:hover {
     color: #e20e17;
@@ -134,6 +152,12 @@ header .util a span {
 header .util a span.on {
     opacity: 1;
 }
+header .nav_wrap .fa-xmark {
+    display: none;
+}
+header .header_wrap .fa-bars {
+    display: none;
+}
 
 /* top버튼 설정 */
 .top_btn {
@@ -145,6 +169,7 @@ header .util a span.on {
     display: none;
 }
 .top_btn img {
+    width: 150px;
 }
 @keyframes topBtn {
     0% {
@@ -165,7 +190,7 @@ header .util a span.on {
 /* video 설정 */
 .vid {
     width: 100%;
-    height: 100vh;
+    height: auto;
     overflow: hidden;
 }
 .vid video {
@@ -183,7 +208,7 @@ header .util a span.on {
     align-items: center;
     width: 480px;
     height: 60px;
-    margin-bottom: 90px;
+    margin-bottom: 220px;
     margin-left: -240px;
     border: 2px solid #fff;
     border-radius: 12px;
@@ -1130,7 +1155,7 @@ header .util a span.on {
     text-align: center;
 }
 .main_section5 .quality_inner .rightTxtBox a:hover {
-    background-color: #f62d34;
+    background-color: #e43b41;
 }
 .main_section5 .quality_inner .bottomImgBox img {
     width: 70%;
@@ -1142,6 +1167,7 @@ header .util a span.on {
 .main_section5 .quality_inner .bottomImgBox p {
     font-size: 16px;
     font-weight: 500;
+    width: 70%;
 }
 /* 생산 카테고리 설정 */
 .main_section5 .production a {
@@ -1155,7 +1181,7 @@ header .util a span.on {
     height: 100%;
     background-image: url(img/section5_production.jpg);
     background-size: cover;
-    background-position: center -20px;
+    background-position: center 2%;
     background-repeat: no-repeat;
     transition: all 0.5s;
 }
@@ -1183,7 +1209,7 @@ header .util a span.on {
     height: 100%;
     background-image: url(img/section5_responsibility.jpg);
     background-size: cover;
-    background-position: center -80px;
+    background-position: center 8%;
     background-repeat: no-repeat;
     transition: all 0.5s;
 }
@@ -1201,8 +1227,9 @@ header .util a span.on {
 }
 .main_section5 .responsibility a .txtBox {
     position: absolute;
+    width: 507px;
     top: calc(50% - 58px);
-    left: calc(50% - 232px);
+    right: calc(50% - 254px);
     height: 116px;
     text-align: right;
 }
@@ -1250,34 +1277,35 @@ header .util a span.on {
     width: 140px;
 }
 /* txtBox 설정 */
-.main_section6 .txtBox {
+.main_section6 .contentInner>.txtBox {
     width: 100%;
     margin-bottom: 76px;
+    padding-left: 100px;
 }
-.main_section6 .txtBox h2 {
-    font-size: 50px;
+.main_section6 .contentInner>.txtBox h2 {
+    font-size: 40px;
     font-weight: 700;
     color: #d8232a;
     margin-bottom: 32px;
     opacity: 0;
     transition: all 0.5s;
 }
-.main_section6 .txtBox h2.visible {
+.main_section6 .contentInner>.txtBox h2.visible {
     opacity: 1;
     transform: translateY(20px);
 }
-.main_section6 .txtBox p {
+.main_section6 .contentInner>.txtBox p {
     font-size: 20px;
     opacity: 0;
     transition: all 0.5s;
 }
-.main_section6 .txtBox p.visible {
+.main_section6 .contentInner>.txtBox p.visible {
     opacity: 1;
     transform: translateY(20px);
 }
 /* listBox 설정 */
 .main_section6 .listBox {
-    width: 100%;
+    width: 90%;
     height: 50%;
     display: flex;
     flex-direction: column;
@@ -1294,20 +1322,22 @@ header .util a span.on {
 .main_section6 .listBox ul {
     width: 100%;
     display: flex;
+    justify-content: space-around;
     position: absolute;
     top: 0;
     left: 0;
 }
 .main_section6 .listBox li {
-    margin: 0 15px;
-    width: 25%;
+    /* margin: 0 15px; */
+    width: 22%;
+    position: relative;
 }
 .main_section6 .listBox .reviewShow {
     border: 1px solid #d7d7d7;
     border-radius: 18px;
     padding: 30px;
     background-color: #fff;
-    height: 380px;
+    height: 350px;
     /* height: auto; */
     overflow: hidden;
     transition: all 0.5s;
@@ -1319,7 +1349,7 @@ header .util a span.on {
 .main_section6 .listBox li:hover .reviewShow {
     box-shadow: 0px 4px 10px 0px rgba(215, 215, 215, 1);
     transform: translateY(-10px);
-    height: 530px;
+    height: 500px;
 }
 .main_section6 .listBox li:hover .bottomBox a {
     opacity: 1;
@@ -1331,6 +1361,7 @@ header .util a span.on {
 .main_section6 .bottomBox {
     position: relative;
     margin-top: 16px;
+    /* background-color: yellow; */
 }
 .main_section6 .bottomBox a {
     border-top: 1px solid #ebebeb;
@@ -1339,14 +1370,19 @@ header .util a span.on {
 }
 .main_section6 .bottomBox .imgBox {
     width: 100%;
-    height: 160px;
+    height: 150px;
+    margin-top: 20px;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
+    position: relative;
     transition: all 0.5s;
 }
 .main_section6 .bottomBox .imgBox img {
-    width: 80px;
+    width: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
     transition: all 0.5s;
 }
 /* main_section6 bottomBox 의 텍스트박스 설정 */
@@ -1354,13 +1390,13 @@ header .util a span.on {
     /* width: 250px; */
     box-sizing: border-box;
     margin-left: 20px;
-    margin-top: 20px;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 25%;
 }
 .main_section6 .bottomBox .txtBox h4 {
     font-size: 15px;
     font-weight: 400;
-    margin-top: 8px;
 }
 .main_section6 .bottomBox .price {
     font-size: 20px;
@@ -1387,8 +1423,8 @@ header .util a span.on {
 .main_section6 .like_bag_btn {
     position: absolute;
     display: flex;
-    right: 0px;
-    bottom: 20px;
+    right: 20px;
+    bottom: 30px;
     transition: all 0.5s;
     opacity: 0;
 }
@@ -1407,8 +1443,6 @@ header .util a span.on {
 /* 이미지 설정 */
 .main_section6 .listBox .img {
     margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
     width: 100%;
     height: 0;
     padding-bottom: 100%;
@@ -2514,7 +2548,7 @@ footer .txtBox ul {
     display: flex;
 }
 footer .txtBox li {
-    padding: 0 20px;
+    padding: 10px 20px;
 }
 footer .txtBox a {
     color: #fff;
@@ -2926,12 +2960,6 @@ footer .snsBox a img {
         margin: 0 auto;
     }
 }
-/* 1420px 이하 main_section1 .vid 여백 해결 */
-@media (max-width: 1420px) {
-    .main_section1 .vid {
-        height: auto;
-    }
-}
 /* 1350px 이하 설정 */
 @media (max-width: 1350px) {
     /* 곰 캐릭터 사라지기 */
@@ -2943,6 +2971,95 @@ footer .snsBox a img {
 @media (min-width: 1280px) and (max-width: 1349px) {
     
 }
+/* 1285px 이하 gnb 축약 */
+@media (max-width: 1285px) {
+    header .header_wrap {
+        position: relative;
+        perspective: 900px;
+    }
+    header .nav_wrap {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 100vh;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        transform: rotateY(-190deg);
+        transform-origin: right center;
+        opacity: 0;
+        transition: all 1s;
+    }
+    header .nav_wrap.on {
+        transform: rotateY(0);
+        opacity: 1;
+    }
+    header .nav {
+        /* background-color: yellow; */
+        margin-top: 120px;
+        margin-right: 0;
+        margin-left: 0;
+        width: 100%;
+    }
+    header .nav ul {
+        flex-direction: column;
+    }
+    header .nav a {
+        padding: 16px 30px;
+        width: 100%;
+    }
+    header .nav a:hover {
+        color: #fff;
+        background-color: #e20e17;
+    }
+    header .util {
+        /* background-color: yellowgreen; */
+        position: absolute;
+        top: 70px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    header .util ul {
+    }
+    header .util li:nth-child(5) a {
+        width: auto;
+    }
+    header .nav_wrap .fa-xmark {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 32px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    header .nav_wrap .fa-xmark:hover {
+        color: #e20e17;
+    }
+    header .header_wrap .fa-bars {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 32px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    header .header_wrap .fa-bars:hover {
+        color: #e20e17;
+    }
+}
+/* 1286px 이상 gnb 다시 원상복구시 햄버거버튼, 닫기 버튼 감추기  */
+@media (min-width: 1286px) {
+    header .nav_wrap .fa-xmark {
+        display: none !important;
+    }
+    header .header_wrap .fa-bars {
+        display: none !important;
+    }
+}
 /* 데스크탑 구간. 769px ~ 1279px 설정 */
 @media (min-width: 769px) and (max-width: 1279px) {
     /* main_section2 설정 */
@@ -2951,6 +3068,9 @@ footer .snsBox a img {
     }
     .main_section2 .listBox ul {
         width: 600px;
+    }
+    .main_section2 .listBox li {
+        padding: 0 20px;
     }
     /* main_section4 설정 */
     .main_section4 {
@@ -2968,18 +3088,119 @@ footer .snsBox a img {
         width: 1700px;
     }
     /* .main_section5 설정 */
+    .main_section5 {
+        height: 540px;
+    }
+    .main_section5 .quality_inner {
+        padding-left: 0;
+    }
+    .main_section5 .quality_inner h2 {
+        font-size: 32px;
+        margin-bottom: 0;
+    }
+    .main_section5 .quality_inner .leftImgBox {
+        display: none;
+    }
+    .main_section5 .quality_inner .rightTxtBox {
+        margin-left: 0;
+        height: 15%;
+        width: 100%;
+    }
     .main_section5 .quality_inner .rightTxtBox ul {
         display: flex;
-        width: 500px;
+        width: 100%;
+        justify-content: center;
     }
     .main_section5 .quality_inner .rightTxtBox li {
-        width: 70px;
+        width: 90px;
     }
-   
+    .main_section5 .quality_inner .rightTxtBox a {
+        padding: 16px 0;
+    }
+    .main_section5 .quality_inner .bottomImgBox {
+        padding-top: 0;
+        width: 100%;
+        height: 60%;
+        text-align: center;
+    }
+    .main_section5 .quality_inner .bottomImgBox img {
+        width: 80%;
+        height: 90%;
+    }
+    .main_section5 .quality_inner .bottomImgBox p {
+        font-size: 16px;
+        line-height: 1.5;
+        width: 100%;
+    }
+    .main_section5 .production a .txtBox {
+        width: 85%;
+        left: 5%;
+    }
+    .main_section5 .production a .txtBox h2 {
+        font-size: 26px;
+    }
+    .main_section5 .production a .txtBox p {
+        font-size: 16px;
+    }
+    .main_section5 .responsibility a .txtBox {
+        width: 85%;
+        right: 5%;
+    }
+    .main_section5 .responsibility a .txtBox h2 {
+        font-size: 26px;
+    }
+    .main_section5 .responsibility a .txtBox p {
+        font-size: 16px;
+    }
+    /* main_section6 설정 */
+    .main_section6 {
+        height: 1620px;
+    }
+    .main_section6 .contentInner {
+        padding-top: 100px;
+    }
+    .main_section6 .topImage {
+        margin-top: -200px;
+    }
+    .main_section6 .listBox {
+        height: 65%;
+    }
+    .main_section6 .listBox ul {
+        flex-wrap: wrap;
+    }
+    .main_section6 .listBox li {
+        width: 45%;
+        margin-bottom: 40px;
+    }
+    .main_section6 .listBox .reviewShow {
+        height: 310px;
+    }
+    .main_section6 .listBox li:hover .reviewShow {
+        height: 450px;
+    }
+    .main_section6 .listBox .img {
+        width: 100%;
+        padding-bottom: 200px;
+        display: flex;
+        justify-content: center;
+    }
+    .main_section6 .listBox .img img {
+        width: 200px;
+        height: 200px;
+        position: relative;
+    }
 }
 /* 950px 이하 여백 해결 */
 @media(max-width: 950px) {
     
+}
+/* 780px 이하 footer 설정 */
+@media (max-width: 780px) {
+    footer .txtBox ul {
+        width: 500px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 /* 태블릿 구간. 481px ~ 768px 설정 */
 @media (min-width: 481px) and (max-width: 768px) {
@@ -3013,7 +3234,7 @@ footer .snsBox a img {
     }
     /* main_section4 설정 */
     .main_section4 {
-        height: 2550px;
+        height: 2750px;
     }
     .main_section4 .intro {
         width: 70%;
@@ -3053,6 +3274,138 @@ footer .snsBox a img {
     }
     .main_section4 .historySub {
         width: 1700px;
+    }
+    /* .main_section5 설정 */
+    .main_section5 {
+        height: 540px;
+    }
+    .main_section5 .quality_inner {
+        padding-left: 0;
+        display: block;
+    }
+    .main_section5 .quality_inner h2 {
+        font-size: 32px;
+        margin-bottom: 0;
+    }
+    .main_section5 .quality_inner .leftImgBox {
+        display: none;
+    }
+    .main_section5 .quality_inner .rightTxtBox {
+        margin-left: 0;
+        height: 15%;
+        width: 100%;
+    }
+    .main_section5 .quality_inner .rightTxtBox ul {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+    .main_section5 .quality_inner .rightTxtBox li {
+        width: 100%;
+    }
+    .main_section5 .quality_inner .rightTxtBox a {
+        padding: 16px 0;
+    }
+    .main_section5 .quality_inner .bottomImgBox {
+        padding-top: 0;
+        width: 100%;
+        height: 60%;
+        text-align: center;
+        display: none;
+    }
+    .main_section5 .quality_inner .bottomImgBox img {
+        width: 80%;
+        height: 90%;
+    }
+    .main_section5 .quality_inner .bottomImgBox p {
+        font-size: 18px;
+        line-height: 1.5;
+        width: 100%;
+    }
+    .main_section5 .production a .txtBox {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main_section5 .production a .txtBox h2 {
+        font-size: 32px;
+        margin-bottom: 0;
+    }
+    .main_section5 .production a .txtBox p {
+        font-size: 16px;
+        display: none;
+    }
+    .main_section5 .responsibility a .txtBox {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main_section5 .responsibility a .txtBox h2 {
+        font-size: 32px;
+        margin-bottom: 0;
+    }
+    .main_section5 .responsibility a .txtBox p {
+        font-size: 16px;
+        display: none;
+    }
+    /* main_section6 설정 */
+    .main_section6 {
+        height: 2420px;
+    }
+    .main_section6 .contentInner {
+        padding-top: 100px;
+    }
+    .main_section6 .topImage {
+        margin-top: -200px;
+    }
+    .main_section6 .listBox {
+        width: 70%;
+        height: 77%;
+    }
+    .main_section6 .listBox ul {
+        flex-wrap: wrap;
+    }
+    .main_section6 .listBox li {
+        width: 95%;
+        margin-bottom: 40px;
+    }
+    .main_section6 .listBox .reviewShow {
+        height: 310px;
+    }
+    .main_section6 .listBox li:hover .reviewShow {
+        height: 450px;
+    }
+    .main_section6 .listBox .img {
+        width: 100%;
+        padding-bottom: 200px;
+        display: flex;
+        justify-content: center;
+    }
+    .main_section6 .listBox .img img {
+        width: 200px;
+        height: 200px;
+        position: relative;
+    }
+    /* footer */
+    footer {
+        height: 400px;
+        align-items: normal;
+    }
+    footer .txtBox {
+        margin-top: 50px;
+    }
+    footer .snsBox {
+        bottom: 10%;
     }
 }
 /* 모바일 구간. 480px 이하 설정 */
@@ -3149,5 +3502,162 @@ footer .snsBox a img {
     }
     .main_section4 .historySub {
         width: 1700px;
+    }
+    /* .main_section5 설정 */
+    .main_section5 {
+        height: 540px;
+    }
+    .main_section5 .quality_inner {
+        padding-left: 0;
+        display: block;
+    }
+    .main_section5 .quality_inner h2 {
+        font-size: 32px;
+        margin-bottom: 0;
+    }
+    .main_section5 .quality_inner .leftImgBox {
+        display: none;
+    }
+    .main_section5 .quality_inner .rightTxtBox {
+        margin-left: 0;
+        height: 15%;
+        width: 100%;
+    }
+    .main_section5 .quality_inner .rightTxtBox ul {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+    .main_section5 .quality_inner .rightTxtBox li {
+        width: 100%;
+    }
+    .main_section5 .quality_inner .rightTxtBox a {
+        padding: 16px 0;
+    }
+    .main_section5 .quality_inner .bottomImgBox {
+        padding-top: 0;
+        width: 100%;
+        height: 60%;
+        text-align: center;
+        display: none;
+    }
+    .main_section5 .quality_inner .bottomImgBox img {
+        width: 80%;
+        height: 90%;
+    }
+    .main_section5 .quality_inner .bottomImgBox p {
+        font-size: 18px;
+        line-height: 1.5;
+        width: 100%;
+    }
+    .main_section5 .production a .txtBox {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main_section5 .production a .txtBox h2 {
+        font-size: 32px;
+        margin-bottom: 0;
+    }
+    .main_section5 .production a .txtBox p {
+        font-size: 16px;
+        display: none;
+    }
+    .main_section5 .responsibility a .txtBox {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main_section5 .responsibility a .txtBox h2 {
+        font-size: 32px;
+        margin-bottom: 0;
+    }
+    .main_section5 .responsibility a .txtBox p {
+        font-size: 16px;
+        display: none;
+    }
+    /* main_section6 설정 */
+    .main_section6 {
+        height: 2420px;
+    }
+    .main_section6 .contentInner {
+        padding-top: 100px;
+    }
+    .main_section6 .topImage {
+        margin-top: -200px;
+    }
+    .main_section6 .topImage img {
+        width: 100px;
+    }
+    .main_section6 .contentInner>.txtBox h2 {
+        font-size: 28px;
+    }
+    .main_section6 .contentInner>.txtBox p {
+        font-size: 16px;
+    }
+    .main_section6 .listBox {
+        width: 75%;
+        height: 77%;
+    }
+    .main_section6 .listBox ul {
+        flex-wrap: wrap;
+    }
+    .main_section6 .listBox li {
+        width: 95%;
+        margin-bottom: 40px;
+    }
+    .main_section6 .listBox .reviewShow {
+        height: 310px;
+    }
+    .main_section6 .listBox li:hover .reviewShow {
+        height: 450px;
+    }
+    .main_section6 .listBox .img {
+        width: 100%;
+        padding-bottom: 160px;
+        display: flex;
+        justify-content: center;
+    }
+    .main_section6 .listBox .img img {
+        width: 160px;
+        height: 160px;
+        position: relative;
+        border-radius: 12px;
+    }
+    .main_section6 .bottomBox .imgBox img {
+        width: 46px;
+    }
+    .main_section6 .bottomBox .price {
+        font-size: 16px;
+    }
+    .main_section6 .bottomBox .price span {
+        font-size: 14px;
+    }
+    /* footer */
+    footer {
+        height: 600px;
+        align-items: normal;
+    }
+    footer .txtBox {
+        margin-top: 50px;
+    }
+    footer .txtBox ul {
+        width: 300px;
+    }
+    footer .txtBox p {
+        width: 330px;
+    }
+    footer .snsBox {
+        bottom: 10%;
     }
 }

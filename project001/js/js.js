@@ -58,7 +58,7 @@ $(document).ready(function(){
     // 브라우저의 상단이 section2의 상단의 상하 100px 이내에 있다면,
     $(window).scroll(function(){
         let sc = $(this).scrollTop();
-        console.log(sc)
+        // console.log(sc)
         let sec1Top = $('section').eq(0).offset().top;
         let sec2Top = $('section').eq(1).offset().top;
         let sec3Top = $('section').eq(2).offset().top;
@@ -112,30 +112,102 @@ $(document).ready(function(){
             }
         });
     } );
-    // 예약하기버튼 클릭시 예약폼 나타나기
+
+    // 자원봉사 예약 버튼$('.volunteer h3 a')을 클릭시 예약팝업 등장  
+    // 포트폴리오 목적상 후원, 입양클릭시에도 보여주기위해 금액/물품 후원 버튼, 입양 문의 버튼에도 적용
+    $('.section2 .listBox > div h3 a').click(function(e){
+        e.preventDefault();
+        $('.reservation').fadeIn();
+    })
+    // 예약팝업 닫기 설정
+    $('.reservation>span').click(function(){
+        $('.reservation').fadeOut();
+    })
+
+    // 예약팝업에서 예약하기 클릭시 예약확인 나타나기
     // 변수만들기
     // 버튼을 클릭했을시 변수로 지정한 내용을 저장하기
     $('.reservation_form').find('button').click(function (e) {
         e.preventDefault();
-        // 날짜를 찾아오기
+        // 예약자 찾아오기
+        let name = $('#name').val();
+        // 예약날짜 찾아오기
         let selectDate = $('#datepicker').datepicker('getDate');
         let selectMon = selectDate.getMonth() + 1; // 달은 0부터 시작
         let selectDay = selectDate.getDate();
-        console.log(selectMon);
-        console.log(selectDay);
-        // 인원수 불러오기
-        let pel = $('#people').val();
-        console.log(pel)
+        // 예약인원 찾아오기
+        let people = $('#people').val();
+        // 예약자 이메일 찾아오기
+        let email = $('#email').val();
+        // 예약자 연락처 찾아오기
+        let phone = $('#phone').val();
+        // 예약 팝업창 퇴장
+        $('.reservation').fadeOut();
+        // 예약확인 팝업창 등장
+        $('.reservation_confirm').css({'display':'flex'});
+
+        // 예약확인 팝업창에 텍스트로 쓰기
+        $('.reservation_confirm').find('.user li').eq(0).text(name);
+        $('.reservation_confirm').find('.user li').eq(1).text(selectMon + '월' + selectDay + '일');
+        $('.reservation_confirm').find('.user li').eq(2).text(people + '명');
+        $('.reservation_confirm').find('.user li').eq(3).text(phone);
+        $('.reservation_confirm').find('.user li').eq(4).text(email);
     })
 
+    // 예약확인팝업 확인 - 닫힘 설정
+    $('.reservation_confirm>div').click(function(){
+        $('.reservation_confirm').fadeOut();
 
+        // 예약팝업창 값들 초기화
+        $('.reservation_form').find('#name').val("");
+        $('.reservation_form').find('#phone').val("");
+        $('.reservation_form').find('#email').val("");
+        $('.reservation_form').find('#people').val("1");
+    })
+    // 예약확인팝업 X - 닫힘 설정
+    $('.reservation_confirm>span').click(function(){
+        $('.reservation_confirm').fadeOut();
 
+        // 예약팝업창 값들 초기화
+        $('.reservation_form').find('#name').val("");
+        $('.reservation_form').find('#phone').val("");
+        $('.reservation_form').find('#email').val("");
+        $('.reservation_form').find('#people').val("1");
+    })
 
-
-
-
-
-
+    // util 클릭, hover시 헤더 접히고 피는 설정
+    $('header .util li').eq(1).click(function(e){
+        e.preventDefault();
+        // header 의 height 변수 설정
+        let headerH = $('header').height();
+        // window 의 가로값 변수 설정
+        let windowW = $(window).width();
+        if (headerH == 80) { // header 의 높이가 80px 일땐, 높이를 늘리고
+            if (windowW <= 599) { // 모바일 상황
+                $('header').height('990px');
+            } else if (windowW >= 600 && windowW <= 768) { // 태블릿 상황
+                $('header').height('360px');
+            }
+        } else { // 그게 아니라면 높이를 80px 로 해라
+            $('header').height('80px');
+        }
+    })
+    $('header').mouseenter(function(){
+        // header 의 height 변수 설정
+        let headerH = $('header').height();
+        // window 의 가로값 변수 설정
+        let windowW = $(window).width();
+        if (windowW <= 599) { // 모바일 상황
+            $('header').height('990px');
+        } else if (windowW >= 600 && windowW <= 768) { // 태블릿 상황
+            $(this).height('360px');
+        } else { // 데스크탑 상황
+            $(this).height('340px');
+        }
+    })
+    $('header').mouseleave(function(){
+        $(this).height('80px');
+    })
 
 
 

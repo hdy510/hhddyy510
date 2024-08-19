@@ -1,4 +1,21 @@
 $(document).ready(function () {
+    // 반응형 gnb 메뉴 설정
+    // 1. 햄버거버튼 클릭시 .nav_wrap 등장
+    $('header .header_wrap .fa-bars').click(function(){
+        $('.nav_wrap').addClass('on')
+        // 닫기버튼 등장
+        $('.nav_wrap .fa-xmark').css({'display':'block'})
+        // 햄버거버튼 사라짐
+        $('header .header_wrap .fa-bars').css({'display':'none'})
+    })
+    // 2. 닫기버튼 클릭시 .nav_wrap 사라짐
+    $('.nav_wrap .fa-xmark').click(function(){
+        $('.nav_wrap').removeClass('on')
+        // 닫기버튼 사라짐
+        $('.nav_wrap .fa-xmark').css({'display':'none'})
+        // 햄버거버튼 등장
+        $('header .header_wrap .fa-bars').css({'display':'block'})
+    })
     // GNB 장바구니 아이콘 클릭시, on 클래스 없다면, 장바구니 팝업창 열림
     $('.util ul li').eq(2).click(function(e){
         e.preventDefault()
@@ -487,8 +504,6 @@ $(document).ready(function () {
                 '<li><img src="img/check_icon-white.png" alt="" class="check"><img src="img/section2_happygrapes.png" alt="" class="product"><span>해피 그레이프 (100g, 1개입)</span><b>1,500원</b></li>'
             );
         }
-
-        
     });
     
 
