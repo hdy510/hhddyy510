@@ -208,7 +208,7 @@ header .header_wrap .fa-bars {
     align-items: center;
     width: 480px;
     height: 60px;
-    margin-bottom: 220px;
+    margin-bottom: 120px;
     margin-left: -240px;
     border: 2px solid #fff;
     border-radius: 12px;
@@ -265,7 +265,6 @@ header .header_wrap .fa-bars {
     position: relative;
 }
 /* 좌측 상단, 우측하단 빨간 포장지 도형 설정 */
-
 .redShapeOuter {
     width: 412px;
     height: 412px;
@@ -422,6 +421,7 @@ header .header_wrap .fa-bars {
     margin-top: -30px;
     opacity: 0;
     transition: all 0.5s;
+    line-height: 1.5;
 }
 .main_section2 .titleBox p.visible {
     opacity: 1;
@@ -1550,13 +1550,18 @@ header .header_wrap .fa-bars {
     height: 470px;
     background-color: #fff;
     border: 1px solid #d7d7d7;
+    box-sizing: border-box;
     border-radius: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .sub_section1_wrap .proimg .imgBox img {
-    width: 210px;
+    width: 470px;
+    height: 470px;
+    border-radius: 18px;
+    border: 1px solid #d7d7d7;
+    box-sizing: border-box;
 }
 .sub_section1_wrap .proimg ul {
     display: flex;
@@ -1579,15 +1584,9 @@ header .header_wrap .fa-bars {
 .sub_section1_wrap .proimg li img {
     width: 100%;
 }
-.sub_section1_wrap .proimg li:nth-child(1) img {
-    width: 50%;
-}
-.sub_section1_wrap .proimg li:nth-child(2) img {
-    width: 70%;
-}
 /* 제품 정보 (protxt) 설정 */
 .sub_section1_wrap .protxt {
-    width: 30%;
+    width: 432px;
 }
 /* topBox 설정 */
 .sub_section1_wrap .protxt .topBox {
@@ -1802,15 +1801,17 @@ input[type='number'] {
 .sub_section2 .listBox {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 1162px;
     height: 500px;
     align-items: center;
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 2;
 }
 .sub_section2 .listBox .listBox_wrap {
     position: relative;
-    width: 1200px;
+    width: 1100px;
     height: 500px;
     overflow: hidden;
 }
@@ -1824,9 +1825,9 @@ input[type='number'] {
     height: 340px;
 }
 .sub_section2 .listBox li {
-    width: 240px;
+    width: 220px;
     height: 100%;
-    padding: 0 20px;
+    padding: 0 10px;
     margin-bottom: 70px;
     box-sizing: border-box;
     position: relative;
@@ -1852,10 +1853,12 @@ input[type='number'] {
     cursor: pointer;
 }
 .sub_section2 .listBox .btn.left {
-    left: 50px;
+    left: -30px;
+    z-index: 3;
 }
 .sub_section2 .listBox .btn.right {
-    right: 50px;
+    right: -30px;
+    z-index: 3;
 }
 .sub_section2 .listBox .btn i {
     color: #d7d7d7;
@@ -1891,6 +1894,7 @@ input[type='number'] {
     background-color: #fff;
     border-radius: 18px;
     border: 1px solid #d7d7d7;
+    box-sizing: border-box;
     transition: all 0.5s;
 }
 .sub_section2 .listBox .imgBox img {
@@ -3060,11 +3064,92 @@ footer .snsBox a img {
         display: none !important;
     }
 }
+/* 서브페이지 1290px 이하 이런상품은 어때요? 좌우 버튼 간격 조정 */
+@media (max-width: 1290px) {
+    .sub_section2 .listBox .btn.left {
+        left: 14px;
+    }
+    .sub_section2 .listBox .btn.right {
+        right: 14px;
+    }
+}
+/* 서브페이지 1160px 이하 서브페이지 설정 */
+@media (max-width: 1160px) {
+    /* sub_section1 */
+    .sub_section1 {
+        height: 1400px;
+    }
+    .sub_section1_wrap .category {
+        margin-left: 40px;
+    }
+    .sub_section1_wrap .pro {
+        display: flex;
+        justify-content: center;
+    }
+    .sub_section1_wrap .pro .pro_wrap {
+        flex-direction: column;
+        width: 500px;
+    }
+    .sub_section1_wrap .proimg {
+        padding-right: 0;
+    }
+    .sub_section1_wrap .proimg .imgBox {
+        width: 500px;
+        height: 500px;
+    }
+    .sub_section1_wrap .proimg .imgBox img {
+        width: 500px;
+        height: 500px;
+    }
+    .sub_section1_wrap .proimg ul {
+        width: 500px;
+    }
+    .sub_section1_wrap .protxt {
+        width: 100%;
+        margin-top: 40px;
+    }
+    .sub_section1_wrap .protxt .topBox {
+        width: 100%;
+    }
+    .sub_section1_wrap .protxt .topBox h4 {
+        width: 100%;
+    }
+    .sub_section1_wrap .protxt .bottomBox {
+        margin-top: 20px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    /* sub_section2 */
+    .sub_section2 .listBox .listBox_wrap {
+        width: 660px;
+    }
+    .sub_section2 .listBox .btn.left {
+        left: 190px;
+    }
+    .sub_section2 .listBox .btn.right {
+        right: 190px;
+    }
+}
+/* 서브페이지 810px 이하 이런상품은 어때요? 좌우 버튼 간격 조정 */
+@media (max-width: 810px) {
+    .sub_section2 .listBox .btn.left {
+        left: 210px;
+    }
+    .sub_section2 .listBox .btn.right {
+        right: 210px;
+    }
+}
 /* 데스크탑 구간. 769px ~ 1279px 설정 */
 @media (min-width: 769px) and (max-width: 1279px) {
     /* main_section2 설정 */
     .main_section2 {
         height: 2726px;
+    }
+    .redShapeOuter.visible {
+        left: -350px;
+    }
+    .redShapeInner.visible {
+        left: -120px;
     }
     .main_section2 .listBox ul {
         width: 600px;
@@ -3204,16 +3289,31 @@ footer .snsBox a img {
 }
 /* 태블릿 구간. 481px ~ 768px 설정 */
 @media (min-width: 481px) and (max-width: 768px) {
+    /* main_section1 */
+    .main_section1 .belowBtn {
+        display: none;
+    }
     /* main_section2 설정 */
+    .redShapeOuter.visible {
+        left: -450px;
+    }
+    .redShapeInner.visible {
+        left: -200px;
+    }
     .main_section2 .titleBox img {
         width: 85%;
     }
     .main_section2 .titleBox p {
         font-size: 20px;
-        margin-top: 60px;
+        margin-top: 0px;
+        width: 310px;
+        text-align: left;
     }
     .main_section2 {
-        height: 4926px;
+        height: 4626px;
+    }
+    .main_section2 .listBox {
+        margin-top: 120px;
     }
     .main_section2 .listBox ul {
         width: 300px;
@@ -3234,7 +3334,23 @@ footer .snsBox a img {
     }
     /* main_section4 설정 */
     .main_section4 {
-        height: 2750px;
+        height: 2450px;
+    }
+    .main_section4 .topBox {
+        height: 500px;
+    }
+    .main_section4 .topBox .txtBox {
+        width: 406px;
+        left: 10%;
+    }
+    .main_section4 .topBox .txtBox h2 {
+        font-size: 34px;
+    }
+    .main_section4 .topBox .txtBox h2 em {
+        font-size: 100px;
+    }
+    .main_section4 .topBox .txtBox p {
+        font-size: 24px;
     }
     .main_section4 .intro {
         width: 70%;
@@ -3407,19 +3523,39 @@ footer .snsBox a img {
     footer .snsBox {
         bottom: 10%;
     }
+    
 }
 /* 모바일 구간. 480px 이하 설정 */
 @media (max-width: 480px) {
+    /* main_section1 */
+    .main_section1 .belowBtn {
+        display: none;
+    }
     /* main_section2 설정 */
+    .redShapeOuter.visible {
+        left: -450px;
+    }
+    .redShapeInner.visible {
+        left: -200px;
+    }
+    .main_section2 .titleBox {
+        top: 130px;
+        left: 60px;
+    }
     .main_section2 .titleBox img {
         width: 85%;
     }
     .main_section2 .titleBox p {
-        font-size: 20px;
-        margin-top: 60px;
+        font-size: 18px;
+        margin-top: 0px;
+        width: 270px;
+        text-align: left;
     }
     .main_section2 {
-        height: 4926px;
+        height: 4626px;
+    }
+    .main_section2 .listBox {
+        margin-top: 60px;
     }
     .main_section2 .listBox ul {
         width: 300px;
@@ -3452,11 +3588,22 @@ footer .snsBox a img {
     .main_section4 {
         height: 3050px;
     }
+    .main_section4 .topBox {
+        height: 500px;
+    }
+    .main_section4 .topBox .txtBox {
+        width: 244px;
+        left: 10%;
+    }
     .main_section4 .topBox .txtBox h2 {
         font-size: 40px;
+        margin-bottom: 30px;
     }
     .main_section4 .topBox .txtBox h2 em {
-        font-size: 120px;
+        font-size: 100px;
+    }
+    .main_section4 .topBox .txtBox p {
+        font-size: 24px;
     }
     .main_section4 .intro {
         width: 70%;

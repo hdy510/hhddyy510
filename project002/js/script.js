@@ -1270,6 +1270,13 @@ $(document).ready(function () {
         }
     });
 
+    // 서브페이지
+    // sub_section1 의 상품 이미지 클릭시 이미지 변화
+    $('.sub_section1 .pro .proimg ul li').click(function(){
+        let index = $(this).index();
+        $('.sub_section1 .pro .proimg .imgBox img').attr('src', 'img/sub_section1_proimg'+(index)+'.jpg');
+    })
+
     // sub_section1 .detail_content 의 .btn 의 .minus 를 클릭할 때 , input 의 숫자가 줄고
     $('.sub_section1 .detail_content .minus').click(function () {
         // input 의 숫자가 1보다 크면, input 의 숫자를 1씩 줄여라
@@ -1302,7 +1309,8 @@ $(document).ready(function () {
 
     // sub_section2 의 이런상품은 어때요? 좌우 버튼에 따라 리스트 이동
     $('.sub_section2 .listBox .btn.right').click(function(){
-        $('.sub_section2 .listBox ul').animate({left: '-480px'}, 500);
+        // if ul 의 길이가~ 라면 left 값을 ~만큼 이동 적용#########################3
+        $('.sub_section2 .listBox ul').animate({left: '-440px'}, 500);
     })
     $('.sub_section2 .listBox .btn.left').click(function(){
         $('.sub_section2 .listBox ul').animate({left: 0}, 500);
