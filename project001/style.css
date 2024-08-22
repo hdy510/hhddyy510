@@ -744,6 +744,8 @@ section .gradient div:nth-child(3) {
     align-items: center;
     padding: 30px;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     background-color: #fcfcfc;
 }
 .section2 .listBox .listBox_wrap {
@@ -940,6 +942,8 @@ section .gradient div:nth-child(3) {
     border: 2px solid #A6DDFC;
     border-radius: 18px;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     transition: all 0.3s;
 }
 
@@ -1027,6 +1031,8 @@ section .gradient div:nth-child(3) {
     color: #6dcbff;
     border: 1px solid #6DCBFF;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 
 /* section4 설정 */
@@ -1087,6 +1093,8 @@ section .gradient div:nth-child(3) {
     border-radius: 70px;
     border: 2px solid #B5E74E;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     margin: 0 30px ;
     cursor: pointer;
     transition: all 0.3s;
@@ -1146,6 +1154,8 @@ section .gradient div:nth-child(3) {
     width: 310px;
     padding: 30px;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     border-radius: 0 0 18px 18px;
     border: 2px solid #C2EB70;
     transition: all 0.3s;
@@ -1206,6 +1216,8 @@ section .gradient div:nth-child(3) {
     color: #B5E74E;
     border: 1px solid #B5E74E;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 
 /* section5 설정 */
@@ -1240,6 +1252,8 @@ section .gradient div:nth-child(3) {
     border-radius: 18px;
     padding: 44px;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     transition: all 0.3s;
 }
 /* section5의 .adoptReview와 .volunteerReview hover transition */
@@ -1359,6 +1373,8 @@ section .gradient div:nth-child(3) {
     border: 2px solid #E0E0E0;
     background-color: #fcfcfc;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     border-radius: 22px;
     padding: 40px;
     transition: all 0.3s;
@@ -1734,6 +1750,8 @@ footer .copyright {
     height: 100%;
     padding: 30px;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 .reservation .reservation_form form {
     display: flex;
@@ -1856,6 +1874,8 @@ footer .copyright {
     padding: 44px;
     display: flex;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 .reservation_confirm>ul>li {}
 .reservation_confirm>ul>li:nth-child(1) {
@@ -2305,6 +2325,8 @@ footer .copyright {
         height: 500px;
         padding: 10px;
         box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
     }
     .reservation_confirm h3 {
         font-size: 26px;

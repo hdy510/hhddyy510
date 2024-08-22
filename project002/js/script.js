@@ -31,15 +31,6 @@ $(document).ready(function () {
             }
     })
     
-    // //  GNB 유저 아이콘 클릭시, loginPage 페이지 등장
-    // $('.util ul li').eq(3).click(function(e){
-    //     e.preventDefault()
-    //     $('.main').hide()
-    //     $('.sub').hide()
-    //     $('footer').hide()
-    //     $('.loginPage').css({'display':'flex'})
-    // })
-    
     // main_section1 TypeIt 효과
     new TypeIt('#typeWriter', {
         deleteSpeed: 80,
@@ -114,30 +105,7 @@ $(document).ready(function () {
                 $(this).addClass('visible');
             }
         });
-        //  main_section3 topBox 등장
-        // $('.main_section3 .topBox').each(function () {
-        //     if ($(this).offset().top < $(window).scrollTop() + $(window).height() * 0.7) {
-        //         $(this).addClass('visible');
-        //     }
-        // });
-        //  main_section3 middleBox 등장
-        // $('.main_section3 .middleBox').each(function () {
-        //     if ($(this).offset().top < $(window).scrollTop() + $(window).height() * 0.7) {
-        //         $(this).addClass('visible');
-        //     }
-        // });
-        //  main_section3 bottomBox 등장
-        // $('.main_section3 .bottomBox').each(function () {
-        //     if ($(this).offset().top < $(window).scrollTop() + $(window).height() * 0.7) {
-        //         $(this).addClass('visible');
-        //     }
-        // });
-        //  main_section4 intro 등장
-        // $('.main_section4 .intro').each(function () {
-        //     if ($(this).offset().top < $(window).scrollTop() + $(window).height() * 0.7) {
-        //         $(this).addClass('visible');
-        //     }
-        // });
+
         //  main_section4 historyMain 과 historySub 등장
         $('.main_section4 .historyMain').each(function () {
             if ($(this).offset().top < $(window).scrollTop() + $(window).height() * 0.7) {
@@ -562,21 +530,6 @@ $(document).ready(function () {
         // 서브페이지의 장바구니 버튼 색 빠짐
         $('.sub_section1 .bottomBox li').eq(1).removeClass('on');
     })
-
-    // // 유틸리티 - 로그인 에서 '로그인' 버튼 클릭시, popup_login 로그인 팝업알림창 등장, 배경 흐려짐
-    // $('.loginPage .loginBtn').click(function (e) {
-    //     e.preventDefault()
-    //     $('.popup_login').css({ display: 'block' });
-    //     $('.loginPage').css({'filter':'brightness(50%)'})
-    // });
-    // // 유틸리티 - 로그인 - popup_login 에서 '확인' 클릭하면 로그인 팝업알림창 사라짐, 배경 밝아짐, 로그인페이지는 사라짐, 메인페이지 등장
-    // $('.popup_login .ok').click(function () {
-    //     $('.popup_login').css({ display: 'none' });
-    //     $('.loginPage').css({'filter':'brightness(100%)'})
-    //     $('.loginPage').css({ display: 'none' });
-    //     $('.main').css({ display: 'block' });
-    //     $('footer').css({ display: 'flex' });
-    // });
 
     // main_section3 의 영양정보/원재료명 토글 설정
     // .titleBox 의 첫 번째 li를 클릭할 때,
@@ -1308,12 +1261,67 @@ $(document).ready(function () {
     });
 
     // sub_section2 의 이런상품은 어때요? 좌우 버튼에 따라 리스트 이동
+    let subSection2Index = 0;
     $('.sub_section2 .listBox .btn.right').click(function(){
-        // if ul 의 길이가~ 라면 left 값을 ~만큼 이동 적용#########################3
-        $('.sub_section2 .listBox ul').animate({left: '-440px'}, 500);
+        subSection2Index++;
+        console.log(subSection2Index);
+
+        // 리스트의 상품 갯수보다 초과해서 버튼을 누를 경우 처리
+        // 만약 .sub_section2 .listBox .listBox_wrap 의 width 가
+        // 1. 1100px 이면 subSection2Index 가 2에서 멈춤
+        // 2. 660px 이면 subSection2Index 가 4에서 멈춤
+        // 3. 440px 이면 subSection2Index 가 5에서 멈춤
+        // 4. 220px 이면 subSection2Index 가 6에서 멈춤
+        // .listBox_wrap 의 width 변수: listWidth
+        let listWidth = $('.sub_section2 .listBox .listBox_wrap').width();
+        // 리스트의 상품 갯수보다 초과해서 버튼을 누를 경우를 인식하기 위한 변수: over
+        let over;
+        switch (listWidth) {
+            case 1100:
+                if (subSection2Index == 3) {
+                    subSection2Index = 2;
+                    over = true;
+                }
+                break;
+            case 660:
+                if (subSection2Index == 5) {
+                    subSection2Index = 4;
+                    over = true;
+                }
+                break;
+            case 440:
+                if (subSection2Index == 6) {
+                    subSection2Index = 5;
+                    over = true;
+                }
+                break;
+            case 220:
+                if (subSection2Index == 7) {
+                    subSection2Index = 6;
+                    over = true;
+                }
+                break;
+        }
+
+        // 위의 switch 문이 작동하면 === true
+
+        if (over) {
+            $('.sub_section2 .listBox ul').animate({left: (-220 * subSection2Index) + 'px'}, 1);
+        } else {
+            $('.sub_section2 .listBox ul').animate({left: (-220 * subSection2Index) + 'px'}, 500);
+        }
     })
     $('.sub_section2 .listBox .btn.left').click(function(){
-        $('.sub_section2 .listBox ul').animate({left: 0}, 500);
+        subSection2Index--;
+        console.log(subSection2Index);
+        
+        // 만약 subSection2Index 가 0 이면 subSection2Index 가 0에서 멈춤
+        if (subSection2Index == -1) {
+            subSection2Index = 0;
+            $('.sub_section2 .listBox ul').animate({left: (-220 * subSection2Index) + 'px'}, 1);
+        } else {
+            $('.sub_section2 .listBox ul').animate({left: (-220 * subSection2Index) + 'px'}, 500);
+        }
     })
 
     // sub_section2 의 스크롤에 반응하여 등장하는 애니메이션

@@ -229,7 +229,7 @@ $(document).ready(function(){
         $('.btn_next').hide()
     })
 
-    //     profile_scroll 각 멤버 페이지 영역 구분 참조!!!!
+    //     profile_scroll 각 멤버 페이지 영역 구분 참고!!!!
     //     // 만약 0 <= scGlobal < 2500 이라면 (다니엘페이지)
     //     // 만약 2500 <= scGlobal < 7500  이라면 (해린페이지)
     //     // 만약 7500 <= scGlobal < 12500 이라면 (민지페이지)
@@ -364,6 +364,9 @@ $(document).ready(function(){
         $('.music_player .cd').removeClass('on')
         // .music_player .cd 의 속성값 src 가 music_player_cd.png 로 초기화
         $('.music_player .cd').attr('src','img/music_player_cd.png')
+
+        // body 의 cd 클래스 지워서 스크롤 없앴던거 다시 만들기
+        $('body').addClass('cd')
     })
     // music_player 의 .play 의 img 를 클릭했을 때, on 클래스 추가해서 정지 이미지로 top 값 변경
     $('.music_player .play img').click(function(){

@@ -35,7 +35,9 @@ body {
 * {
     padding: 0;
     margin: 0;
-    /* box-sizing: border-box; */
+    /* box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; */
     /* section6 가로스크롤바 방지방법2 */
 }
 ul,
@@ -111,6 +113,8 @@ header .nav a {
     padding: 10px 30px;
     width: 93px;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     transition: all 0.3s;
 }
 header .nav a:hover {
@@ -451,6 +455,8 @@ header .header_wrap .fa-bars {
     padding: 0 10px;
     margin-bottom: 70px;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     position: relative;
 }
 .main_section2 .listBox li > a {
@@ -501,6 +507,8 @@ header .header_wrap .fa-bars {
 .main_section2 .listBox .txtBox {
     width: 100%;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     padding: 20px;
     margin-top: 10px;
     position: relative;
@@ -714,6 +722,8 @@ header .header_wrap .fa-bars {
 .main_section3 .bottomBox .txtBox {
     width: 250px;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     padding: 20px;
     margin-left: 10px;
     position: relative;
@@ -837,12 +847,10 @@ header .header_wrap .fa-bars {
     display: flex;
     align-items: center;
     margin-top: 83px;
-    opacity: 0;
     transition: all 0.5s;
 }
-.main_section4 .intro.visible {
-    opacity: 1;
-    transform: translateY(40px);
+.main_section4 .intro .imgBox img {
+    width: 100%;
 }
 .main_section4 .intro .txtBox {
     margin-left: 40px;
@@ -878,12 +886,8 @@ header .header_wrap .fa-bars {
     align-items: center;
     width: 970px;
     margin-top: 76px;
-    opacity: 0;
     transition: all 0.5s;
-}
-.main_section4 .historyMain.visible {
-    opacity: 1;
-    transform: translateX(40px);
+    position: relative;
 }
 .main_section4 .historyMain .imgBox {
     width: 424px;
@@ -960,6 +964,8 @@ header .header_wrap .fa-bars {
     color: #fff;
     border: 1px solid #d8232a;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 .main_section4 .historyMain .list:hover {
     background-color: #fff;
@@ -1075,12 +1081,16 @@ header .header_wrap .fa-bars {
     height: 60%;
     margin-left: 60px;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 .main_section5 .quality_inner .bottomImgBox {
     width: 100%;
     height: 30%;
     padding-top: 40px;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 /* 품질 이미지박스 레이아웃 설정 */
 .main_section5 .quality_inner .leftImgBox {
@@ -1115,6 +1125,8 @@ header .header_wrap .fa-bars {
 /* .main_section5 .quality_inner .leftImgBox div {
     padding: 4px;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 } */
 /* 품질 이미지박스 이미지 설정 */
 .main_section5 .leftImgBox img {
@@ -1163,6 +1175,8 @@ header .header_wrap .fa-bars {
     object-fit: cover;
     padding-bottom: 16px;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 .main_section5 .quality_inner .bottomImgBox p {
     font-size: 16px;
@@ -1281,6 +1295,9 @@ header .header_wrap .fa-bars {
     width: 100%;
     margin-bottom: 76px;
     padding-left: 100px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 .main_section6 .contentInner>.txtBox h2 {
     font-size: 40px;
@@ -1389,6 +1406,8 @@ header .header_wrap .fa-bars {
 .main_section6 .bottomBox .txtBox {
     /* width: 250px; */
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     margin-left: 20px;
     position: absolute;
     top: 0;
@@ -1551,6 +1570,8 @@ header .header_wrap .fa-bars {
     background-color: #fff;
     border: 1px solid #d7d7d7;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     border-radius: 18px;
     display: flex;
     justify-content: center;
@@ -1562,6 +1583,8 @@ header .header_wrap .fa-bars {
     border-radius: 18px;
     border: 1px solid #d7d7d7;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 .sub_section1_wrap .proimg ul {
     display: flex;
@@ -1640,6 +1663,8 @@ header .header_wrap .fa-bars {
     width: 90px;
     border-radius: 6px;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 .sub_section1_wrap .protxt .detail .detail_content li .btn button {
     width: 30px;
@@ -1830,6 +1855,8 @@ input[type='number'] {
     padding: 0 10px;
     margin-bottom: 70px;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     position: relative;
 }
 .sub_section2 .listBox li > a {
@@ -1844,6 +1871,8 @@ input[type='number'] {
     width: 42px;
     height: 42px;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1895,6 +1924,8 @@ input[type='number'] {
     border-radius: 18px;
     border: 1px solid #d7d7d7;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     transition: all 0.5s;
 }
 .sub_section2 .listBox .imgBox img {
@@ -1912,6 +1943,8 @@ input[type='number'] {
 .sub_section2 .listBox .txtBox {
     width: 200px;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     padding: 10px;
     margin-top: 10px;
     position: relative;
@@ -2061,7 +2094,6 @@ input[type='number'] {
     display: flex;
     flex-direction: column;
     margin-bottom: 16px;
-    /* 질문 : .review_more_btn 의 margin-top 으로는 안 움직이는 이유 */
 }
 .product_review .reviewBox li {
     margin-bottom: 20px;
@@ -2075,6 +2107,8 @@ input[type='number'] {
     justify-content: space-between;
     background-color: #fff;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 .product_review .reviewBox a img {
     width: 104px;
@@ -2144,6 +2178,7 @@ input[type='number'] {
 }
 .sub_section4 .infoBox1 img {
     width: 376px;
+    margin-left: 100px;
 }
 .sub_section4 .infoBox1 .txtBox {
     display: flex;
@@ -2188,6 +2223,7 @@ input[type='number'] {
     justify-content: center;
     /* padding: 0 100px; */
     height: 500px;
+    margin-left: 100px;
 }
 .sub_section4 .infoBox2 .txtBox p {
     line-height: 1.5;
@@ -2215,10 +2251,10 @@ input[type='number'] {
     font-style: normal;
 }
 .sub_section4 .infoBox2 img {
-    width: 600px;
+    width: 400px;
     position: absolute;
-    top: 0;
-    right: -100px;
+    top: 300px;
+    right: 0;
 }
 /* infoBox3 설정 */
 .sub_section4 .infoBox3 {
@@ -2247,7 +2283,6 @@ input[type='number'] {
     display: flex;
     justify-content: center;
     width: 100%;
-    /* background-color: yellow; */
     margin-top: 70px;
 }
 .sub_section4 .infoBox3 .txtBox .imgBox .imgBoxEach {
@@ -2319,6 +2354,8 @@ input[type='number'] {
     padding: 0 10px;
     padding-bottom: 20px;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 .sub_section5 .txtBox {
     width: 720px;
@@ -2582,8 +2619,7 @@ footer .snsBox a img {
     position: fixed;
     top: 50%;
     left: 50%;
-    margin-top: -153px;
-    margin-left: -204px;
+    transform: translate(-50%, -50%);
     z-index: 100;
     display: none;
 }
@@ -2613,6 +2649,7 @@ footer .snsBox a img {
 .popup_like .popup p {
     font-size: 16px;
     margin-bottom: 36px;
+    line-height: 1.5;
 }
 .popup_like .popup ul {
     display: flex;
@@ -2639,8 +2676,7 @@ footer .snsBox a img {
     position: fixed;
     top: 50%;
     left: 50%;
-    margin-top: -153px;
-    margin-left: -204px;
+    transform: translate(-50%, -50%);
     z-index: 100;
     display: none;
 }
@@ -2670,6 +2706,7 @@ footer .snsBox a img {
 .popup_bag1 .popup p {
     font-size: 16px;
     margin-bottom: 36px;
+    line-height: 1.5;
 }
 .popup_bag1 .popup ul {
     display: flex;
@@ -2712,8 +2749,7 @@ footer .snsBox a img {
     height: 700px;
     top: 50%;
     left: 50%;
-    margin-top: -350px;
-    margin-left: -304px;
+    transform: translate(-50%, -50%);
 }
 .popup_bag2 .popup {
     background-color: #fff;
@@ -2734,21 +2770,31 @@ footer .snsBox a img {
     width: 530px;
 }
 .popup_bag2 .popup>span {
-    font-size: 20px;
-    color: #a8a8a8;
-    font-weight: 600;
-    width: 130px;
+    border: 2px solid #e9e9e9;
+    border-radius: 8px;
+    padding: 8px 4px;
+    font-size: 18px;
+    color: #818181;
+    font-weight: 500;
+    width: 60px;
     text-align: center;
     position: absolute;
-    top: 7%;
-    right: 4%;
+    top: 5%;
+    right: 5%;
     cursor: pointer;
+}
+.popup_bag2 .popup>span:hover {
+    background-color: #f2f2f2;
 }
 .popup_bag2 .popup .bagBox {
     width: 530px;
     height: 400px;
     margin-bottom: 20px;
     overflow-y: scroll;
+    overscroll-behavior: none;
+}
+.popup_bag2 .popup .bagBox::-webkit-scrollbar {
+    width: 6px;
 }
 .popup_bag2 .popup .bagBox>p {
     font-size: 18px;
@@ -2784,10 +2830,10 @@ footer .snsBox a img {
     width: 272px;
     cursor: pointer;
 }
-.popup_bag2 .popup .bagBox .purchase_list div  {
+/* .popup_bag2 .popup .bagBox .purchase_list div  {
     width: 110px;
     text-align: center;
-}
+} */
 .popup_bag2 .popup .bagBox .purchase_list b {
     width: 80px;
     font-size: 18px;
@@ -3119,6 +3165,9 @@ footer .snsBox a img {
         justify-content: flex-end;
     }
     /* sub_section2 */
+    .sub_section2 {
+        height: 500px;
+    }
     .sub_section2 .listBox .listBox_wrap {
         width: 660px;
     }
@@ -3160,7 +3209,7 @@ footer .snsBox a img {
     }
     .product_review h5 {
         padding-left: 40px;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
     .product_review .reviewBox {
         padding: 30px;
@@ -3169,6 +3218,9 @@ footer .snsBox a img {
         flex-direction: column;
         align-items: center;
         margin: 0 auto;
+    }
+    .product_review .reviewBox .reviewBox_wrap {
+        width: 700px;
     }
     .product_review .reviewBox ul {
         flex-direction: row;
@@ -3199,8 +3251,6 @@ footer .snsBox a img {
         align-items: center;
     }
     /* sub_section4 */
-    .sub_section4 .infoBox1 {
-    }
     .sub_section4 .infoBox1 img {
         width: 300px;
         margin-left: 100px;
@@ -3280,6 +3330,144 @@ footer .snsBox a img {
     .sub_section2 .listBox .btn.right {
         right: 210px;
     }
+    /* 서브페이지 sub_section4 설정 */
+    .sub_section3 .sub_section3_wrap {
+        height: 1300px;
+    }
+    .sub_section3 .product_detail {
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+    .sub_section3 .product_detail h5 {
+        padding-left: 40px;
+    }
+    .sub_section3 .product_detail .imgBox {
+        width: 400px;
+        height: 563px;
+        margin: 0 auto;
+    }
+    .sub_section3 .product_detail .imgBox h6 {
+        left: 5%;
+    }
+    .sub_section3 .product_detail .imgBox .goldbaren {
+        width: 180px;
+        left: 49%;
+        top: 55%;
+    }
+    .sub_section3 .product_detail .imgBox .jellyPile {
+        width: 130px;
+        bottom: 0;
+        left: 22%;
+    }
+    .sub_section3 .product_review {
+        height: auto;
+    }
+    .product_review .reviewBox {
+        width: 350px;
+    }
+    .product_review .reviewBox .reviewBox_wrap {
+        width: 350px;
+        overflow: hidden;
+    }
+    .product_review .reviewBox ul {
+        width: 700px;
+    }
+    .sub_section4 .infoBox1 {
+        flex-direction: column;
+    }
+    .sub_section4 .infoBox1 img {
+        width: 300px;
+        margin-left: 0;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+    .sub_section4 .infoBox1 .txtBox {
+        width: 400px;
+        margin: 0 auto;
+        padding: 0;
+        text-align: center;
+        line-height: 1.5;
+    }
+    .sub_section4 .infoBox1 .txtBox p:nth-child(1) {
+        width: 400px;
+        font-size: 24px;
+    }
+    .sub_section4 .infoBox1 .txtBox p:nth-child(2) {
+        font-size: 16px;
+        width: 100%;
+    }
+    .sub_section4 .infoBox1 .txtBox p b {
+        font-size: 36px;
+    }
+    .sub_section4 .infoBox2 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .sub_section4 .infoBox2 .txtBox {
+        width: 400px;
+        height: auto;
+        padding-right: 0;
+        order: 2;
+        margin-left: 0;
+        text-align: center;
+        line-height: 1.5;
+    }
+    .sub_section4 .infoBox2 .txtBox p:nth-child(1) {
+        width: 400px;
+        font-size: 24px;
+    }
+    .sub_section4 .infoBox2 .txtBox p:nth-child(2) {
+        font-size: 16px;
+        width: 100%;
+    }
+    .sub_section4 .infoBox2 .txtBox p b {
+        font-size: 36px;
+    }
+    .sub_section4 .infoBox2 img {
+        order: 1;
+        width: 300px;
+        height: 259.95px;
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 40px;
+    }
+    .sub_section4 .infoBox3 {
+        height: 500px;
+    }
+    .sub_section4 .infoBox3 .txtBox {
+        width: 460px;
+        margin: 0 auto;
+        height: 100%;
+        justify-content: flex-start;
+    }
+    .sub_section4 .infoBox3 .txtBox p {
+        font-size: 20px;
+        margin: 0 20px;
+        width: 340px;
+        text-align: center;
+        line-height: 1.5;
+    }
+    .sub_section4 .infoBox3 .txtBox p b {
+        font-size: 36px;
+    }
+    .sub_section4 .infoBox3 .txtBox .imgBox {
+        flex-wrap: wrap;
+        height: 360px;
+        margin-top: 20px;
+    }
+    .sub_section4 .infoBox3 .txtBox .imgBox .imgBoxEach {
+        width: 33.3333%;
+    }
+    .sub_section5 .txtBox {
+        width: 380px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+    .sub_section5 .txtBox table tr th {
+        width: 35%;
+    }
 }
 /* 데스크탑 구간. 769px ~ 1279px 설정 */
 @media (min-width: 769px) and (max-width: 1279px) {
@@ -3310,6 +3498,11 @@ footer .snsBox a img {
     .main_section4 .historyMain {
         width: 50%;
         flex-direction: column;
+    }
+    .main_section4 .historyMain .imgBox {
+        width: 320px;
+        height: 243px;
+        padding-bottom: 20px;
     }
     .main_section4 .historySub {
         width: 1700px;
@@ -3416,10 +3609,6 @@ footer .snsBox a img {
         height: 200px;
         position: relative;
     }
-}
-/* 950px 이하 여백 해결 */
-@media(max-width: 950px) {
-    
 }
 /* 780px 이하 footer 설정 */
 @media (max-width: 780px) {
@@ -3750,9 +3939,15 @@ footer .snsBox a img {
         right: 14px;
     }
 }
-
 /* 모바일 구간. 480px 이하 설정 */
 @media (max-width: 480px) {
+    /* header */
+    header {
+        height: 80px;
+    }
+    header .header_wrap {
+        padding: 0 20px;
+    }
     /* main_section1 */
     .main_section1 .belowBtn {
         display: none;
@@ -3812,7 +4007,7 @@ footer .snsBox a img {
     }
     /* main_section4 설정 */
     .main_section4 {
-        height: 3050px;
+        height: 2650px;
     }
     .main_section4 .topBox {
         height: 500px;
@@ -3834,6 +4029,9 @@ footer .snsBox a img {
     .main_section4 .intro {
         width: 70%;
         flex-direction: column;
+    }
+    .main_section4 .intro .imgBox {
+        width: 220px;
     }
     .main_section4 .historyMain {
         width: 50%;
@@ -4038,8 +4236,15 @@ footer .snsBox a img {
         margin-left: 20px;
     }
     /* sub_section2 */
+    .sub_section2 {
+        align-items: start;
+        height: 500px;
+    }
+    .sub_section2_wrap {
+        height: 500px;
+    }
     .sub_section2_wrap h5 {
-        padding: 40px 20px;
+        padding: 40px 40px;
     }
     .sub_section2 .listBox {
         width: 300px;
@@ -4048,9 +4253,260 @@ footer .snsBox a img {
         width: 220px;
     }
     .sub_section2 .listBox .btn.left {
-        left: -10px;
+        left: -4px;
     }
     .sub_section2 .listBox .btn.right {
-        right: -10px;
+        right: -4px;
+    }
+    /* sub_section3 */
+    .sub_section3 {
+        height: 1300px;
+    }
+    .sub_section3 .product_detail {
+        padding: 0;
+    }
+    .sub_section3 .product_detail h5 {
+        padding-left: 40px;
+    }
+    .sub_section3 .product_detail .imgBox {
+        width: 200px;
+        margin: 0 auto;
+    }
+    .sub_section3 .product_detail .imgBox h6 {
+        font-size: 28px;
+    }
+    .sub_section3 .product_detail .imgBox h6 b {
+        font-size: 78px;
+    }
+    .sub_section3 .product_detail .imgBox h6 em {
+        font-size: 58px;
+    }
+    .sub_section3 .product_detail .imgBox .goldbaren {
+        width: 150px;
+        top: 52%;
+        left: 28%;
+    }
+    .sub_section3 .product_detail .imgBox .jellyPile {
+        width: 120px;
+        bottom: -2%;
+        left: 10%;
+    }
+    .sub_section3 .product_review {
+       width: 100%;
+    }
+    .product_review .reviewBox {
+        width: 200px;
+    }
+    .product_review .reviewBox .reviewBox_wrap {
+        width: 152px;
+        overflow: hidden;
+    }
+    .product_review .reviewBox ul {
+        width: 152px;
+    }
+    .sub_section4 .infoBox1 {
+        flex-direction: column;
+    }
+    .sub_section4 .infoBox1 img {
+        width: 200px;
+        margin: 0 auto;
+    }
+    .sub_section4 .infoBox1 .txtBox {
+        width: 210px;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .sub_section4 .infoBox1 .txtBox p:nth-child(1) {
+        width: 220px;
+        font-size: 24px;
+    }
+    .sub_section4 .infoBox1 .txtBox p:nth-child(2) {
+        font-size: 16px;
+        width: 100%;
+    }
+    .sub_section4 .infoBox1 .txtBox p b {
+        font-size: 36px;
+    }
+    .sub_section4 .infoBox2 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .sub_section4 .infoBox2 .txtBox {
+        width: 210px;
+        padding-right: 0;
+        order: 2;
+    }
+    .sub_section4 .infoBox2 .txtBox p:nth-child(1) {
+        width: 220px;
+        font-size: 24px;
+    }
+    .sub_section4 .infoBox2 .txtBox p:nth-child(2) {
+        font-size: 16px;
+        width: 100%;
+    }
+    .sub_section4 .infoBox2 .txtBox p b {
+        font-size: 36px;
+    }
+    .sub_section4 .infoBox2 img {
+        order: 1;
+        width: 200px;
+        height: 173.3px;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    .sub_section4 .infoBox3 {
+        height: 700px;
+    }
+    .sub_section4 .infoBox3 .txtBox {
+        width: 240px;
+        margin: 0 auto;
+        height: 100%;
+        justify-content: flex-start;
+    }
+    .sub_section4 .infoBox3 .txtBox p {
+        font-size: 20px;
+        width: 240px;
+    }
+    .sub_section4 .infoBox3 .txtBox p b {
+        font-size: 36px;
+    }
+    .sub_section4 .infoBox3 .txtBox .imgBox {
+        flex-wrap: wrap;
+        height: 500px;
+        margin-top: 20px;
+    }
+    .sub_section4 .infoBox3 .txtBox .imgBox .imgBoxEach {
+        width: 50%;
+    }
+    .sub_section5 .txtBox {
+        width: 260px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+    .sub_section5 .txtBox table tr th {
+        width: 35%;
+    }
+    /* 장바구니 알림 팝업 */
+    .popup_bag1 .popup {
+        width: 300px;
+        height: 330px;
+    }
+    .popup_bag1 .popup span i {
+        font-size: 50px;
+    }
+    .popup_bag1 .popup p {
+        width: 200px;
+        text-align: center;
+    }
+    .popup_bag1 .popup li {
+        margin: 0 6px;
+    }
+    .popup_bag1 .popup li span {
+        padding: 12px 18px;
+    }
+    .popup_bag1 .popup li a {
+        padding: 12px 18px;
+    }
+    /* 관심상품 팝업 */
+    .popup_like .popup {
+        width: 300px;
+        height: 330px;
+    }
+    .popup_like .popup span i {
+        font-size: 50px;
+    }
+    .popup_like .popup p {
+        width: 200px;
+        text-align: center;
+    }
+    .popup_like .popup li span {
+        padding: 12px 40px;
+    }
+    /* 장바구니 팝업 */
+    .popup_bag2 {
+        width: 300px;
+        height: 700px;
+    }
+    .popup_bag2 .popup h4 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .popup_bag2 .popup>span {
+        font-size: 15px;
+        right: 4%;
+        top: 1.5%;
+    }
+    .popup_bag2 .popup .bagBox {
+        width: 270px;
+    }
+    .popup_bag2 .popup .bagBox>p {
+        font-size: 14px;
+        padding-left: 74px;
+        padding-top: 20px;
+        padding-bottom: 0;
+    }
+    .popup_bag2 .popup .bagBox>p em {
+        margin-left: 76px;
+    }
+    .popup_bag2 .popup .bagBox .purchase_list li {
+        transform: translateX(-10px);
+        height: 70px;
+    }
+    .popup_bag2 .popup .bagBox .purchase_list .check {
+        margin-right: 0;
+    }
+    .popup_bag2 .popup .bagBox .purchase_list .product {
+        width: 30px;
+        margin-right: 10px;
+    }
+    .popup_bag2 .popup .bagBox .purchase_list span {
+        font-size: 13px;
+        width: 80px;
+    }
+    .popup_bag2 .popup .bagBox .purchase_list b {
+        width: 20%;
+        font-size: 16px;
+        margin-left: 42px;
+    }
+    .popup_bag2 .popup .total_price {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    .popup_bag2 .popup .popup_bag2_button {
+        flex-direction: column;
+        width: 100%;
+    }
+    .popup_bag2 .popup .popup_bag2_button li {
+        width: 100%;
+        margin: 10px 0px;
+        display: flex;
+        justify-content: center;
+    }
+    .popup_bag2 .popup .popup_bag2_button li.empty {
+        order: 2;
+        margin-bottom: 0;
+    }
+    .popup_bag2 .popup .popup_bag2_button li.order {
+        order: 1;
+    }
+    .popup_bag2 .popup .popup_bag2_button li span {
+        padding: 0;
+        width: 140px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+    }
+    .popup_bag2 .popup .popup_bag2_button li a {
+        padding: 0;
+        width: 80%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
