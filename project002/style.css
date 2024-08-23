@@ -2745,7 +2745,7 @@ footer .snsBox a img {
     position: fixed;
     z-index: 100;
     display: none;
-    width: 608px;
+    width: 430px;
     height: 700px;
     top: 50%;
     left: 50%;
@@ -2767,7 +2767,7 @@ footer .snsBox a img {
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 30px;
-    width: 530px;
+    width: 370px;
 }
 .popup_bag2 .popup>span {
     border: 2px solid #e9e9e9;
@@ -2787,7 +2787,7 @@ footer .snsBox a img {
     background-color: #f2f2f2;
 }
 .popup_bag2 .popup .bagBox {
-    width: 530px;
+    width: 400px;
     height: 400px;
     margin-bottom: 20px;
     overflow-y: scroll;
@@ -2799,12 +2799,12 @@ footer .snsBox a img {
 .popup_bag2 .popup .bagBox>p {
     font-size: 18px;
     color: #616161;
-    padding-left: 200px;
+    padding-left: 150px;
     padding-bottom: 20px;
 }
 .popup_bag2 .popup .bagBox>p em {
     font-style: normal;
-    margin-left: 152px;
+    margin-left: 100px;
 }
 .popup_bag2 .popup .bagBox .purchase_list {
     width: 100%;
@@ -2827,18 +2827,13 @@ footer .snsBox a img {
     cursor: pointer;
 }
 .popup_bag2 .popup .bagBox .purchase_list span {
-    width: 272px;
+    width: 190px;
     cursor: pointer;
 }
-/* .popup_bag2 .popup .bagBox .purchase_list div  {
-    width: 110px;
-    text-align: center;
-} */
 .popup_bag2 .popup .bagBox .purchase_list b {
-    width: 80px;
+    width: 70px;
     font-size: 18px;
     font-weight: 700;
-    text-align: right;
 }
 /* 총상품금액 설정 */
 .popup_bag2 .popup .total_price {
@@ -4431,13 +4426,14 @@ footer .snsBox a img {
     }
     .popup_bag2 .popup h4 {
         width: 100%;
-        text-align: center;
+        /* text-align: center; */
+        margin-left: 50px;
         margin-bottom: 10px;
     }
     .popup_bag2 .popup>span {
         font-size: 15px;
         right: 4%;
-        top: 1.5%;
+        top: 3%;
     }
     .popup_bag2 .popup .bagBox {
         width: 270px;
