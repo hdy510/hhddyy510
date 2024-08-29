@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 외부 스타일시트 연결 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- jquery cdn -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <!-- 제이쿼리 min 버전 가져오기 -->
+    <script src="jquery-3.7.1.min.js"></script>
+    <!-- 폰트어썸 라이브러리 연결 -->
+    <script src="https://kit.fontawesome.com/fb97202f89.js" crossorigin="anonymous"></script>
+    <!-- gsap 라이브러리 연결 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <!-- 외부 스크립트 연결 -->
+    <script src="js.js"></script>
+</head>
+<body>
+    <section class="section1">
+        <div class="intro">
+            <div class="dvd-container">
+                <img src="img/dvd_logo.png" alt="dvd_logo" class="dvd-logo">
+            </div>
+        </div>
+        <div class="black_bg">
+            <div class="bg">
+                <div class="mainTitle">
+                    <h1>Portfolio<i>2024</i></h1>
+                    <p>Hwang Do Young</p>
+                </div>
+            </div>
+            <div class="txt uiux">UI/UX DESIGN</div>
+            <div class="txt publishing">WEB PUBLISHING</div>
+            <div class="txt welcome">Welcome to my Portfolio page<i>_</i></div>
+            <div class="btn toIntro">
+                <img src="img/dvd_logo.png" alt="dvd_logo">
+            </div>
+            <div class="btn profile">
+                <img src="img/profileIcon.png" alt="profileIcon">
+                <span>PROFILE</span>
+            </div>
+            <div class="contentBox">
+                <div class="eachBox haribo">
+                    <div class="bar">
+                        <span><i class="fa-solid fa-xmark"></i></span>
+                    </div>
+                    <div class="box">
+                        <h2>HARIBO</h2>
+                        <h3>하리보</h3>
+                        <h4>리뉴얼 프로젝트</h4>
+                        <p>제품 중심 리뉴얼 프로젝트<br>장바구니 기능, 로그인 기능</p>
+                    </div>
+                </div>
+                <div class="eachBox kaps">
+                    <div class="bar">
+                        <span><i class="fa-solid fa-xmark"></i></span>
+                    </div>
+                    <div class="box">
+                        <h2>KAPS</h2>
+                        <h3>한국동물보호협회</h3>
+                        <h4>리뉴얼 프로젝트</h4>
+                        <p>공공기관 리뉴얼 프로젝트<br>예약시스템 기능</p>
+                    </div>
+                </div>
+                <div class="eachBox newjeans">
+                    <div class="bar">
+                        <span><i class="fa-solid fa-xmark"></i></span>
+                    </div>
+                    <div class="box">
+                        <h2>NEWJEANS</h2>
+                        <h3>뉴진스</h3>
+                        <h4>펜페이지 프로젝트</h4>
+                        <p>아트 중심 신규 프로젝트<br>인터렉션 페이지 구성</p>
+                    </div>
+                </div>
+            </div>
+            <div class="profileContent">
+                <div class="boxA">
+                    <ul class="firstUl">
+                        <li class="firstLi">Name
+                            <ul class="secondUl">
+                                <li class="secondLi">황도영</li>
+                            </ul>
+                        </li>
+                        <li class="firstLi">Birth
+                            <ul class="secondUl">
+                                <li class="secondLi">1996년</li>
+                            </ul>
+                        </li>
+                        <li class="firstLi">Education
+                            <ul class="secondUl">
+                                <li class="secondLi">2023 충남대학교 생물과학과 졸업</li>
+                                <li class="secondLi">2024 (NCS) UI/UX & 프론트엔드 개발자 양성과정 수료</li>
+                            </ul>
+                        </li>
+                        <li class="firstLi">Keywords
+                            <ul class="secondUl">
+                                <li class="secondLi">#지적호기심</li>
+                                <li class="secondLi">#창조성</li>
+                                <li class="secondLi">#이상적인</li>
+                                <li class="secondLi">#몰입</li>
+                                <li class="secondLi">#끈기</li>
+                                <li class="secondLi">#책임감</li>
+                                <li class="secondLi">#성실</li>
+                            </ul>
+                        </li>
+                        <li class="firstLi">Contact
+                            <ul class="secondUl">
+                                <li class="secondLi">hdy510@naver.com</li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="boxB">
+                    <ul class="firstUl">
+                        <li class="firstLi">Skills
+                            <ul class="secondUl">
+                                <li class="secondLi">
+                                    <div class="secondLiWrap">
+                                        <img src="img/figma.png" alt="">
+                                        <span>Figma</span>
+                                    </div>
+                                    <div class="canvas_wrap">
+                                        <canvas class="canvas" width="130" height="130" data-percent="80"></canvas>
+                                        <span class="percent"></span>
+                                    </div>
+                                </li>
+                                <li class="secondLi">
+                                    <div class="secondLiWrap">
+                                        <img src="img/photoshop.png" alt="">
+                                        <span>Photoshop</span>
+                                    </div>
+                                    <div class="canvas_wrap">
+                                        <canvas class="canvas" width="130" height="130" data-percent="60"></canvas>
+                                        <span class="percent"></span>
+                                    </div>
+                                </li>
+                                <li class="secondLi">
+                                    <div class="secondLiWrap">
+                                        <img src="img/html.png" alt="">
+                                        <span>HTML5</span>
+                                    </div>
+                                    <div class="canvas_wrap">
+                                        <canvas class="canvas" width="130" height="130" data-percent="90"></canvas>
+                                        <span class="percent"></span>
+                                    </div>
+                                </li>
+                                <li class="secondLi">
+                                    <div class="secondLiWrap">
+                                        <img src="img/css.png" alt="">
+                                        <span>CSS3</span>
+                                    </div>
+                                    <div class="canvas_wrap">
+                                        <canvas class="canvas" width="130" height="130" data-percent="90"></canvas>
+                                        <span class="percent"></span>
+                                    </div>
+                                </li>
+                                <li class="secondLi">
+                                    <div class="secondLiWrap">
+                                        <img src="img/javascript.png" alt="">
+                                        <span>Javascript</span>
+                                    </div>
+                                    <div class="canvas_wrap">
+                                        <canvas class="canvas" width="130" height="130" data-percent="60"></canvas>
+                                        <span class="percent"></span>
+                                    </div>
+                                </li>
+                                <li class="secondLi">
+                                    <div class="secondLiWrap">
+                                        <img src="img/jquery.png" alt="">
+                                        <span>jQuery</span>
+                                    </div>
+                                    <div class="canvas_wrap">
+                                        <canvas class="canvas" width="130" height="130" data-percent="80"></canvas>
+                                        <span class="percent"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li>HOME</li>
+                    <li>PROFILE</li>
+                    <li>HARIBO</li>
+                    <li>KAPS</li>
+                    <li>NEWJEANS</li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+    
+</body>
+</html>

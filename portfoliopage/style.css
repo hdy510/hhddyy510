@@ -1,0 +1,407 @@
+/* 언어설정 */
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+/* .press-start-2p-regular {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  } */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* 색상변수설정 */
+:root {
+    --color-mainBlue: #00007b;
+    --color-subBlue: #0000d2;
+    --color-textBlue: #2A2AA1;
+    --color-creamBlue: #466FFF; 
+    --color-black: #060607;
+    --color-white: #fff;
+    --color-gray: #d9d9d9;
+}
+
+/* 전체설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul,ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: var(--color-black);
+}
+img {
+    vertical-align: bottom;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Pretendard-Regular';
+}
+
+/* section1 설정 */
+.section1 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+/* intro 설정 */
+.intro {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: var(--color-black);
+}
+.dvd-container {
+    width: 250px;
+    height: 130px;
+    position: absolute;
+}
+.dvd-logo {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+/* 배경설정 */
+.black_bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-black);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.5s;
+}
+.black_bg .bg {
+    width: 0px;
+    height: 0px;
+}
+/* 요소 설정 */
+.section1 .bg .mainTitle {
+    margin-top: 200px;
+    margin-left: 100px;
+}
+.section1 .bg .mainTitle h1 {
+    font-family: "Press Start 2P", system-ui;
+    color: var(--color-white);
+    font-size: 100px;
+    position: relative;
+    width: 1000px;
+}
+.section1 .bg .mainTitle h1 i {
+    font-style: normal;
+    font-size: 24px;
+    position: absolute;
+    top: -30px;
+    right: 0;
+}
+.section1 .bg .mainTitle p {
+    font-family: "Press Start 2P", system-ui;
+    color: var(--color-white);
+    font-size: 26px;
+    margin-top: 60px;
+    width: 420px;
+}
+.section1 .txt {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    font-family: "Press Start 2P", system-ui;
+    color: var(--color-white);
+    font-size: 16px;
+    text-align: center;
+}
+.section1 .txt.uiux {
+    top: 40px;
+    left: 40px;
+}
+.section1 .txt.publishing {
+    top: 40px;
+    right: 40px;
+}
+.section1 .txt.welcome {
+    bottom: 60px;
+    display: inline-block;
+    font-size: 22px;
+}
+.section1 .txt.welcome i {
+    animation: blink 1s infinite;
+}
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    49% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.section1 .btn {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 40px;
+}
+.section1 .btn.toIntro {
+    right: 40px;
+    width: 120px;
+    cursor: pointer;
+}
+.section1 .btn.toIntro img {
+    width: 100%;
+    opacity: 0.3;
+}
+.section1 .btn.toIntro:hover img {
+    opacity: 0.8;
+}
+.section1 .btn.profile {
+    bottom: 250px;
+    left: 100px;
+    cursor: pointer;
+    width: 208px;
+    height: 166px;
+}
+.section1 .btn.profile img {
+    width: 104px;
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    z-index: 1;
+}
+.section1 .btn.profile span {
+    font-family: "Press Start 2P", system-ui;
+    color: var(--color-white);
+    background-color: var(--color-subBlue);
+    font-size: 20px;
+    text-align: center;
+    padding: 21px 34px;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    transition: all 0.3s;
+}
+.section1 .btn.profile:hover span {
+    background-color: var(--color-white);
+    color: var(--color-subBlue);
+}
+.section1 .contentBox {
+    position: absolute;
+    bottom: 120px;
+    right: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+.section1 .contentBox .eachBox {
+    width: 240px;
+    height: 220px;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    opacity: 0;
+}
+.section1 .contentBox .eachBox .bar {
+    background-color: var(--color-subBlue);
+    width: 240px;
+    height: 26px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    transition: all 0.3s;
+}
+.section1 .contentBox .eachBox .bar span {
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 6px;
+}
+.section1 .contentBox .eachBox .bar span i {}
+.section1 .contentBox .eachBox .box {
+    background-color: var(--color-white);
+    border: 4px solid #0000aa;
+    padding: 26px;
+    width: 100%;
+    height: 80px;
+    /* height: 215px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+.section1 .contentBox .eachBox .box h2 {
+    font-family: "Press Start 2P", system-ui;
+    color: var(--color-mainBlue);
+    font-size: 20px;
+    margin-bottom: 26px;
+    transition: all 0.3s;
+}
+.section1 .contentBox .eachBox .box h3 {
+    color: var(--color-mainBlue);
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: 12px;
+    transition: all 0.3s;
+}
+.section1 .contentBox .eachBox .box h4 {
+    color: var(--color-textBlue);
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 12px;
+    transition: all 0.3s;
+}
+.section1 .contentBox .eachBox .box p {
+    color: var(--color-textBlue);
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.5;
+    transition: all 0.3s;
+}
+/* hover transition */
+.section1 .contentBox .eachBox:hover .bar {
+    transform: translate(0px, -30px);
+}
+.section1 .contentBox .eachBox:hover .box {
+    background-color: var(--color-creamBlue);
+    transform: translate(0px, -30px);
+    height: 220px;
+    box-shadow: 0px 4px 10px 0px #18183a;    
+}
+.section1 .contentBox .eachBox:hover .box h2 {
+    color: var(--color-white);
+}
+.section1 .contentBox .eachBox:hover .box h3 {
+    color: var(--color-white);
+}
+.section1 .contentBox .eachBox:hover .box h4 {
+    color: var(--color-white);
+}
+.section1 .contentBox .eachBox:hover .box p {
+    color: var(--color-white);
+}
+/* profileContent 설정 */
+.section1 .profileContent {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1220px;
+    height: 600px;
+    color: #fff;
+    position: absolute;
+    top: 250px;
+    z-index: -1;
+    opacity: 0;
+    margin-left: 30px;
+}
+.section1 .profileContent .boxA {
+    width: 100%;
+    height: 50%;
+    /* background-color: rgb(255, 172, 172); */
+}
+.section1 .profileContent .firstUl {
+    display: flex;
+}
+.section1 .profileContent .firstLi {
+    font-size: 24px;
+    font-weight: 600;
+    margin-right: 70px;
+}
+.section1 .profileContent .secondUl {
+    margin-top: 20px;
+}
+.section1 .profileContent .secondLi {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.section1 .profileContent .boxB {
+    width: 100%;
+    height: 50%;
+}
+.section1 .profileContent .boxB .secondUl {
+    display: flex;
+}
+.section1 .profileContent .boxB .secondLi {
+    margin-right: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+}
+.section1 .profileContent .boxB .secondLi .secondLiWrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.section1 .profileContent .boxB .secondLi .secondLiWrap img {
+    margin-right: 10px;
+}
+.section1 .profileContent .boxB .secondLi .canvas_wrap {
+    position: relative;
+    max-width: 300px;
+    max-height: 300px;
+    margin-top: 20px;
+}
+.section1 .profileContent .boxB .secondLi .canvas_wrap .percent {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 20px;
+    color: var(--color-white);
+    transform: translate(-50%, -50%);
+}
+.section1 .profileContent .boxB .secondLi .canvas_wrap .percent::after {
+    content: '%';
+
+}
+/* 네비설정 */
+.section1 nav {
+    position: absolute;
+    left: 40px;
+    top: 200px;
+    z-index: -1;
+    opacity: 0;
+}
+.section1 nav ul {}
+.section1 nav ul li {
+    font-family: "Press Start 2P", system-ui;
+    color: var(--color-white);
+    font-size: 20px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.section1 nav ul li:hover {
+    color: var(--color-creamBlue);
+}
+.section1 nav ul li.on {
+    color: var(--color-creamBlue);
+}

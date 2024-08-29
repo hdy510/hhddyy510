@@ -277,15 +277,7 @@ $(document).ready(function(){
     
 
 
-
-
     
-
-
-
-
-
-
 
     // ###### Music ######
     // GNB의 Music 을 클릭하면 .music_detail과 .music_player 은 숨기고 .music_inner 는 나타나라
