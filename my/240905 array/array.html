@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+    <div class="bag">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="productList">
+        <ul>
+            <li>빵빵이빵</li>
+            <li>우유</li>
+            <li>삼각김밥</li>
+            <li>햄버거</li>
+            <li>커피</li>
+        </ul>
+    </div>
+    <div class="removeBox">
+        <div class="remove remove1">1개씩 제거</div>
+        <div class="show">장바구니 보기</div>
+        <div class="hide">장바구니 닫기</div>
+    </div>
+
+    <style>
+        ul {
+            list-style: none;
+        }
+        .bag {
+            width: 200px;
+            height: 300px;
+            background-color: rgb(195, 235, 255);
+            padding: 10px;
+            display: none;
+        }
+        .bag.active {
+            display: block;
+        }
+        .bag ul {}
+        .bag ul li {
+            margin: 8px 0;
+        }
+
+        .productList {
+            width: 1000px;
+            height: 100px;
+        }
+        .productList ul {
+            display: flex;
+        }
+        .productList ul li {
+            width: 80px;
+            height: 80px;
+            border: 1px solid black;
+            margin: 0 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .productList ul li:hover {
+            background-color: #d4d4d4;
+        }
+
+        .removeBox {
+            display: flex;
+        }
+        .remove {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .remove:hover {
+            background-color: #ffc6c6;
+        }
+        .show {
+            width: 140px;
+            height: 80px;
+            background-color: rgb(209, 255, 209);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .show:hover {
+            background-color: #8bc08b;
+        }
+        .hide {
+            width: 140px;
+            height: 80px;
+            background-color: rgb(250, 255, 209);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .hide:hover {
+            background-color: rgb(212, 218, 170);
+        }
+       
+        
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            let bag = [];
+            // 상품을 클릭할때마다 bag 배열에 추가
+            $('.productList ul li').click(function () {
+                let product = $(this).text();
+                bag.push(product);
+                $('.bag ul').append(`<li>${product}</li>`);
+                console.log(bag)
+            });
+
+            // 1개씩 제거를 클릭할 때마다 bag 의 뒤에서 1개씩 제거
+            $('.remove1').click(function(){
+                bag.pop();
+                console.log(bag)
+                $('.bag ul li').last().remove();
+            })
+
+            // 장바구니 보기 버튼 클릭하면 bag 보여주기
+            $('.show').click(function(){
+                $('.bag').addClass('active');
+            })
+
+            // 장바구니 닫기 버튼 클릭하면 bag 보여주기
+            $('.hide').click(function(){
+                $('.bag').removeClass('active');
+            })
+        })
+    </script>
+</body>
+</html>

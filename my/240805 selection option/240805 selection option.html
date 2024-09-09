@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+    <div>
+        <div class="select">
+            <div class="icecream ice1">아이스크림1</div>
+            <div class="icecream ice2">아이스크림2</div>
+        </div>
+        <form action="/submit-form" method="post">
+            <label for="fruits">과일을 선택하세요:</label>
+            <select id="fruits" name="fruits">
+                <option value="" selected>선택하세요</option>
+                <option value="apple">사과</option>
+                <option value="banana">바나나</option>
+                <option value="cherry">체리</option>
+                <option value="grape">포도</option>
+            </select>
+            <div class="order">
+                <ul>
+                    <!-- <li>
+                        <p>아이스크림1</p>
+                        <div>과일:<em>사과</em></div>
+                        <div class="close">닫기</div>
+                    </li> -->
+                    
+                </ul>
+            </div>
+            <input type="submit" value="제출">
+        </form>
+    </div>
+
+    <style>
+        em {
+            font-style: normal;
+        }
+        .select {
+            display: flex;
+
+        }
+        .icecream {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            margin: 0 20px;
+            cursor: pointer;
+        }
+        .icecream:hover {
+            background-color: rgb(226, 226, 226);
+        }
+        .icecream.on {
+            background-color: rgb(226, 226, 226);
+        }
+        form {
+            margin: 10px;
+        }
+        .order {
+            width: 800px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 10px;
+        }
+        .order li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .order li p {
+            padding-right: 100px;
+        }
+        .order li .close {
+            margin-left: 100px;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            // .icecream 을 클릭하면 배경 색이 바뀜
+            $('.icecream').click(function(){
+                $(this).addClass('on');
+                // 하나만 선택할 수 있게 하기
+                $(this).siblings().removeClass('on');
+
+
+                var selectedFruit = $('#fruits').val();
+                var selectedIcecream = $('.icecream.on').text();
+                if (selectedFruit && selectedIcecream) {
+                    var listItem = '<li>' +
+                        '<p>' + selectedIcecream + '</p>' +
+                        '<div>과일:<em>' + selectedFruit + '</em></div>' +
+                        '<div class="close">닫기</div>' +
+                        '</li>';
+                        
+                    $('.order ul').append(listItem);
+                }
+            });
+            $('select').change('#fruits', function() {
+                var selectedFruit = $(this).val();
+                var selectedIcecream = $('.icecream.on').text();
+                
+                if (selectedFruit && selectedIcecream) {
+                    var listItem = '<li>' +
+                        '<p>' + selectedIcecream + '</p>' +
+                        '<div>과일:<em>' + selectedFruit + '</em></div>' +
+                        '<div class="close">닫기</div>' +
+                        '</li>';
+                        
+                    $('.order ul').append(listItem);
+                }
+            });
+
+            // .close 를 클릭하면 li 삭제
+            $('.order').on('click', '.close', function(){
+                $(this).parent().remove();
+            });
+
+
+
+
+
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>혼합 스크롤 페이지</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            -ms-overflow-style: none; 
+            /* IE, Edge */
+            scrollbar-width: none; 
+            /* Firefox */
+        }
+        ::-webkit-scrollbar {
+            display: none; 
+            /* Chrome, Safari, Opera */
+        }
+        .section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: white;
+        }
+        #section1 { background-color: #3498db; }
+        #section2 { background-color: #e74c3c; }
+        #horizontalSection {
+            height: 100vh;
+            width: 300vw;
+            display: flex;
+            flex-direction: row;
+            overflow-x: hidden;
+        }
+        .horizontalPanel {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: white;
+        }
+        #panel1 { background-color: #2ecc71; }
+        #panel2 { background-color: #f39c12; }
+        #panel3 { background-color: #9b59b6; }
+        #section4 { background-color: #1abc9c; }
+    </style>
+</head>
+<body>
+    <div id="section1" class="section">섹션 1 - 세로 스크롤</div>
+    <div id="section2" class="section">섹션 2 - 세로 스크롤</div>
+    <div id="horizontalSection">
+        <div id="panel1" class="horizontalPanel">패널 1 - 가로 스크롤</div>
+        <div id="panel2" class="horizontalPanel">패널 2 - 가로 스크롤</div>
+        <div id="panel3" class="horizontalPanel">패널 3 - 가로 스크롤</div>
+    </div>
+    <div id="section4" class="section">섹션 4 - 세로 스크롤</div>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 가로 스크롤 섹션 설정
+        gsap.to("#horizontalSection", {
+            x: () => -(document.querySelector("#horizontalSection").scrollWidth - window.innerWidth),
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#horizontalSection",
+                start: "top top",
+                end: () => `+=${document.querySelector("#horizontalSection").scrollWidth - window.innerWidth}`,
+                scrub: true,
+                pin: true,
+                anticipatePin: 1
+            }
+        });
+    </script>
+</body>
+</html>

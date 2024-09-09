@@ -1,0 +1,105 @@
+@charset 'utf-8';
+
+// 전체설정
+* {
+    padding: 0;
+    margin: 0;
+}
+ul,ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+img {
+    vertical-align: bottom;
+}
+
+// section1 - 중첩(nesting), Ampersand
+.section1 {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(231, 255, 226);
+    .gallery {
+        width: 1500px;
+        height: 400px;
+        background-color: rgb(255, 211, 211);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        $fs40: 40px;
+        h1 {
+            font-size: $fs40;
+            font-weight: normal;
+        }
+        ul {
+            display: flex;
+            li {
+                width: 200px;
+                height: 200px;
+                background-color: white;
+                border: 1px solid #000;
+                margin: 0 10px;
+                &:nth-child(1) {
+                    background-color: rgb(255, 255, 199);
+                }
+                &:nth-child(2) {
+                    font-size: $fs40;
+                }
+            }
+        }
+        .btn {
+            width: 50px;
+            height: 30px;
+            background-color: white;
+            border: 1px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            span {}
+            cursor: pointer;
+            &:hover {
+                background-color: rgb(211, 215, 255);
+            }
+        }
+        .at-root {
+            width: 300px;
+            height: 300px;
+            $bgGreen: rgb(0, 255, 0);
+            .at-root-box {
+                width: 100px;
+                height: 100px;
+                background-color: $bgGreen;
+            }
+            @at-root .at-root-not {
+                width: 50px;
+                height: 50px;
+                background-color: $bgGreen;
+            }
+        }
+    }
+}
+
+// section2
+$bgRed: rgb(215, 235, 255); // 전역 변수 선언
+
+.section2 {
+    width: 100%;
+    height: 100px;
+    background-color: $bgRed;
+
+    .global {
+        width: 100px;
+        height: 100px;
+        $bgRed: rgb(255, 0, 0) !global; // 전역 변수 재정의
+        background-color: $bgRed;
+        
+    }
+
+    .global2 {
+        width: 200px;
+        height: 50px;
+        background-color: $bgRed; // 재정의된 전역 변수 사용
+    }
+}
