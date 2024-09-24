@@ -116,3 +116,30 @@ img {
 .swiper-pagination-bullet {
     background-color: rgb(255, 121, 25);
 }
+
+/* 640 이하 모바일 설정 */
+@media (max-width: 640px) {
+    .swiper {
+        height: auto;
+        margin-top: 80px;
+    }
+    .swiper-wrapper {
+        width: 110%;
+        flex-wrap: wrap;
+    }
+    .swiper-slide {
+        margin-bottom: 40px;
+    }
+    .swiper-slide .text-bg {
+        opacity: 0.8;
+    }
+    .swiper-slide .text-box {
+        bottom: 10px;
+    }
+    .swiper-slide .text-box h3 {
+        opacity: 1;
+    }
+    .swiper-slide .text-box p {
+        opacity: 1;
+    }
+}
