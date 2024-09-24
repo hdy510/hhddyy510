@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper</title>
+    <!-- font awesome cdn -->
+    <script src="https://kit.fontawesome.com/fb97202f89.js" crossorigin="anonymous"></script>
+    <!-- swiper css cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- 외부스타일시트 -->
+     <link rel="stylesheet" href="style.css">
+    <!-- swiper js cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="https://picsum.photos/id/237/500/300" alt="">
+                <div class="text-bg"></div>
+                <div class="text-box">
+                    <h3>Box1</h3>
+                    <p>lorem ipsum</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://picsum.photos/id/247/500/300" alt="">
+                <div class="text-bg"></div>
+                <div class="text-box">
+                    <h3>Box2</h3>
+                    <p>lorem ipsum</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://picsum.photos/id/437/500/300" alt="">
+                <div class="text-bg"></div>
+                <div class="text-box">
+                    <h3>Box3</h3>
+                    <p>lorem ipsum</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://picsum.photos/id/167/500/300" alt="">
+                <div class="text-bg"></div>
+                <div class="text-box">
+                    <h3>Box4</h3>
+                    <p>lorem ipsum</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://picsum.photos/id/277/500/300" alt="">
+                <div class="text-bg"></div>
+                <div class="text-box">
+                    <h3>Box5</h3>
+                    <p>lorem ipsum</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://picsum.photos/id/287/500/300" alt="">
+                <div class="text-bg"></div>
+                <div class="text-box">
+                    <h3>Box6</h3>
+                    <p>lorem ipsum</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://picsum.photos/id/297/500/300" alt="">
+                <div class="text-bg"></div>
+                <div class="text-box">
+                    <h3>Box7</h3>
+                    <p>lorem ipsum</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://picsum.photos/id/231/500/300" alt="">
+                <div class="text-bg"></div>
+                <div class="text-box">
+                    <h3>Box8</h3>
+                    <p>lorem ipsum</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://picsum.photos/id/232/500/300" alt="">
+                <div class="text-bg"></div>
+                <div class="text-box">
+                    <h3>Box9</h3>
+                    <p>lorem ipsum</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://picsum.photos/id/233/500/300" alt="">
+                <div class="text-bg"></div>
+                <div class="text-box">
+                    <h3>Box10</h3>
+                    <p>lorem ipsum</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            loop: true,
+            slidesPerView: 2,
+            spaceBetween: 10,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                1024: {
+                    slidesPerView: 6,
+                    spaceBetween: 20,
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    },
+                },
+                640: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    },
+                },
+                0: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                    autoplay: false,
+                },
+            },
+        });
+    </script>
+</body>
+</html>
